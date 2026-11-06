@@ -14,3 +14,5 @@ Repositorio: https://github.com/marinpittet/Portafolio-product-designer-mvp
 Sitio: https://marinpittet.github.io/Portafolio-product-designer-mvp/
 
 `HANDOFF.md` documenta fuentes y pendientes de contenido. Figma solo es una referencia histórica: no acceder ni modificar.
+
+Iconos de interfaz: [Lucide](https://lucide.dev/icons/), SVG oficiales locales y sprite en `assets/icons/lucide/`. Licencia incluida.

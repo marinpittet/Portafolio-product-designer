@@ -11,3 +11,11 @@
 
 .profile-photo{display:block;width:280px;height:280px;max-width:100%;object-fit:contain}
 @media(max-width:799px){.profile-photo{width:210px;height:210px}}
+
+/* Identidad y cifras: conservar el dibujo del SVG y usar números de caja. */
+*,*::before,*::after{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1,"onum" 0}
+.brand{font-family:var(--slab);font-weight:700}
+.brand-icon{display:block;object-fit:contain;flex-shrink:0;border:0;border-radius:0}
+.nav-links a,.mobile-nav .links a{color:var(--gray)}
+.nav-links a[aria-current],.mobile-nav .links a[aria-current]{color:var(--orange);font-weight:700}
+.nav-links a:hover,.mobile-nav .links a:hover{color:var(--orange)}

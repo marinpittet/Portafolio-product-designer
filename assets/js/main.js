@@ -3,6 +3,13 @@
     home: document.getElementById('page-home'),
     transferencias: document.getElementById('page-transferencias'),
   };
+  const mobileNav = document.querySelector('.mobile-nav');
+  function measureNavigation() {
+    document.documentElement.style.setProperty('--mobile-nav-height', `${mobileNav.getBoundingClientRect().height}px`);
+  }
+  const navigationObserver = new ResizeObserver(measureNavigation);
+  navigationObserver.observe(mobileNav);
+  measureNavigation();
   function navigate() {
     const hash = location.hash || '#/';
     const page = hash.startsWith('#/transferencias') ? 'transferencias' : 'home';

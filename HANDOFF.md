@@ -14,5 +14,5 @@ HTML original recuperado desde Portfolio/MVP/sitio-web/sitio-web. Se conserva un
 - Repositorio conectado mediante GitHub: https://github.com/marinpittet/Portafolio-product-designer-mvp. HTML y .nojekyll subidos a main.
 - GitHub Pages activado desde main / (root), con HTTPS. El usuario hizo público el repositorio.
 - HTML sin proceso de compilación; navegación por hash compatible con Pages. Las actualizaciones en main se publican automáticamente.
-- Raleway y Roboto Slab conectadas a Google Fonts con display=swap y preconexión.
+- Raleway y Roboto Slab de Google Fonts alojadas localmente como WOFF2 variables, con precarga y display=swap.
 - Estilos y navegación separados en assets/css y assets/js; foto original en assets/images/profile.png.

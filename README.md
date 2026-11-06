@@ -1,7 +1,16 @@
-# Portafolio de Andrés Marín — MVP
+# Portafolio de Andrés Marín
 
-1. Abre `index.html` en Chrome, Safari, Firefox o Edge. No requiere internet ni instalación.
-2. Navega entre Inicio y Transferencias con los enlaces integrados.
-3. Para publicar en GitHub Pages, sube el contenido de esta carpeta a la raíz de un repositorio y activa **Settings → Pages → Deploy from a branch → main / (root)**. El sitio se abrirá en la URL de Pages del repositorio.
+Sitio estático: HTML, CSS y JavaScript sin compilación.
 
-Todos los estilos, textos, gráficos SVG y scripts están incluidos en el mismo HTML. `HANDOFF.md` identifica fuentes, decisiones, limitaciones y pendientes.
+- `index.html`: contenido y rutas de Inicio y Transferencias.
+- `assets/css/styles.css`: estilos y adaptación a móviles.
+- `assets/js/main.js`: navegación por hash.
+- `assets/images/profile.png`: foto original de perfil con transparencia.
+- Raleway y Roboto Slab servidas por Google Fonts, con preconexión y display=swap. El navegador recibe los formatos y subconjuntos compatibles; no se bloquea la lectura mientras cargan.
+
+GitHub Pages publica automáticamente desde `main`, carpeta raíz. HTTPS.
+
+Repositorio: https://github.com/marinpittet/Portafolio-product-designer-mvp
+Sitio: https://marinpittet.github.io/Portafolio-product-designer-mvp/
+
+`HANDOFF.md` documenta fuentes y pendientes de contenido. Figma solo es una referencia histórica: no acceder ni modificar.

@@ -12,6 +12,6 @@ HTML original recuperado desde Portfolio/MVP/sitio-web/sitio-web. Se conserva un
 ## Pendientes
 - Retomar más adelante cómo se organizaron la ideación y la priorización. No preguntar durante la publicación.
 - Repositorio conectado mediante GitHub: https://github.com/marinpittet/Portafolio-product-designer-mvp. HTML y .nojekyll subidos a main.
-- Activación de Pages pendiente de iniciar sesión en el navegador; el conector no expone configuración de Pages.
-- Configurar GitHub Pages desde la raíz de la rama publicada. HTML sin proceso de compilación; navegación por hash compatible con Pages.
+- GitHub Pages activado desde main / (root), con HTTPS. El usuario hizo público el repositorio.
+- HTML sin proceso de compilación; navegación por hash compatible con Pages. Las actualizaciones en main se publican automáticamente.
 - Tipografías declaradas con alternativas de sistema; no hay archivos de fuentes incrustados.

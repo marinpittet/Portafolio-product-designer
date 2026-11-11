@@ -1,18 +1,29 @@
-# Estado del portafolio · 2026-11-06
+# Estado del portafolio · 2026-11-11
 
-HTML original recuperado desde Portfolio/MVP/sitio-web/sitio-web. Se conserva una copia original en esa ubicación.
+## Caso TEF
 
-## Cambios
-- Discovery del caso TEF actualizado con el relato del usuario en «MVP Portafolio HTML».
-- Encargo y diagnóstico en septiembre de 2023 distinguidos del período de diseño previamente documentado.
-- Alcance >80 %, metodología Useberry, cuatro hallazgos, benchmark y limitaciones documentados sin añadir resultados de pruebas.
-- Figma se mantiene únicamente como referencia histórica. No acceder ni modificar.
-- Las secciones restantes y las cifras atribuidas al CV se conservan del MVP; no se han verificado de nuevo contra ese documento.
+- Discovery conserva el alcance definido con la PO, los cuatro hallazgos, el benchmark y el diagnóstico no moderado en Useberry.
+- El caso cubre tres conceptos, dos rondas de validación posteriores al diagnóstico, la decisión de portadilla y los acuerdos con desarrollo. Las comparaciones de prototipos son cualitativas. Quedan por contrastar muestras, resultados por tarea y cifras de uso con los informes originales.
+- Las capturas de Pagos y Centro de ayuda muestran la adopción de la portadilla. La agenda y el comprobante TEF tienen respaldo visual parcial. Las tres iteraciones del botón Compartir, su posición final y la cortina animada con sonido están documentadas por el relato. Queda pendiente evidencia visual de ese botón y de la cortina. El interés de otros equipos en reutilizar ambos recursos se registra sin confirmación de lanzamiento.
+- QA del producto y medición posterior al lanzamiento se retoman más adelante. Se retiró del caso público la cifra aproximada de NPS hasta verificar la fuente, el período y el método de comparación.
+- Figma queda como referencia histórica. Los casos de IA y Open Finance conservan el alcance del MVP.
 
-## Pendientes
-- Retomar más adelante cómo se organizaron la ideación y la priorización. No preguntar durante la publicación.
-- Repositorio conectado mediante GitHub: https://github.com/marinpittet/Portafolio-product-designer-mvp. HTML y .nojekyll subidos a main.
-- GitHub Pages activado desde main / (root), con HTTPS. El usuario hizo público el repositorio.
-- HTML sin proceso de compilación; navegación por hash compatible con Pages. Las actualizaciones en main se publican automáticamente.
-- Raleway y Roboto Slab de Google Fonts alojadas localmente como WOFF2 variables, con precarga y display=swap.
-- Estilos y navegación separados en assets/css y assets/js; foto original en assets/images/profile.png.
+## Imágenes
+
+Las versiones públicas son JPEG nuevos y aplanados. Se revisaron los recortes y las áreas cubiertas. Se usaron datos ficticios para mostrar los sufijos de cuenta y la jerarquía del destinatario. Los originales se conservan fuera del repositorio público.
+
+| Fuente | Versión publicable |
+| --- | --- |
+| IMG_7570.PNG y IMG_7571.PNG | `portadilla-pagos.jpg` y `portadilla-ayuda.jpg`, recortes de las portadillas |
+| image(2).png y image(3).png | `comprobante-tef.jpg` y `agenda-tef.jpg`, capturas anonimizadas |
+| IMG_7572.jpeg, IMG_7573.jpeg e IMG_7576.jpeg | `bocetos-portadilla.jpg`, `boceto-flujo.jpg` y `boceto-navegacion.jpg`, recortes de bocetos |
+| IMG_7345.PNG | `comprobante-pago-referencia.jpg`, referencia anonimizada de pago de tarjeta, de un flujo distinto a TEF |
+| IMG_7574.jpeg e IMG_7575.jpeg | Referencias privadas con cifras internas y notas de investigación |
+| image(1).png | Pendiente de recuperar con ese nombre |
+
+Los derivados están en `assets/images/tef/`. La página muestra cinco piezas. Los dos bocetos adicionales y el comprobante de pago son referencias sanitizadas del repositorio público.
+
+## Sitio
+
+- GitHub Pages configurado desde `main` y la raíz del repositorio, con HTTPS y `.nojekyll`.
+- HTML estático con navegación por hash. Raleway y Roboto Slab se sirven localmente. Los estilos y la navegación están en `assets/css` y `assets/js`.

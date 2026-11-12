@@ -1,0 +1,67 @@
+/* Benchmark editorial: elementos gráficos HTML/CSS, logos locales. */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.benchmark{border:1px solid var(--hair);background:#fff;margin:60px 0 20px;min-width:0;color:var(--text)}
+.benchmark-heading{padding:clamp(21px,3vw,40px);display:grid;grid-template-columns:1fr minmax(210px,.8fr);gap:35px}
+.benchmark-heading h3{font-size:clamp(25px,2.5vw,36px);margin-top:12px}
+.benchmark-heading p{font-size:13px;line-height:1.6;margin:5px 0 0;max-width:430px}
+.benchmark-heading strong{color:var(--accent)}
+.benchmark-tabs{display:flex;border-block:1px solid var(--hair);overflow-x:auto}
+.benchmark-tabs button{flex:1;min-width:155px;border:0;border-bottom:3px solid transparent;background:#f7f7f7;color:var(--muted);text-align:left;font:700 12px var(--sans);padding:16px clamp(16px,2.5vw,32px);cursor:pointer}
+.benchmark-tabs button+button{border-left:1px solid var(--hair)}
+.benchmark-tabs button[aria-selected=true]{background:#fff;border-bottom-color:var(--accent);color:var(--ink)}
+.benchmark-tabs button:hover{color:var(--accent)}
+.benchmark-panel{padding:24px clamp(12px,2.5vw,32px) 26px;min-width:0}
+.benchmark-panel[hidden]{display:none}
+.bench-panel-intro{display:flex;gap:12px;align-items:baseline;justify-content:space-between;margin-bottom:20px}
+.bench-panel-intro p{margin:0;font-size:13px;line-height:1.5;max-width:600px}
+.bench-panel-intro small{font-size:11px;color:var(--muted);white-space:nowrap}
+.bench-scroll{overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;padding-bottom:12px}
+.bench-journey-list,.bench-stage-list{list-style:none;margin:0;padding:0}
+.bench-journey-list{min-width:635px}
+.bench-journey-row{display:grid;grid-template-columns:148px 1fr;gap:10px;padding:15px 0;border-top:1px solid var(--hair);align-items:center}
+.bench-journey-row:last-child{border-bottom:1px solid var(--hair)}
+.bench-bank{display:flex;align-items:center;gap:10px;min-width:0}
+.bench-bank img{width:39px;height:39px;object-fit:contain;flex-shrink:0;border-radius:8px}
+.bench-bank strong{font-size:12px;line-height:1.3;color:var(--ink)}
+.bench-stage-list{display:grid;grid-template-columns:repeat(4,minmax(80px,1fr));gap:clamp(10px,2vw,26px);justify-items:center}
+.bench-stage{position:relative;display:flex;align-items:center;flex-direction:column;gap:7px;min-width:0}
+.bench-stage:not(:last-child):after{content:'→';position:absolute;left:calc(100% + 2px);top:45%;font:20px var(--serif);color:var(--accent)}
+.bench-step-name{font-size:10px;line-height:1.4;color:var(--muted);text-align:center}
+.bench-phone{width:60px;height:107px;background:#fff;border:1.5px solid #aab0b5;border-radius:8px;padding:7px 5px 6px;display:flex;flex-direction:column;gap:5px;box-shadow:0 2px 5px #1111110b;overflow:hidden}
+.screen-top{display:flex;gap:2px;height:4px;flex:none;align-items:center;justify-content:flex-end;border-bottom:1px solid #eaedf0;padding-bottom:4px}
+.screen-top i{display:block;width:3px;height:2px;border-radius:4px;background:#8b969f}
+.skeleton-heading{height:5px;width:75%;background:#9aa5af;border-radius:2px;flex:none}
+.skeleton-heading.short{width:52%}
+.skeleton-line{height:3px;width:52%;background:#d7dce2;border-radius:2px;flex:none}
+.skeleton-list{display:flex;flex-direction:column;gap:6px;margin-top:3px}
+.skeleton-list span{height:14px;display:block;border:1px solid #e2e5e8;background:linear-gradient(90deg,#cfd7dd 0 25%,#f2f4f6 25% 100%);border-radius:3px}
+.skeleton-search{height:10px;border:1px solid #cdd3db;border-radius:5px;background:#f8f9fa;flex:none}
+.screen-contact .skeleton-list span{height:18px}
+.skeleton-amount{height:13px;width:60%;align-self:center;border-bottom:1px solid #acb9c2;background:#f4f6f7;flex:none;margin:6px 0 0}
+.skeleton-fields{display:flex;flex-direction:column;gap:5px}
+.skeleton-fields span{height:10px;border:1px solid #e1e4e8;background:#f6f7f8;border-radius:3px}
+.skeleton-cta{height:7px;width:83%;border-radius:9px;background:#7b8d9c;align-self:center;margin-top:auto}
+.skeleton-success{width:22px;height:22px;border-radius:50%;border:1.5px solid #8193a0;display:grid;place-items:center;color:#8193a0;align-self:center;font:700 13px sans-serif;margin:6px 0 0}
+.screen-receipt .skeleton-heading{align-self:center}
+.skeleton-lines{display:flex;flex-direction:column;gap:4px;margin-top:2px}
+.skeleton-lines i{height:3px;width:100%;background:#d5dae1;border-radius:2px}
+.skeleton-lines i:nth-child(2){width:65%}
+.skeleton-lines i:nth-child(3){width:85%}
+.bench-subcaption{margin:6px 0 0!important;font-size:11px;line-height:1.5;color:var(--muted)}
+.bench-matrix{border-collapse:collapse;width:100%;min-width:770px;table-layout:fixed;font-size:12px}
+.bench-matrix th,.bench-matrix td{padding:12px 8px;border-bottom:1px solid #e5e5e5;text-align:center}
+.bench-matrix thead th{vertical-align:bottom;background:#fafafa}
+.bench-matrix tr:nth-child(even){background:#f6f7f8}
+.bench-matrix th:first-child{width:210px;text-align:left}
+.bench-matrix tbody th{font-weight:500;color:var(--ink);font-size:12px;line-height:1.4}
+.bench-col-bank{display:grid;justify-items:center;gap:6px;line-height:1.2;font-size:10px;min-height:60px}
+.bench-col-bank img{width:35px;height:35px;object-fit:contain;border-radius:7px}
+.bench-status{font:700 18px var(--sans);display:inline-flex;align-items:center;justify-content:center;min-width:24px}
+.bench-status.is-yes{color:#197a54}.bench-status.is-part{color:#b77512}.bench-status.is-no{color:#b7494a}
+.bench-legend{display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;margin-top:15px;font-size:11px;color:var(--muted)}
+.bench-legend span{display:flex;align-items:center;gap:4px}
+.bench-disclaimer{background:#f6f6f6;border-top:1px solid var(--hair);display:flex;gap:20px;justify-content:space-between;align-items:baseline;padding:18px clamp(12px,2.5vw,32px)}
+.bench-disclaimer span{font-size:10px;color:var(--accent);font-weight:800;letter-spacing:.07em;white-space:nowrap}
+.bench-disclaimer p{margin:0;font-size:11px;line-height:1.6;max-width:730px;color:var(--muted)}
+@media(max-width:860px){.benchmark-heading{grid-template-columns:1fr;gap:12px}.bench-panel-intro{flex-wrap:wrap}.bench-disclaimer{flex-direction:column;gap:6px}}
+@media(max-width:550px){.benchmark{margin-left:-12px;margin-right:-12px}.benchmark-heading{padding:20px}.benchmark-panel{padding:16px 12px 22px}.benchmark-tabs button{text-align:center;padding:14px 11px}.bench-bank strong{font-size:11px}.bench-journey-row{grid-template-columns:118px 1fr}.bench-journey-list{min-width:610px}}

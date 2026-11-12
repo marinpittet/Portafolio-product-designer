@@ -27,3 +27,13 @@
 - Revisión estática de rutas, etiquetas, recursos del paquete local y sintaxis JS realizada.
 - Verificación visual en navegador completo: NO VERIFICADO; el navegador de este entorno bloquea la navegación a archivos y localhost.
 - Falta revisión visual final en el entorno del usuario y sustitución de medios anonimizados antes de publicar.
+
+
+## Iteración editorial TEF — 12 de noviembre de 2026
+- Rama de implementación: `feat/caso-tef-editorial`, sin cambios ni merge a `main`.
+- Ruta aislada: `caso-tef/index.html`.
+- Audio: el video entregado no contiene sonido; se eliminó «Activar sonido». Se conserva MP4 por compresión, calidad y control manual.
+- Benchmark: el anterior par de imágenes de ejemplo se reemplazó por un componente editable (`caso-tef/benchmark.js` y `benchmark.css`) con vistas de recorridos y funcionalidades. Todos los flujos, estados y datos de comparación son sintéticos; los logotipos originales se incluyen solo en el paquete local de revisión.
+- La rama pública contiene código y placeholders, no las capturas privadas, video original ni logos descargados del ZIP. El paquete de revisión local contiene los assets para comprobar el diseño.
+- La publicación pública permanece bloqueada hasta anonimizar los recursos. GitHub Pages sigue sirviendo desde `main`.
+- QA: se revisó sintaxis JS, tabs, teclado, ausencia del botón de sonido y ausencia de overflow global en anchos 390, 800, 1280 y 1440 mediante render autocontenido. Navegación directa desde Chromium de prueba: NO VERIFICADO (bloqueo del entorno).

@@ -9,7 +9,7 @@
   function navigate() {
     const hash = location.hash || '#/';
     if (hash.startsWith('#/transferencias')) {
-      location.replace('./caso-tef/');
+      location.replace(document.documentElement.lang === 'en' ? './caso-tef/index.en.html' : './caso-tef/');
       return;
     }
     document.querySelectorAll('.nav-links a, .mobile-nav .links a').forEach(link => {
@@ -25,4 +25,3 @@
   window.addEventListener('hashchange', navigate);
   navigate();
 })();
-

@@ -37,16 +37,17 @@
   const player = document.getElementById('success-video');
   const toggle = document.getElementById('video-toggle');
   if (player && toggle) {
+    const english = document.documentElement.lang === 'en';
     const videoContainer = player.closest('.motion-player');
     const unavailable = () => {
       videoContainer.classList.add('media-missing');
       toggle.disabled = true;
-      toggle.textContent = 'Video no disponible';
+      toggle.textContent = english ? 'Video unavailable' : 'Video no disponible';
     };
     player.addEventListener('error', unavailable);
     player.querySelector('source')?.addEventListener('error', () => { if (player.networkState === 3) unavailable(); });
     const sync = () => {
-      toggle.textContent = player.paused ? 'Reproducir' : 'Pausar';
+      toggle.textContent = player.paused ? (english ? 'Play' : 'Reproducir') : (english ? 'Pause' : 'Pausar');
       toggle.setAttribute('aria-pressed', String(!player.paused));
     };
     toggle.addEventListener('click', () => {

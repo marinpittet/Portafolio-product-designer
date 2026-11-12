@@ -65,6 +65,47 @@
     '<div class="bench-scroll"><table class="bench-matrix"><caption class="sr-only">Matriz demostrativa: todos los estados son sintéticos.</caption><thead><tr><th scope="col">Funcionalidad</th>'+heads+'</tr></thead><tbody>'+rows+'</tbody></table></div>'+
     '<div class="bench-legend"><span><b class="bench-status is-yes">✓</b>Sí</span><span><b class="bench-status is-part">◐</b>Parcial</span><span><b class="bench-status is-no">×</b>No</span><span>Todos los valores son ficticios</span></div></section>'+
     '<div class="bench-disclaimer"><span>DEMO / SIN DATOS REALES</span><p>Las marcas solo identifican columnas. Las secuencias, las categorías y los estados se crearon como ejemplo sintético del formato, no como hallazgos de un estudio competitivo.</p></div></div>';
+  if (document.documentElement.lang === 'en') {
+    const english = {
+      'Inicio':'Home', 'Destinatario':'Recipient', 'Datos':'Details', 'Comprobante':'Receipt',
+      'Transferencia a contacto guardado':'Transfer to a saved contact',
+      'Transferencia a destinatario nuevo':'Transfer to a new recipient',
+      'Buscador de contactos':'Contact search', 'Acceso al historial':'Access to history',
+      'Destinatarios favoritos':'Favorite recipients', 'Transferencias programadas':'Scheduled transfers',
+      'Compartir comprobante':'Share receipt', 'Sí':'Yes', 'Parcial':'Partial',
+      'Sí (sintético)':'Yes (synthetic)', 'Parcial (sintético)':'Partial (synthetic)',
+      'No (sintético)':'No (synthetic)',
+      'Secuencia ilustrativa de cuatro pantallas':'Illustrative sequence of four screens',
+      'Reconstrucción ilustrativa del benchmark':'Illustrative benchmark reconstruction',
+      'Recurso reconstruido / Modelo de trabajo':'Reconstructed material / Working model',
+      'Un benchmark, dos perspectivas.':'One benchmark, two perspectives.',
+      'Datos sintéticos.':'Synthetic data.',
+      'Reconstrucción editorial para mostrar exclusivamente el formato de análisis. Pantallas y estados son ficticios; no reflejan resultados originales ni capacidades verificadas de estos bancos.':'Editorial reconstruction showing the analysis format only. Screens and states are fictional; they do not reflect original findings or verified capabilities of these banks.',
+      'Tipo de benchmark':'Benchmark type', '01   Recorridos':'01   Journeys',
+      '02   Funcionalidades':'02   Features',
+      'Secuencia ilustrativa de una transferencia por institución, para comparar la organización del recorrido.':'Illustrative transfer sequence for each institution, comparing how the journey is organized.',
+      'Desplaza horizontalmente en móvil.':'Scroll horizontally on mobile.',
+      'Los teléfonos son placeholders editables en HTML y CSS. No reproducen aplicaciones reales.':'The phones are editable HTML and CSS placeholders. They do not reproduce real apps.',
+      'Ejemplo de matriz de registro de funcionalidades entre instituciones.':'Example feature comparison matrix across institutions.',
+      'Matriz demostrativa: todos los estados son sintéticos.':'Demo matrix: all statuses are synthetic.',
+      'Funcionalidad':'Feature', 'Todos los valores son ficticios':'All values are fictional',
+      'DEMO / SIN DATOS REALES':'DEMO / NO REAL DATA',
+      'Las marcas solo identifican columnas. Las secuencias, las categorías y los estados se crearon como ejemplo sintético del formato, no como hallazgos de un estudio competitivo.':'Brands identify columns only. Sequences, categories, and statuses were created as synthetic examples of the format, not as findings from a competitive study.'
+    };
+    const benchmark = document.querySelector('.benchmark');
+    const walker = document.createTreeWalker(benchmark, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const value = node.nodeValue.trim();
+      if (english[value]) node.nodeValue = node.nodeValue.replace(value, english[value]);
+    }
+    benchmark.querySelectorAll('[aria-label]').forEach(node => {
+      const value = node.getAttribute('aria-label');
+      if (english[value]) node.setAttribute('aria-label', english[value]);
+    });
+    benchmark.querySelector('#bench-tab-journeys').innerHTML = '01 &nbsp; Journeys';
+    benchmark.querySelector('#bench-tab-features').innerHTML = '02 &nbsp; Features';
+  }
   const tabs = Array.from(document.querySelectorAll('.benchmark-tabs [role="tab"]'));
   const choose = (selected, focus) => {
     for(const tab of tabs){

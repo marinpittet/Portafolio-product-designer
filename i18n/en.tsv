@@ -1,0 +1,262 @@
+Saltar al contenido	Skip to content
+Inicio	Home
+Sobre mí	About me
+Proyectos	Projects
+Transferencias	Transfers
+Contacto	Contact
+Navegación principal	Main navigation
+Navegación	Navigation
+Idioma	Language
+Portafolio	Portfolio
+Portafolio en desarrollo · 2026	Portfolio in progress · 2026
+Product design · Research · IA aplicada	Product design · Research · Applied AI
+Hola, soy	Hi, I'm
+Andrés!	Andrés!
+apasionado por la tecnología y la resolución de problemas.	passionate about technology and solving problems.
+Product Designer especializado en productos financieros digitales. Defino y conduzco proyectos de punta a punta, desde discovery hasta seguimiento de métricas, y aplico IA para acelerar procesos de diseño.	I am a Product Designer specializing in digital financial products. I lead projects from discovery through performance monitoring, and use AI to speed up design workflows.
+Casos de estudio	Case studies
+Analizador semántico [IA]	Semantic analyzer [AI]
+Analizador	Semantic
+semántico [IA]	analyzer [AI]
+Ver caso de estudio	View case study
+Rediseñar transferencias significó separar la navegación de la transacción.	Redesigning transfers meant separating navigation from the transaction itself.
+La investigación mostró que concentrar tareas en menos pantallas no reducía el esfuerzo. Reorganicé el acceso a las funciones, dividí el formulario para nuevos destinatarios y mejoré el comprobante. Tras las pruebas y ajustes con desarrollo, la nueva experiencia se lanzó gradualmente en 2025; el patrón de navegación se adoptó también en otros módulos.	Research showed that putting tasks on fewer screens did not reduce effort. I reorganized access to features, split the form for new recipients, and improved the receipt. After testing and adjustments with engineering, the new experience was rolled out gradually in 2025; its navigation pattern was also adopted in other modules.
+Etapas del flujo de transferencias	Stages of the transfer flow
+Selección	Selection
+Datos	Details
+Autorización	Authorization
+Comprobante	Receipt
+Etapas de una transferencia	Stages of a transfer
+Diseño 2023–2024 · Lanzamiento gradual 2025	Designed 2023–2024 · Gradual rollout 2025
+Caso en preparación	Case study in progress
+Convertir feedback cualitativo en información accionable para decisiones de producto.	Turning qualitative feedback into actionable insights for product decisions.
+Diseño de un sistema asistido por IA para analizar aproximadamente 6.000 respuestas NPS mensuales, estandarizar categorías e identificar patrones de fricción, tendencias y oportunidades para equipos de producto.	Design of an AI-assisted system to analyze approximately 6,000 NPS responses each month, standardize categories, and identify friction patterns, trends, and opportunities for product teams.
+Escala del análisis mensual	Monthly analysis volume
+~6.000	~6,000
+Respuestas NPS / mes	NPS responses / month
+Diseñar experiencias financieras conectadas, comprensibles y escalables.	Designing connected, understandable, and scalable financial experiences.
+Trabajo de diseño de experiencia en colaboración con negocio, ingeniería y stakeholders globales, alineando decisiones de producto con estándares del grupo y regulación de la CMF.	Experience design work with business, engineering, and global stakeholders, aligning product decisions with group standards and Chile's CMF regulations.
+Ilustración conceptual de servicios financieros conectados	Conceptual illustration of connected financial services
+Cuenta	Account
+Productos	Products
+Servicios	Services
+Vista	Integrated
+integrada	view
+Servicios financieros conectados	Connected financial services
+Isotipo de Andrés Marín	Andrés Marín symbol
+Portafolio de Andrés Marín, Product Designer especializado en productos financieros digitales e IA aplicada al diseño.	Portfolio of Andrés Marín, a Product Designer specializing in digital financial products and AI-assisted design.
+Ir a la siguiente sección: Sobre mí	Go to the next section: About me
+Representación editorial del flujo de transferencia: selección, datos, autorización y comprobante	Editorial diagram of the transfer flow: selection, details, authorization, and receipt
+Aproximadamente seis mil respuestas NPS analizadas al mes	Approximately six thousand NPS responses analyzed per month
+Diagrama conceptual de experiencias financieras conectadas	Conceptual diagram of connected financial experiences
+Rediseñar transferencias — Andrés Marín	Redesigning transfers — Andrés Marín
+Caso de estudio	Case study
+Contexto	Context
+Reconstrucción	Reconstruction
+Diagnóstico	Diagnosis
+La propuesta estrella	The leading proposal
+Simplificar	Simplifying
+Implementación	Implementation
+Patrón compartido	Shared pattern
+Retrospectiva	Retrospective
+01 / Caso de estudio	01 / Case study
+Rediseñar	Redesigning
+transferencias.	transfers.
+Menos pasos no siempre significa menos esfuerzo.	Fewer steps do not always mean less effort.
+Archivo de producto	Product archive
+Interfaz original, 2023	Original interface, 2023
+Recurso no disponible.	Media unavailable.
+Estado anterior · App Santander	Previous state · Santander app
+Mi rol	My role
+Alcance	Scope
+Estrategia UX · Research · Diseño · Testing · QA	UX strategy · Research · Design · Testing · QA
+Periodo	Period
+En septiembre de 2023 recibí el encargo de rediseñar uno de los módulos más utilizados de la aplicación de Banco Santander Chile.	In September 2023, I was asked to redesign one of the most used modules in Banco Santander Chile's app.
+El objetivo era simplificar las transferencias, reducir fricciones y mejorar la satisfacción de los clientes. Lo que comenzó como una renovación de interfaz terminó cuestionando una premisa: que reducir pantallas y clics necesariamente significa ofrecer una experiencia más sencilla.	The goal was to simplify transfers, reduce friction, and improve customer satisfaction. What began as an interface refresh ultimately challenged an assumption: that fewer screens and clicks necessarily make an experience easier.
+El proceso / una lectura retrospectiva	The process / a retrospective view
+Investigar, cuestionar, probar,	Research, question, test,
+negociar y volver a aprender.	negotiate, and learn again.
+Reconstruir	Reconstruct
+e investigar	and research
+Identificar	Identify
+fricciones	friction
+Explorar,	Explore,
+probar, iterar	test, iterate
+Liberar	Release
+y observar	and observe
+Revisar	revisit
+el problema	the problem
+Modelo editorial adaptado del triple diamante. La validación obligó a regresar sobre una propuesta ya seleccionada; el aprendizaje posterior también cuestionó el diagnóstico inicial.	An editorial model adapted from the triple diamond. Validation required revisiting an already selected proposal; later learning also challenged the initial diagnosis.
+01 / Contexto	01 / Context
+El encargo parecía sencillo.	The brief seemed straightforward.
+El punto de partida no lo era.	The starting point was not.
+Santander acababa de constituir su equipo interno de UX. Hasta entonces, buena parte del diseño de sus productos digitales había dependido de proveedores externos.	Santander had just formed its in-house UX team. Until then, much of its digital product design had relied on external vendors.
+La transición también implicaba establecer procesos y consolidar herramientas. La migración de Sketch a Figma había dejado al equipo sin archivos editables actualizados del módulo de transferencias, sin documentación completa de sus recorridos y sin una biblioteca que representara todos los componentes existentes en producción. Algunos solo existían en código.	The transition also meant establishing processes and consolidating tools. The move from Sketch to Figma had left the team without current editable files for the transfers module, complete documentation of its flows, or a library covering every component in production. Some components existed only in code.
+Antes de proponer una nueva experiencia, necesitaba comprender la anterior.	Before proposing a new experience, I needed to understand the existing one.
+Para cambiar algo, primero	Before changing anything, I first
+tenía que reconstruirlo.	had to reconstruct it.
+Comencé desde la aplicación real. Recorrí sus funcionalidades y registré capturas secuenciales para reconstruir la arquitectura y comprender cómo se conectaban los distintos flujos.	I started with the live app. I walked through its features and captured each screen in sequence to reconstruct the architecture and understand how the flows connected.
+Junto con la Product Owner revisamos el uso del módulo y delimitamos el alcance: transferencias hacia destinatarios guardados y nuevos contactos, recorridos que reunían más del 80 % de la utilización.	Together with the Product Owner, I reviewed module usage and defined the scope: transfers to saved recipients and new contacts, flows that accounted for more than 80% of use.
+Reconstruí sus pantallas e interacciones en Figma. Necesitaba prototipos funcionales que permitieran observar cómo las personas resolvían las tareas, no solamente cómo se veían las interfaces.	I reconstructed the screens and interactions in Figma. I needed functional prototypes to observe how people completed tasks, beyond how the interfaces looked.
+Alcance prioritario	Priority scope
+Del uso del módulo: contactos guardados y nuevos destinatarios.	Of module usage: saved contacts and new recipients.
+Evaluaciones	Evaluations
+Pruebas remotas no moderadas en Useberry y, posteriormente, Maze: tareas, matriz de éxito, tiempos, mapas de calor y primeros clics.	Unmoderated remote tests in Useberry and later Maze: tasks, success matrix, completion times, heatmaps, and first clicks.
+Comparación de recorridos transaccionales y de funcionalidades de bancos relevantes en Chile.	Comparison of transaction flows and features across relevant banks in Chile.
+Limitaciones	Limitations
+Muestras principalmente de conveniencia y prototipos que no permitían observar fallas de servicios en producción.	Primarily convenience samples and prototypes that could not reveal failures in live services.
+El benchmark ilustrativo interactivo requiere JavaScript.	The interactive illustrative benchmark requires JavaScript.
+El problema no estaba	The problem was not
+solamente en las pantallas.	limited to the screens.
+La investigación evidenció dificultades para encontrar funcionalidades y comprender cómo estaban organizados los recorridos.	Research showed that people had difficulty finding features and understanding how the flows were organized.
+La pantalla principal reunía pestañas, acceso a nuevos destinatarios, selector de agendas, búsqueda, favoritos y contactos. Mientras tanto, historial y transferencias programadas permanecían ocultos en un menú secundario.	The main screen combined tabs, access to new recipients, an address book selector, search, favorites, and contacts. Meanwhile, history and scheduled transfers were hidden in a secondary menu.
+Dentro del flujo, un formulario para destinatarios nuevos mezclaba datos personales y bancarios, origen, monto y campos adicionales. En el comprobante faltaba información, y al compartirlo se enviaba una captura completa de la pantalla.	Within the flow, a form for new recipients mixed personal and banking details, source account, amount, and additional fields. The receipt lacked information, and sharing it sent a screenshot of the entire screen.
+Navegación fragmentada y funciones difíciles de encontrar.	Fragmented navigation and hard-to-find features.
+Demasiadas decisiones simultáneas.	Too many decisions at once.
+Comprobantes con información insuficiente.	Receipts with insufficient information.
+Restricciones y límites difíciles de comprender.	Restrictions and limits that were hard to understand.
+¿Estábamos reduciendo el esfuerzo de las personas o simplemente	Were we reducing people's effort, or just
+concentrándolo en menos pasos?	concentrating it into fewer steps?
+04 / Development · Punto de inflexión	04 / Development · Turning point
+La propuesta favorita	The preferred proposal
+no fue la mejor respuesta.	was not the best answer.
+Comencé la ideación con papel y lápiz. Exploré composiciones, discutí alternativas y convergí en tres propuestas: conservadora, arriesgada y estrella.	I began ideation with pen and paper. I explored layouts, discussed alternatives, and converged on three proposals: conservative, bold, and a leading concept.
+La estrella era la que mejor combinaba, a mi juicio, las expectativas de negocio con una interfaz moderna: cuatro accesos rápidos y «Ver más», un carrusel de cuentas de origen, ingreso del monto y selección del destinatario.	In my view, the leading concept best combined business expectations with a modern interface: four shortcuts and “See more,” a carousel of source accounts, amount entry, and recipient selection.
+01 / Conservadora	01 / Conservative
+Transición contenida	Measured transition
+Conservadora	Conservative
+Reconstrucción retrospectiva	Retrospective reconstruction
+02 / Arriesgada	02 / Bold
+Exploración más disruptiva	More disruptive exploration
+Arriesgada	Bold
+03 / Estrella	03 / Leading concept
+Seleccionada inicialmente	Initially selected
+Estrella	Leading concept
+pasos	steps
+La promesa era reducir el recorrido a dos pasos.	The promise was to reduce the flow to two steps.
+La propuesta fue seleccionada por consenso. En las pruebas obtuvo resultados ligeramente mejores que la experiencia anterior, pero no lo suficiente para considerar resueltas las fricciones.	The proposal was selected by consensus. In testing, it performed slightly better than the previous experience, but not well enough to consider the friction resolved.
+Seguíamos concentrando numerosas decisiones en la misma pantalla. Propuse entonces evaluar la alternativa conservadora, aunque no era la favorita del responsable de negocio.	We were still concentrating many decisions on one screen. I proposed testing the conservative alternative, although it was not the business lead's favorite.
+Las pruebas respaldaron cambiar de dirección.	Testing supported a change of direction.
+Defender una decisión de diseño también significa estar dispuesto a	Standing behind a design decision also means being willing to
+cambiarla.	change it.
+05 / La decisión estructural	05 / The structural decision
+Simplificar significaba separar	Simplifying meant separating
+navegación de transacción.	navigation from the transaction.
+La alternativa conservadora introducía un cambio fundamental: la pantalla principal dejaría de ser el lugar donde se inicia una operación para convertirse en una portada dedicada a orientar.	The conservative alternative introduced a fundamental change: the main screen would stop being the place where a transaction begins and become a landing screen dedicated to orientation.
+Los accesos se organizaron por relevancia y uso. Cada tarea daba paso a un flujo independiente, sin mantener pestañas y controles de navegación durante toda la operación.	Shortcuts were organized by relevance and use. Each task led to a separate flow, without carrying tabs and navigation controls through the entire transaction.
+Antes	Before
+Después	After
+Pantalla principal del módulo Transferencias	Main screen of the Transfers module
+Una pantalla adicional. Menos decisiones simultáneas.	One additional screen. Fewer simultaneous decisions.
+Para destinatarios guardados mantuvimos una estructura familiar, mejorando la información disponible para identificarlos.	For saved recipients, we kept a familiar structure while improving the information available to identify them.
+Para destinatarios nuevos dividí el formulario en dos etapas: primero los datos del receptor; después la cuenta de origen, el monto y los detalles de la transferencia. También eliminamos el campo de correo alternativo que había causado confusión.	For new recipients, I split the form into two stages: recipient details first; then source account, amount, and transfer details. We also removed an alternate email field that had caused confusion.
+Las pruebas ofrecieron señales más favorables. La diferencia no era extraordinaria, pero respaldaba una dirección mejor sustentada dentro de las restricciones del proyecto.	Testing provided more favorable signals. The difference was not dramatic, but it supported a better grounded direction within the project's constraints.
+Destinatario + cuenta de origen + monto + detalles	Recipient + source account + amount + details
+Decisiones simultáneas	Decisions made at once
+Datos del destinatario	Recipient details
+Datos de la transferencia	Transfer details
+Decisiones distribuidas por contexto	Decisions distributed by context
+Reconstrucción explicativa del cambio, no captura del prototipo original.	An explanatory reconstruction of the change, not a screenshot of the original prototype.
+Más pasos no significa automáticamente más esfuerzo.	More steps do not automatically mean more effort.
+La complejidad depende también de cuándo decidimos cada cosa.	Complexity also depends on when we make each decision.
+06 / Implementación y distribución	06 / Implementation and rollout
+Diseñar la solución era	Designing the solution was
+solo la mitad del trabajo.	only half the work.
+Con la dirección validada, comenzó el trabajo de trasladar la intención del diseño a las posibilidades reales de desarrollo. Algunas funcionalidades tuvieron que adaptarse o descartarse.	Once the direction was validated, we had to translate design intent into what engineering could deliver. Some features had to be adapted or dropped.
+Intención	Intent
+Agrupar las cuentas por destinatario y RUT	Group accounts by recipient and Chilean tax ID (RUT)
+La agenda anterior duplicaba personas con varias cuentas.	The previous address book duplicated people with multiple accounts.
+Solución viable	Feasible solution
+Banco y últimos dígitos visibles	Show bank and final account digits
+Mejor identificación sin rediseñar técnicamente toda la agenda.	Better identification without technically rebuilding the entire address book.
+Quedaron pendientes la organización alfabética, la unificación de agendas y ciertas validaciones anticipadas.	Alphabetical ordering, consolidation of address books, and some early validations remained pending.
+Microinteracciones	Microinteractions
+El instante en que sabemos que todo salió bien.	The moment we know it all went well.
+Una transferencia no termina psicológicamente cuando el sistema deja de procesar. También necesita una señal inequívoca de que la operación fue exitosa.	A transfer does not feel complete just because processing stops. People also need an unmistakable signal that it succeeded.
+Diseñé una cortina de éxito animada y sonora para reforzar ese instante. Implementarla exigió resolver limitaciones técnicas junto con desarrollo.	I designed an animated success transition with sound to reinforce that moment. Implementing it required working through technical constraints with engineering.
+La animación no era solamente un adorno: buscaba transmitir certeza y convertir la confirmación en un momento memorable.	The animation was more than decoration: it aimed to convey certainty and make confirmation memorable.
+Tu navegador no permite reproducir el video.	Your browser cannot play this video.
+Cortina de éxito	Success transition
+Reproducir	Play
+Grabación de la interacción implementada · Sin audio	Recording of the implemented interaction · No audio
+Comprobante / Información y certeza	Receipt / Information and certainty
+No compartir la pantalla.	Do not share the screen.
+Compartir el comprobante.	Share the receipt.
+Reorganicé el comprobante para destacar la información relevante e incluir datos faltantes como fecha y hora. También conseguimos que compartirlo generara una imagen del comprobante, sin los elementos de navegación de la aplicación.	I reorganized the receipt to highlight relevant information and include missing details such as date and time. We also made sharing generate an image of the receipt, without the app's navigation elements.
+La ubicación y presentación de Compartir tuvo tres iteraciones en producción hasta adoptar un botón pill independiente bajo el comprobante.	The position and presentation of Share went through three production iterations before we adopted a separate pill button below the receipt.
+Comprobante anterior	Previous receipt
+Antes · Pantalla antigua	Before · Previous screen
+Comprobante rediseñado	Redesigned receipt
+Después · Documento independiente	After · Standalone document
+Iteraciones en producción	Iterations in production
+Una acción, tres presentaciones.	One action, three presentations.
+Versión 01	Version 01
+01 · Compartir integrado	01 · Integrated share action
+Versión 02	Version 02
+02 · Mayor visibilidad	02 · Greater visibility
+Versión final	Final version
+03 · Botón pill independiente	03 · Separate pill button
+Las tres imágenes muestran la	The three images show the
+pantalla de comprobante durante sus iteraciones en producción	receipt screen during its production iterations
+. Los comprobantes de este caso muestran datos de ejemplo.	. The receipts in this case use sample data.
+Desplegar sin perder estabilidad.	Roll out without losing stability.
+Primero probamos con colaboradores del banco mediante un acceso controlado por banner. Como no reproducía la navegación habitual, pasamos después a una exposición gradual a clientes reales mediante Firebase.	We first tested with bank employees through banner controlled access. Because that did not reflect normal navigation, we then gradually exposed real customers through Firebase.
+La prioridad era que conversión y NPS no se deterioraran significativamente frente a la versión anterior, considerando tanto la resistencia al cambio como el efecto novedad.	The priority was to avoid significant declines in conversion and NPS compared with the previous version, accounting for both resistance to change and the novelty effect.
+Abril	April
+Fin de desarrollo	Development complete
+Preparación del piloto	Pilot preparation
+Piloto	Pilot
+Colaboradores	Employees
+Acceso controlado	Controlled access
+Firebase y ampliación	Firebase and expansion
+Noviembre	November
+Disponibilidad general	General availability
+¿Qué podemos afirmar de los resultados?	What can we say about the results?
+El rediseño llegó a producción sin incidentes de liberación ni cambios sustanciales en los flujos. La comparación documentada durante el piloto mostró una satisfacción comparable entre ambas experiencias.	The redesign reached production without release incidents or substantial changes to the flows. The comparison documented during the pilot showed comparable satisfaction across both experiences.
+Los datos no permiten atribuirle un incremento causal específico de NPS. El seguimiento posterior también mostró problemas de autorización, continuidad, estabilidad y usabilidad que persistían más allá de la intervención de interfaz.	The data do not support attributing a specific causal increase in NPS to the redesign. Later monitoring also revealed authorization, continuity, stability, and usability issues that persisted beyond the interface changes.
+07 / Impacto organizacional	07 / Organizational impact
+Una solución local se convirtió	A local solution became
+en un patrón compartido.	a shared pattern.
+La portadilla ofrecía algo más que una reorganización visual: una estructura capaz de incorporar nuevas funciones sin saturar otra vez una pantalla transaccional.	The landing screen offered more than a visual reorganization: it provided a structure that could accommodate new features without overcrowding a transaction screen again.
+Mi gerenta UX comenzó a llamar «portadillas» a estas interfaces. El equipo adoptó el patrón para otras intervenciones, incluyendo Pagos y Centro de ayuda.	My UX manager began calling these screens “portadillas.” The team adopted the pattern for other areas, including Payments and Help Center.
+No era una solución universal. Funcionaba en módulos que reunían tareas independientes y necesitaban hacerlas descubribles antes de comenzar su ejecución.	It was not a universal solution. It worked for modules containing independent tasks that needed to be discoverable before execution began.
+Pagos	Payments
+Centro de ayuda	Help Center
+01 / Transferencias	01 / Transfers
+02 / Pagos	02 / Payments
+03 / Centro de ayuda	03 / Help Center
+La adopción del patrón de navegación está documentada. Otros equipos mostraron interés en el comprobante y la animación, pero no está confirmada su implementación en esos productos.	Adoption of the navigation pattern is documented. Other teams expressed interest in the receipt and animation, but their implementation in those products has not been confirmed.
+Retrospectiva / La pregunta que quedó abierta	Retrospective / The question left open
+El problema que debí	The problem I should have
+cuestionar antes.	questioned sooner.
+Al revisar el proyecto completo, hay algo que hoy haría de otra manera: investigaría con mayor profundidad el origen de la insatisfacción antes de comprometer un rediseño de esta magnitud.	Looking back at the entire project, there is one thing I would do differently today: investigate the source of dissatisfaction more deeply before committing to a redesign of this scale.
+El encargo inicial ya contenía una solución: había que rediseñar transferencias. Investigamos, identificamos fricciones, cuestionamos propuestas y validamos alternativas. Pero gran parte del trabajo estuvo condicionado por esa premisa.	The initial brief already contained a solution: redesign transfers. We researched, identified friction, challenged proposals, and validated alternatives. But much of the work was shaped by that premise.
+El seguimiento posterior amplió mi perspectiva. Las dificultades de autorización, las fallas de servicios y los problemas de continuidad también influían en la satisfacción. Algunas fricciones eran claramente de usabilidad; otras requerían intervenciones tecnológicas o de proceso.	Later monitoring broadened my perspective. Authorization difficulties, service failures, and continuity problems also affected satisfaction. Some friction was clearly related to usability; other issues required technology or process changes.
+Este proyecto me enseñó a cambiar de opinión frente a la evidencia, negociar sin perder la intención de una solución y acompañar decisiones hasta su implementación.	This project taught me to change my mind in response to evidence, negotiate without losing the intent behind a solution, and see decisions through to implementation.
+¿Estamos diseñando la mejor solución para un encargo, o hemos comprobado que ese es	Are we designing the best solution to a brief, or have we confirmed that this is
+el problema que realmente debemos resolver?	the problem we actually need to solve?
+A veces, los cambios más significativos son invisibles.	Sometimes the most meaningful changes are invisible.
+← Volver al portafolio	← Back to portfolio
+Continuar explorando	Keep exploring
+Caso de estudio del rediseño de transferencias de Banco Santander Chile. Investigación, decisiones de diseño, implementación y retrospectiva por Andrés Marín.	A case study of the transfers redesign at Banco Santander Chile. Research, design decisions, implementation, and retrospective by Andrés Marín.
+Ir al inicio del portafolio	Go to portfolio home
+Volver al portafolio	Back to portfolio
+Índice del caso	Case contents
+Interfaz original del módulo de transferencias de Banco Santander Chile	Original interface of Banco Santander Chile's transfers module
+Cinco fases: Discovery, Definition, Development, Distribution y Retro; un retorno a la definición después de probar la propuesta estrella	Five phases: Discovery, Definition, Development, Distribution, and Retro; a return to definition after testing the leading proposal
+Wireframe retrospectivo de la alternativa conservadora: portada de accesos a distintas funciones	Retrospective wireframe of the conservative alternative: a landing screen with access to different functions
+Wireframe retrospectivo de la alternativa arriesgada con búsqueda, accesos y movimientos recientes	Retrospective wireframe of the bold alternative with search, shortcuts, and recent transactions
+Wireframe retrospectivo de la propuesta estrella con accesos rápidos, carrusel de cuentas, monto y agenda	Retrospective wireframe of the leading concept with shortcuts, account carousel, amount, and address book
+Pantalla anterior de Transferencias con pestañas, favoritos y agenda	Previous Transfers screen with tabs, favorites, and address book
+Portadilla rediseñada con accesos a cada tarea de Transferencias	Redesigned landing screen with access to each Transfers task
+Comparación conceptual entre un formulario que concentra todas las decisiones y dos etapas separadas	Conceptual comparison of a form that concentrates all decisions with two separate stages
+Grabación de la cortina animada de éxito de transferencia	Recording of the animated transfer success transition
+Pantalla anterior de comprobante; contiene navegación y controles de la aplicación	Previous receipt screen, including app navigation and controls
+Imagen del comprobante rediseñado con fecha, hora, destinatario y datos de la transferencia	Image of the redesigned receipt with date, time, recipient, and transfer details
+Primera versión de la pantalla de comprobante, con compartir integrado	First version of the receipt screen with an integrated share action
+Segunda versión de la pantalla de comprobante con el control de compartir destacado	Second version of the receipt screen with a more prominent share control
+Versión final del comprobante, con botón pill Compartir comprobante bajo la información	Final version of the receipt with a pill shaped Share receipt button below the details
+Evolución del despliegue durante 2025	Rollout timeline during 2025
+Portadilla rediseñada del módulo Transferencias	Redesigned Transfers landing screen
+Portadilla del módulo Pagos basada en el patrón compartido	Payments landing screen based on the shared pattern
+Portadilla de Centro de ayuda que utiliza el patrón compartido	Help Center landing screen using the shared pattern

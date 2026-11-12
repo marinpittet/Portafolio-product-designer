@@ -36,12 +36,11 @@
   }
   const player = document.getElementById('success-video');
   const toggle = document.getElementById('video-toggle');
-  const sound = document.getElementById('sound-toggle');
-  if (player && toggle && sound) {
+  if (player && toggle) {
     const videoContainer = player.closest('.motion-player');
     const unavailable = () => {
       videoContainer.classList.add('media-missing');
-      toggle.disabled = sound.disabled = true;
+      toggle.disabled = true;
       toggle.textContent = 'Video no disponible';
     };
     player.addEventListener('error', unavailable);
@@ -49,14 +48,11 @@
     const sync = () => {
       toggle.textContent = player.paused ? 'Reproducir' : 'Pausar';
       toggle.setAttribute('aria-pressed', String(!player.paused));
-      sound.textContent = player.muted ? 'Activar sonido' : 'Silenciar';
-      sound.setAttribute('aria-pressed', String(!player.muted));
     };
     toggle.addEventListener('click', () => {
       if (player.paused) player.play().catch(unavailable);
       else player.pause();
     });
-    sound.addEventListener('click', () => { player.muted = !player.muted; sync(); });
     player.addEventListener('play', sync);
     player.addEventListener('pause', sync);
     player.addEventListener('ended', sync);

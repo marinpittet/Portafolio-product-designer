@@ -8,6 +8,7 @@ Sitio estático: HTML, CSS y JavaScript sin compilación.
 - `assets/css/styles.css`: estilos y adaptación a móviles.
 - `assets/js/main.js`: navegación por hash.
 - `assets/images/profile.png`: foto original de perfil con transparencia.
+- `assets/images/isotype-andres-marin.svg`: isotipo de marca y favicon de ambas versiones del sitio.
 - Raleway y Roboto Slab de Google Fonts alojadas localmente en `assets/fonts`: dos archivos variables WOFF2, subconjunto latino con caracteres españoles, precarga y display=swap. Licencias incluidas. No requiere conexión con servidores de fuentes externos.
 
 GitHub Pages publica automáticamente desde `main`, carpeta raíz. HTTPS.

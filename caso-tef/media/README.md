@@ -1,5 +1,5 @@
 # Medios del caso TEF
 
-Los recursos de esta carpeta se sirven desde GitHub Pages. Los comprobantes usan datos de ejemplo y las capturas de navegación ocultan identificadores personales. La cortina de éxito muestra un fragmento sin audio y el póster procede del mismo fragmento.
+Los recursos de esta carpeta se sirven desde GitHub Pages. Los comprobantes y las capturas con marco de dispositivo son los PNG entregados. La grabación de la cortina de éxito conserva la secuencia completa sin audio y cubre los datos bancarios visibles en el video.
 
 Los logotipos identifican las instituciones en el benchmark ilustrativo, cuyos recorridos y estados son sintéticos.

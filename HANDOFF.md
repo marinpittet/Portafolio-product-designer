@@ -18,4 +18,4 @@
 
 ## Material multimedia
 - El benchmark usa HTML, CSS y JavaScript con datos sintéticos y seis logotipos locales.
-- Los comprobantes se derivan de las cinco capturas anonimizadas. Se cubrieron identificadores residuales y se acotó el MP4 a la confirmación de éxito.
+- El caso usa los cinco PNG de comprobantes y las dos capturas con marco de dispositivo tal como se entregaron. El MP4 procede del MOV adjunto y cubre los datos bancarios visibles durante la grabación.

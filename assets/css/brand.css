@@ -1,0 +1,27 @@
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #575757;
+  font: 700 15px/1.55 'Roboto Slab', 'Rockwell', Georgia, serif;
+  letter-spacing: -.035em;
+}
+
+.brand-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+@media (max-width: 799px) {
+  .brand {
+    font-size: 12px;
+  }
+
+  .brand .brand-icon {
+    width: 25px;
+    height: 25px;
+  }
+}

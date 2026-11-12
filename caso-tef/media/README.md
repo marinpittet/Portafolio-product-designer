@@ -1,14 +1,5 @@
-# Recursos locales pendientes de anonimización
+# Medios del caso TEF
 
-Los siguientes recursos se incluyen únicamente en el paquete local de revisión, no en esta rama pública:
+Los recursos de esta carpeta se sirven desde GitHub Pages. Los comprobantes usan datos de ejemplo y las capturas de navegación ocultan identificadores personales. La cortina de éxito muestra un fragmento sin audio y el póster procede del mismo fragmento.
 
-- tef-legado.webp: interfaz original.
-- bench-journeys.webp y bench-funciones.webp: ejemplos ilustrativos.
-- conservadora.webp, disruptiva.webp, estrella.webp: wireframes reconstruidos retrospectivamente.
-- antes-despues.webp: comparación de la portadilla.
-- comprobante-antiguo.webp y comprobante-nuevo.webp: comprobantes compartibles.
-- iteracion-1.webp, iteracion-2.webp, iteracion-3.webp: pantalla de comprobante en producción.
-- cortina-exito.mp4 y exito-poster.webp: video de éxito y fotograma inicial.
-- portadilla-tef.webp, portadilla-pagos.webp, portadilla-ayuda.webp: patrón compartido.
-
-No publicar estas capturas con información personal o financiera sin revisión/anonimización previa.
+Los logotipos identifican las instituciones en el benchmark ilustrativo, cuyos recorridos y estados son sintéticos.

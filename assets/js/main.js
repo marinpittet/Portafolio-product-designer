@@ -12,7 +12,11 @@
   measureNavigation();
   function navigate() {
     const hash = location.hash || '#/';
-    const page = hash.startsWith('#/transferencias') ? 'transferencias' : 'home';
+    if (hash.startsWith('#/transferencias')) {
+      location.replace('./caso-tef/');
+      return;
+    }
+    const page = 'home';
     Object.entries(pages).forEach(([key, element]) => {
       element.classList.toggle('is-active', key === page);
       element.inert = key !== page;

@@ -1,18 +1,29 @@
-# Estado del portafolio · 2026-11-06
+# Caso de estudio TEF — entrega editorial 2026-11-12
 
-HTML original recuperado desde Portfolio/MVP/sitio-web/sitio-web. Se conserva una copia original en esa ubicación.
+## Rama
+- Rama de trabajo: `feat/caso-tef-editorial`, derivada de `main`.
+- `main` no se modifica ni se publica esta versión.
+- Ruta del caso: `caso-tef/index.html`; Home actualizado para enlazar el caso.
 
-## Cambios
-- Discovery del caso TEF actualizado con el relato del usuario en «MVP Portafolio HTML».
-- Encargo y diagnóstico en septiembre de 2023 distinguidos del período de diseño previamente documentado.
-- Alcance >80 %, metodología Useberry, cuatro hallazgos, benchmark y limitaciones documentados sin añadir resultados de pruebas.
-- Figma se mantiene únicamente como referencia histórica. No acceder ni modificar.
-- Las secciones restantes y las cifras atribuidas al CV se conservan del MVP; no se han verificado de nuevo contra ese documento.
+## Contenido
+- Guion editorial aprobado: siete capítulos y retrospectiva.
+- Tesis: «Menos pasos no siempre significa menos esfuerzo».
+- Se distinguen pruebas de usabilidad, decisiones, trade-offs, despliegue y reflexión.
+- No se atribuye aumento causal de +10 puntos de NPS.
 
-## Pendientes
-- Retomar más adelante cómo se organizaron la ideación y la priorización. No preguntar durante la publicación.
-- Repositorio conectado mediante GitHub: https://github.com/marinpittet/Portafolio-product-designer-mvp. HTML y .nojekyll subidos a main.
-- GitHub Pages activado desde main / (root), con HTTPS. El usuario hizo público el repositorio.
-- HTML sin proceso de compilación; navegación por hash compatible con Pages. Las actualizaciones en main se publican automáticamente.
-- Raleway y Roboto Slab de Google Fonts alojadas localmente como WOFF2 variables, con precarga y display=swap.
-- Estilos y navegación separados en assets/css y assets/js; foto original en assets/images/profile.png.
+## Diseño y comportamiento
+- Estilo editorial basado en Raleway/Roboto Slab y acento #F45F00.
+- Los diagramas, procesos, flujos, comparaciones conceptuales y timeline se crean con HTML/CSS, no se rasterizan. Las capturas originales y wireframes reconstruidos se tratan como evidencia.
+- Reproducción de cortina de éxito con controles manuales, sin autoplay y con sonido opcional; JS mejora de foco, lectura y navegación.
+- Responsive con puntos de control 799/800/1279/1280 px.
+
+## Material multimedia en la rama pública
+- **No se suben** los medios originales que todavía contienen información personal o financiera. Los contenedores muestran un fallback accesible mientras falten las imágenes y el video.
+- El ZIP de revisión local contiene las imágenes y video originales dentro de `caso-tef/media/`, y no debe publicarse sin anonimizar.
+- Nombres de archivos y medios previstos figuran en `caso-tef/media/README.md`.
+- Benchmarks históricos reales: no accesibles. Los ejemplos disponibles se identifican como ilustrativos.
+
+## Verificación
+- Revisión estática de rutas, etiquetas, recursos del paquete local y sintaxis JS realizada.
+- Verificación visual en navegador completo: NO VERIFICADO; el navegador de este entorno bloquea la navegación a archivos y localhost.
+- Falta revisión visual final en el entorno del usuario y sustitución de medios anonimizados antes de publicar.

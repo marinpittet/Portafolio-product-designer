@@ -241,6 +241,8 @@ Continuar explorando	Keep exploring
 Caso de estudio del rediseño de transferencias de Banco Santander Chile. Investigación, decisiones de diseño, implementación y retrospectiva por Andrés Marín.	A case study of the transfers redesign at Banco Santander Chile. Research, design decisions, implementation, and retrospective by Andrés Marín.
 Ir al inicio del portafolio	Go to portfolio home
 Volver al portafolio	Back to portfolio
+Volver	Back
+Algunos datos cuantitativos, métricas de negocio e información interna han sido reservados bajo acuerdos de confidencialidad (NDA). El enfoque de estos casos se centra en el proceso de diseño, la arquitectura de solución y el impacto cualitativo.	Some quantitative data, business metrics, and internal information have been withheld under nondisclosure agreements (NDAs). These case studies focus on the design process, solution architecture, and qualitative impact.
 Índice del caso	Case contents
 Interfaz original del módulo de transferencias de Banco Santander Chile	Original interface of Banco Santander Chile's transfers module
 Cinco fases: Discovery, Definition, Development, Distribution y Retro; un retorno a la definición después de probar la propuesta estrella	Five phases: Discovery, Definition, Development, Distribution, and Retro; a return to definition after testing the leading proposal

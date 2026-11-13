@@ -54,16 +54,16 @@
     '<div class="benchmark-heading"><div><span class="eyebrow">Recurso reconstruido / Modelo de trabajo</span><h3>Un benchmark, dos perspectivas.</h3></div>'+
     '<p><strong>Datos sintéticos.</strong> Reconstrucción editorial para mostrar exclusivamente el formato de análisis. Pantallas y estados son ficticios; no reflejan resultados originales ni capacidades verificadas de estos bancos.</p></div>'+
     '<div class="benchmark-tabs" role="tablist" aria-label="Tipo de benchmark">'+
-    '<button type="button" role="tab" id="bench-tab-journeys" aria-controls="bench-journeys" aria-selected="true" tabindex="0">01 &nbsp; Recorridos</button>'+
-    '<button type="button" role="tab" id="bench-tab-features" aria-controls="bench-features" aria-selected="false" tabindex="-1">02 &nbsp; Funcionalidades</button></div>'+
-    '<section id="bench-journeys" class="benchmark-panel" role="tabpanel" aria-labelledby="bench-tab-journeys" tabindex="0">'+
-    '<div class="bench-panel-intro"><p>Secuencia ilustrativa de una transferencia por institución, para comparar la organización del recorrido.</p><small>Desplaza horizontalmente en móvil.</small></div>'+
-    '<div class="bench-scroll"><ol class="bench-journey-list">'+journeyRows+'</ol></div>'+
-    '<p class="bench-subcaption">Los teléfonos son placeholders editables en HTML y CSS. No reproducen aplicaciones reales.</p></section>'+
-    '<section id="bench-features" class="benchmark-panel" role="tabpanel" aria-labelledby="bench-tab-features" tabindex="0" hidden>'+
+    '<button type="button" role="tab" id="bench-tab-features" aria-controls="bench-features" aria-selected="true" tabindex="0">01 &nbsp; Funcionalidades</button>'+
+    '<button type="button" role="tab" id="bench-tab-journeys" aria-controls="bench-journeys" aria-selected="false" tabindex="-1">02 &nbsp; Recorridos</button></div>'+
+    '<section id="bench-features" class="benchmark-panel" role="tabpanel" aria-labelledby="bench-tab-features" tabindex="0">'+
     '<div class="bench-panel-intro"><p>Ejemplo de matriz de registro de funcionalidades entre instituciones.</p><small>Desplaza horizontalmente en móvil.</small></div>'+
     '<div class="bench-scroll"><table class="bench-matrix"><caption class="sr-only">Matriz demostrativa: todos los estados son sintéticos.</caption><thead><tr><th scope="col">Funcionalidad</th>'+heads+'</tr></thead><tbody>'+rows+'</tbody></table></div>'+
     '<div class="bench-legend"><span><b class="bench-status is-yes">✓</b>Sí</span><span><b class="bench-status is-part">◐</b>Parcial</span><span><b class="bench-status is-no">×</b>No</span><span>Todos los valores son ficticios</span></div></section>'+
+    '<section id="bench-journeys" class="benchmark-panel" role="tabpanel" aria-labelledby="bench-tab-journeys" tabindex="0" hidden>'+
+    '<div class="bench-panel-intro"><p>Secuencia ilustrativa de una transferencia por institución, para comparar la organización del recorrido.</p><small>Desplaza horizontalmente en móvil.</small></div>'+
+    '<div class="bench-scroll"><ol class="bench-journey-list">'+journeyRows+'</ol></div>'+
+    '<p class="bench-subcaption">Los teléfonos son placeholders editables en HTML y CSS. No reproducen aplicaciones reales.</p></section>'+
     '<div class="bench-disclaimer"><span>DEMO / SIN DATOS REALES</span><p>Las marcas solo identifican columnas. Las secuencias, las categorías y los estados se crearon como ejemplo sintético del formato, no como hallazgos de un estudio competitivo.</p></div></div>';
   if (document.documentElement.lang === 'en') {
     const english = {
@@ -81,8 +81,7 @@
       'Un benchmark, dos perspectivas.':'One benchmark, two perspectives.',
       'Datos sintéticos.':'Synthetic data.',
       'Reconstrucción editorial para mostrar exclusivamente el formato de análisis. Pantallas y estados son ficticios; no reflejan resultados originales ni capacidades verificadas de estos bancos.':'Editorial reconstruction showing the analysis format only. Screens and states are fictional; they do not reflect original findings or verified capabilities of these banks.',
-      'Tipo de benchmark':'Benchmark type', '01   Recorridos':'01   Journeys',
-      '02   Funcionalidades':'02   Features',
+      'Tipo de benchmark':'Benchmark type',
       'Secuencia ilustrativa de una transferencia por institución, para comparar la organización del recorrido.':'Illustrative transfer sequence for each institution, comparing how the journey is organized.',
       'Desplaza horizontalmente en móvil.':'Scroll horizontally on mobile.',
       'Los teléfonos son placeholders editables en HTML y CSS. No reproducen aplicaciones reales.':'The phones are editable HTML and CSS placeholders. They do not reproduce real apps.',
@@ -103,8 +102,8 @@
       const value = node.getAttribute('aria-label');
       if (english[value]) node.setAttribute('aria-label', english[value]);
     });
-    benchmark.querySelector('#bench-tab-journeys').innerHTML = '01 &nbsp; Journeys';
-    benchmark.querySelector('#bench-tab-features').innerHTML = '02 &nbsp; Features';
+    benchmark.querySelector('#bench-tab-features').innerHTML = '01 &nbsp; Features';
+    benchmark.querySelector('#bench-tab-journeys').innerHTML = '02 &nbsp; Journeys';
   }
   const tabs = Array.from(document.querySelectorAll('.benchmark-tabs [role="tab"]'));
   const choose = (selected, focus) => {

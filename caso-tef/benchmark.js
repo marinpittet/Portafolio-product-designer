@@ -1,11 +1,17 @@
 /* Benchmark TEF: reconstrucción editorial con datos sintéticos.
-   Los nombres identifican columnas de ejemplo; no se atribuyen hallazgos reales. */
+   Los logotipos identifican columnas de ejemplo; no se atribuyen hallazgos reales. */
 (() => {
   "use strict";
   const old = document.querySelector(".figure-pair");
   if (!old) return;
   const banks = [
-    "Santander", "Banco de Chile", "BancoEstado", "BCI", "Itaú", "Scotiabank"
+    ["Santander", "Santander.png"],
+    ["Banco de Chile", "Banco de chile.jpg"],
+    ["BancoEstado", "banco estado.jpg"],
+    ["BCI", "BCI.jpg"],
+    ["Itaú", "itau.png"],
+    ["Scotiabank", "Scotiabank.jpg"],
+    ["Banco Falabella", "falabella.png"]
   ];
   const stages = [
     ["Inicio","home"],["Destinatario","contact"],
@@ -13,16 +19,16 @@
   ];
   // Los siguientes valores son ficticios: no describen productos de los bancos.
   const features = [
-    ["Transferencia a contacto guardado","yes","yes","yes","yes","yes","yes"],
-    ["Transferencia a destinatario nuevo","yes","yes","yes","yes","yes","yes"],
-    ["Buscador de contactos","yes","part","yes","yes","part","yes"],
-    ["Acceso al historial","yes","yes","part","yes","yes","yes"],
-    ["Destinatarios favoritos","part","yes","no","part","yes","yes"],
-    ["Transferencias programadas","part","yes","part","no","yes","no"],
-    ["Compartir comprobante","yes","part","yes","yes","part","yes"]
+    ["Transferencia a contacto guardado","yes","yes","yes","yes","yes","yes","yes"],
+    ["Transferencia a destinatario nuevo","yes","yes","yes","yes","yes","yes","yes"],
+    ["Buscador de contactos","yes","part","yes","yes","part","yes","part"],
+    ["Acceso al historial","yes","yes","part","yes","yes","yes","part"],
+    ["Destinatarios favoritos","part","yes","no","part","yes","yes","yes"],
+    ["Transferencias programadas","part","yes","part","no","yes","no","part"],
+    ["Compartir comprobante","yes","part","yes","yes","part","yes","part"]
   ];
   const labels = {yes:["✓","Sí"],part:["◐","Parcial"],no:["×","No"]};
-  const marker = index => '<span class="bench-bank-mark" aria-hidden="true">'+String(index+1).padStart(2,"0")+'</span>';
+  const logo = (bank,size) => '<img src="./media/brands/'+bank[1]+'" width="'+size+'" height="'+size+'" alt="" loading="lazy">';
   const screen = type => {
     const top = '<span class="screen-top"><i></i><i></i><i></i></span>';
     const heading = '<div class="skeleton-heading"></div>';
@@ -31,14 +37,14 @@
     if(type === "form") return top+heading+'<div class="skeleton-amount"></div><div class="skeleton-fields"><span></span><span></span></div><div class="skeleton-cta"></div>';
     return top+'<div class="skeleton-success">✓</div><div class="skeleton-heading short"></div><div class="skeleton-lines"><i></i><i></i><i></i></div><div class="skeleton-cta"></div>';
   };
-  const journeyRows = banks.map((bank,index) =>
-    '<li class="bench-journey-row"><div class="bench-bank">'+marker(index)+'<strong>'+bank+'</strong></div>'+
+  const journeyRows = banks.map(bank =>
+    '<li class="bench-journey-row"><div class="bench-bank">'+logo(bank,48)+'<strong>'+bank[0]+'</strong></div>'+
     '<ol class="bench-stage-list" aria-label="Secuencia ilustrativa de cuatro pantallas">'+
     stages.map(step =>
       '<li class="bench-stage"><div class="bench-phone screen-'+step[1]+'" aria-hidden="true">'+screen(step[1])+'</div><span class="bench-step-name">'+step[0]+'</span></li>'
     ).join("")+'</ol></li>'
   ).join("");
-  const heads = banks.map((bank,index) => '<th scope="col"><span class="bench-col-bank">'+marker(index)+'<span>'+bank+'</span></span></th>').join("");
+  const heads = banks.map(bank => '<th scope="col"><span class="bench-col-bank">'+logo(bank,35)+'<span>'+bank[0]+'</span></span></th>').join("");
   const rows = features.map(feature =>
     '<tr><th scope="row">'+feature[0]+'</th>'+feature.slice(1).map(code =>
       '<td><span class="bench-status is-'+code+'" aria-label="'+labels[code][1]+' (sintético)">'+labels[code][0]+'</span></td>'

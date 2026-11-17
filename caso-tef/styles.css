@@ -77,6 +77,3 @@
 }
 
 .hero-intro .case-mockup-note{max-width:72ch;margin-top:14px;font-size:13px;line-height:1.6;color:var(--muted)}
-
-
-.motion-player .media-fallback img{max-height:530px;width:auto;max-width:100%;object-fit:contain;align-self:center}

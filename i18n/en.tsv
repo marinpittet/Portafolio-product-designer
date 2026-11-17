@@ -64,9 +64,9 @@ Rediseñar	Redesigning
 transferencias.	transfers.
 Menos pasos no siempre significa menos esfuerzo.	Fewer steps do not always mean less effort.
 Archivo de producto	Product archive
-Interfaz original, 2023	Original interface, 2023
+Estado anterior, 2023	Previous state, 2023
 Recurso no disponible.	Media unavailable.
-Estado anterior · App Santander	Previous state · Santander app
+Estado anterior · Mockup representativo	Previous state · Representative mockup
 Mi rol	My role
 Alcance	Scope
 Estrategia UX · Research · Diseño · Testing · QA	UX strategy · Research · Design · Testing · QA
@@ -178,7 +178,7 @@ La animación no era solamente un adorno: buscaba transmitir certeza y convertir
 Tu navegador no permite reproducir el video.	Your browser cannot play this video.
 Cortina de éxito	Success transition
 Reproducir	Play
-Grabación de la interacción implementada · Sin audio	Recording of the implemented interaction · No audio
+Mockup representativo de la animación · Sin audio	Representative animation mockup · No audio
 Comprobante / Información y certeza	Receipt / Information and certainty
 No compartir la pantalla.	Do not share the screen.
 Compartir el comprobante.	Share the receipt.
@@ -196,9 +196,9 @@ Versión 02	Version 02
 02 · Mayor visibilidad	02 · Greater visibility
 Versión final	Final version
 03 · Botón pill independiente	03 · Separate pill button
-Las tres imágenes muestran la	The three images show the
+Los tres mockups representan la	The three mockups represent the
 pantalla de comprobante durante sus iteraciones en producción	receipt screen during its production iterations
-. Los comprobantes de este caso muestran datos de ejemplo.	. The receipts in this case use sample data.
+y usan datos de ejemplo.	and use sample data.
 Desplegar sin perder estabilidad.	Roll out without losing stability.
 Primero probamos con colaboradores del banco mediante un acceso controlado por banner. Como no reproducía la navegación habitual, pasamos después a una exposición gradual a clientes reales mediante Firebase.	We first tested with bank employees through banner controlled access. Because that did not reflect normal navigation, we then gradually exposed real customers through Firebase.
 La prioridad era que conversión y NPS no se deterioraran significativamente frente a la versión anterior, considerando tanto la resistencia al cambio como el efecto novedad.	The priority was to avoid significant declines in conversion and NPS compared with the previous version, accounting for both resistance to change and the novelty effect.
@@ -244,7 +244,7 @@ Volver al portafolio	Back to portfolio
 Volver	Back
 Algunos datos cuantitativos, métricas de negocio e información interna han sido reservados bajo acuerdos de confidencialidad (NDA). El enfoque de estos casos se centra en el proceso de diseño, la arquitectura de solución y el impacto cualitativo.	Some quantitative data, business metrics, and internal information have been withheld under nondisclosure agreements (NDAs). These case studies focus on the design process, solution architecture, and qualitative impact.
 Índice del caso	Case contents
-Interfaz original del módulo de transferencias de Banco Santander Chile	Original interface of Banco Santander Chile's transfers module
+Mockup representativo de la pantalla anterior de Transferencias	Representative mockup of the previous Transfers landing screen
 Cinco fases: Discovery, Definition, Development, Distribution y Retro; un retorno a la definición después de probar la propuesta estrella	Five phases: Discovery, Definition, Development, Distribution, and Retro; a return to definition after testing the leading proposal
 Wireframe retrospectivo de la alternativa conservadora: portada de accesos a distintas funciones	Retrospective wireframe of the conservative alternative: a landing screen with access to different functions
 Wireframe retrospectivo de la alternativa arriesgada con búsqueda, accesos y movimientos recientes	Retrospective wireframe of the bold alternative with search, shortcuts, and recent transactions
@@ -252,7 +252,7 @@ Wireframe retrospectivo de la propuesta estrella con accesos rápidos, carrusel 
 Pantalla anterior de Transferencias con pestañas, favoritos y agenda	Previous Transfers screen with tabs, favorites, and address book
 Portadilla rediseñada con accesos a cada tarea de Transferencias	Redesigned landing screen with access to each Transfers task
 Comparación conceptual entre un formulario que concentra todas las decisiones y dos etapas separadas	Conceptual comparison of a form that concentrates all decisions with two separate stages
-Grabación de la cortina animada de éxito de transferencia	Recording of the animated transfer success transition
+Mockup representativo de la cortina animada de éxito de transferencia	Representative mockup of the animated transfer success transition
 Pantalla anterior de comprobante; contiene navegación y controles de la aplicación	Previous receipt screen, including app navigation and controls
 Imagen del comprobante rediseñado con fecha, hora, destinatario y datos de la transferencia	Image of the redesigned receipt with date, time, recipient, and transfer details
 Primera versión de la pantalla de comprobante, con compartir integrado	First version of the receipt screen with an integrated share action
@@ -262,3 +262,6 @@ Evolución del despliegue durante 2025	Rollout timeline during 2025
 Portadilla rediseñada del módulo Transferencias	Redesigned Transfers landing screen
 Portadilla del módulo Pagos basada en el patrón compartido	Payments landing screen based on the shared pattern
 Portadilla de Centro de ayuda que utiliza el patrón compartido	Help Center landing screen using the shared pattern
+Todas las pantallas y la animación de este caso son mockups representativos con datos de ejemplo.	All screens and the animation shown here are representative mockups with sample data.
+Mockup animado de la cortina de éxito	Animated success transition mockup
+Vista previa animada	Animation preview

@@ -1,4 +1,4 @@
-/* Benchmark editorial: elementos gráficos HTML/CSS, logos locales. */
+/* Benchmark editorial: elementos gráficos HTML/CSS. */
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 .benchmark{border:1px solid var(--hair);background:#fff;margin:60px 0 20px;min-width:0;color:var(--text)}
 .benchmark-heading{padding:clamp(21px,3vw,40px);display:grid;grid-template-columns:1fr minmax(210px,.8fr);gap:35px}
@@ -21,7 +21,7 @@
 .bench-journey-row{display:grid;grid-template-columns:148px 1fr;gap:10px;padding:15px 0;border-top:1px solid var(--hair);align-items:center}
 .bench-journey-row:last-child{border-bottom:1px solid var(--hair)}
 .bench-bank{display:flex;align-items:center;gap:10px;min-width:0}
-.bench-bank img{width:39px;height:39px;object-fit:contain;flex-shrink:0;border-radius:8px}
+.bench-bank-mark{width:39px;height:39px;display:grid;place-items:center;flex-shrink:0;border:1px solid var(--hair);border-radius:8px;background:#f7f7f7;color:var(--muted);font:700 11px var(--sans)}
 .bench-bank strong{font-size:12px;line-height:1.3;color:var(--ink)}
 .bench-stage-list{display:grid;grid-template-columns:repeat(4,minmax(80px,1fr));gap:clamp(10px,2vw,26px);justify-items:center}
 .bench-stage{position:relative;display:flex;align-items:center;flex-direction:column;gap:7px;min-width:0}
@@ -55,7 +55,7 @@
 .bench-matrix th:first-child{width:210px;text-align:left}
 .bench-matrix tbody th{font-weight:500;color:var(--ink);font-size:12px;line-height:1.4}
 .bench-col-bank{display:grid;justify-items:center;gap:6px;line-height:1.2;font-size:10px;min-height:60px}
-.bench-col-bank img{width:35px;height:35px;object-fit:contain;border-radius:7px}
+.bench-col-bank .bench-bank-mark{width:35px;height:35px;border-radius:7px}
 .bench-status{font:700 18px var(--sans);display:inline-flex;align-items:center;justify-content:center;min-width:24px}
 .bench-status.is-yes{color:#197a54}.bench-status.is-part{color:#b77512}.bench-status.is-no{color:#b7494a}
 .bench-legend{display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px;margin-top:15px;font-size:11px;color:var(--muted)}

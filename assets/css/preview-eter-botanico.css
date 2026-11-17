@@ -1,0 +1,69 @@
+/* Prueba local de la paleta Éter Botánico. */
+:root {
+  --paper: #F7F8F5;
+  --ink: #1E2221;
+  --gray: #454E49;
+  --muted: #56605A;
+  --line: #D5DCD5;
+  --orange: #D97706;
+  --pale: #EAEDE6;
+  --botanical: #059669;
+  --botanical-soft: #DDF4EA;
+  --amber-soft: #FFF0D9;
+  --color-highlight-text: #07553E;
+  --color-index: #9A4F00;
+  --highlight-mark: linear-gradient(to bottom, transparent 68%, var(--amber-soft) 68%, var(--amber-soft) 91%, transparent 91%);
+}
+
+body { background: var(--paper); color: var(--gray); }
+::selection { background: var(--amber-soft); color: var(--ink); }
+.site-nav, .mobile-nav { background: var(--paper); border-color: var(--line); }
+.brand, .hero h1, .section-label, .section-title, .card-heading,
+.project-card h3, .hero .subtitle, .hero .subtitle strong { color: var(--ink); }
+.nav-links a[aria-current], .mobile-nav .links a[aria-current],
+.nav-links a:hover, .mobile-nav .links a:hover,
+.meta-links a:hover, .footer a:hover, .contents a:hover,
+.hero-next:hover, .hero-next:focus-visible { color: var(--ink); }
+.nav-links a[aria-current], .mobile-nav .links a[aria-current] {
+  box-shadow: inset 0 -3px var(--orange);
+}
+#home-title > span, #page-home > div > section.hero > p > strong {
+  color: var(--color-highlight-text);
+  font-weight: 700;
+  background: var(--highlight-mark);
+  box-shadow: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.section-label, .contents a span, .project-card .index, .number-indicator,
+.metric-visual .giant { color: var(--color-index); }
+.project-card .card-heading { color: var(--ink); }
+.eyebrow { color: var(--color-index); }
+.project-card { border-color: var(--line); }
+.project-card .left { border-top: 0; padding-top: 0; }
+.section-label { display: block; padding-bottom: 0; border-bottom: 0; }
+.contents a { text-decoration: none; }
+.contents a:hover { box-shadow: inset 0 -5px var(--amber-soft); }
+.project-card .card-heading { text-decoration: none; }
+.project-card .index { font-weight: 500; }
+.project-card h3 { color: var(--ink); }
+.project-card .eyebrow { background: transparent; padding: 0; }
+.action { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.action:hover { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+.visual, .metric-visual { background: var(--pale); border-color: var(--line); }
+.visual-label { background: var(--paper); border-color: var(--line); }
+.metric-visual { background: var(--pale); }
+.metric-visual .dots span { background: var(--line); }
+.metric-visual .dots span:nth-child(-n+7) { background: var(--orange); }
+.language-switch { background: var(--paper); }
+.language-switch a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.language-switch a:not([aria-current="page"]):hover { background: var(--amber-soft); color: var(--ink); }
+.hero-next .icon { color: var(--color-highlight-text); }
+.meta-links .icon, .footer-links .icon { color: var(--color-index); }
+.action .icon { color: inherit; }
+.brand-icon { background: transparent; }
+.preview-label { position: fixed; right: 18px; bottom: 18px; z-index: 100;
+  padding: 8px 11px; background: var(--ink); color: var(--paper);
+  border-radius: 6px; font: 700 11px/1.2 var(--sans); letter-spacing: .04em;
+  box-shadow: 0 5px 18px #1E222122; }
+@media print { .preview-label { display: none; } }

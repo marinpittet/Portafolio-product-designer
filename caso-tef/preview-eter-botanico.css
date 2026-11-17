@@ -90,3 +90,6 @@ body, .topbar, .rail, .story { background: var(--paper); }
 }
 
 .wireframe figcaption { margin-top: 16px; }
+
+.rail .rail-back { margin: 0; flex-shrink: 0; }
+.rail .rail-back[hidden] { display: none; }

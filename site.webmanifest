@@ -9,9 +9,14 @@
   "background_color": "#F7F8F5",
   "icons": [
     {
-      "src": "assets/images/isotype-andres-marin-eter.svg",
+      "src": "assets/images/isotype-andres-marin-app.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ]
 }

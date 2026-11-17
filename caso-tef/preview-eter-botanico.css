@@ -75,3 +75,18 @@ body, .topbar, .rail, .story { background: var(--paper); }
   border-radius: 6px; font: 700 11px/1.2 var(--sans); letter-spacing: .04em;
   box-shadow: 0 5px 18px #1E222122; }
 @media print { .preview-label { display: none; } }
+
+/* Keep the case index usable in short desktop windows. */
+.rail { min-height: 0; overflow-y: auto; }
+.rail .rail-back { align-self: flex-start; margin: 4px 0 24px; }
+.rail > .rail-label, .rail > .chapter-nav, .rail > .rail-bottom { flex-shrink: 0; }
+
+@media (min-width: 800px) {
+  #reconstruccion > .split-text, #reconstruccion > .methods {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+  }
+  #reconstruccion > .split-text > .reading-copy { grid-column: span 2; }
+}
+
+.wireframe figcaption { margin-top: 16px; }

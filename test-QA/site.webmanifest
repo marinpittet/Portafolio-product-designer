@@ -1,0 +1,22 @@
+{
+  "name": "Andrés Marín — Product Designer",
+  "short_name": "Andrés Marín",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#F7F8F5",
+  "background_color": "#F7F8F5",
+  "icons": [
+    {
+      "src": "assets/images/isotype-andres-marin-app.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

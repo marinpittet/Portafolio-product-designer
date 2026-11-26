@@ -1,0 +1,109 @@
+.case-description {
+  display: grid;
+  gap: 1rem;
+}
+
+#juego-rol .card-heading {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  overflow-wrap: anywhere;
+}
+
+.case-example {
+  container-type: inline-size;
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  color: var(--ink);
+}
+
+.example-entry,
+.example-result {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  margin: 0;
+}
+
+.example-entry,
+.example-result > div {
+  padding: clamp(0.85rem, 1.8vw, 1.25rem);
+}
+
+.example-label {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.example-entry p,
+.example-entry blockquote,
+.example-result dd {
+  margin: 0.375rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.example-entry blockquote {
+  font-family: var(--slab);
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+}
+
+.analysis-example mark {
+  background: var(--amber-soft);
+  color: var(--color-highlight-text);
+  font-weight: 600;
+  padding-inline: 0.125em;
+}
+
+.example-result {
+  display: grid;
+}
+
+.example-result > div + div {
+  border-block-start: 1px solid var(--line);
+}
+
+@container (min-width: 22rem) {
+  .example-result {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .example-result > div + div {
+    border-block-start: 0;
+    border-inline-start: 1px solid var(--line);
+  }
+}
+
+.example-action {
+  background: var(--botanical-soft);
+  border-inline-start: 3px solid var(--color-highlight-text);
+}
+
+.example-action-header,
+.example-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.example-action-header {
+  justify-content: space-between;
+  gap: 0.375rem 0.75rem;
+}
+
+.example-input {
+  gap: 0.375rem;
+  color: var(--color-highlight-text);
+  font-size: 0.8125rem;
+  font-weight: 750;
+}
+
+.example-input svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

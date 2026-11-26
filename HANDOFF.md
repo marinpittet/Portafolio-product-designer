@@ -25,7 +25,7 @@ HTML original recuperado desde Portfolio/MVP/sitio-web/sitio-web. Se conserva un
 - Los apoyos visuales del 02 y 03 son ejemplos editoriales estáticos en HTML. El 02 usa una matriz accesible de respuestas NPS sintéticas con tres etapas aprobadas: Resumen del pedido, Pago y Comprobante de compra. En anchos estrechos las filas se apilan como fichas. Los iconos del 03 identifican voz y texto.
 - Verificado: diferencias acotadas a la portada, los estilos nuevos y la traducción. Los archivos de TEF, el hero, la navegación y el footer coinciden con la base. Los enlaces internos y los recursos referenciados por ambas portadas existen.
 - Vista de revisión: `/test-QA/#analisis-ia` en GitHub Pages. La matriz conserva la paleta y las fuentes locales del sitio. Queda pendiente la aprobación de la portada antes de incorporar los cambios a producción.
-- En QA, debajo de la matriz a ancho completo, hay una variante con fichas por etapa en la columna derecha. Ambas muestran los mismos comentarios sintéticos y las mismas hipótesis para comparar el ritmo visual. Las citas del 02 y la acción del jugador en el 03 usan comillas y cursiva.
+- En QA, la matriz del caso 02 ocupa la columna derecha bajo la descripción. Mantiene la tabla semántica y la presentación en fichas cuando falta espacio. Las citas del 02 y la acción del jugador en el 03 usan comillas y cursiva.
 - QA previo: la navegación cambia a la de escritorio en anchos fraccionales entre los rangos de estilos existentes. El ajuste de los breakpoints generales queda pendiente.
 
 ## Abrir y publicar

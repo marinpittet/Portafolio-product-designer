@@ -290,3 +290,23 @@ Voz o texto	Voice or text
 Quiero revisar el camarote.	I want to search the cabin.
 Respuesta del juego	Game response
 Al entrar, ves un cajón que se abre y se cierra con el balanceo. Dentro hay una llave envuelta en un pañuelo.	As you enter, you see a drawer slide open and shut as the boat rocks. Inside is a key wrapped in a handkerchief.
+
+# Matriz de analisis del checkout
+De respuestas NPS a hipótesis de producto	From NPS responses to product hypotheses
+Ejemplo ilustrativo con respuestas NPS sintéticas.	Illustrative example using synthetic NPS responses.
+Comentarios de origen	Source comments
+Etapa afectada	Affected stage
+Hipótesis de fricción	Friction hypothesis
+Supe cuánto costaba el envío recién al pagar.	I only found out the shipping cost when I went to pay.
+En el resumen no salía el despacho. El total subió al final.	Shipping wasn’t shown in the summary. The total went up at the end.
+Costos de despacho	Shipping costs
+Resumen del pedido	Order summary
+Mostrar el costo de envío recién al pagar podría llevar a reconsiderar la compra.	Showing shipping costs only at payment could lead shoppers to reconsider the purchase.
+Mi tarjeta fue rechazada y solo apareció «Ocurrió un error».	My card was declined and all I got was ‘An error occurred.’
+Errores de pago	Payment errors
+Pago	Payment
+Un mensaje genérico podría dificultar saber cómo completar el pago.	A generic error message could make it harder to figure out how to complete the payment.
+Después de pagar, volví al inicio y no supe si se hizo el pedido.	After paying, I was sent back to the home page and couldn’t tell if my order went through.
+Confirmación del pedido	Order confirmation
+Comprobante de compra	Purchase receipt
+Si el comprobante no aparece al finalizar el pago, el cliente podría volver a intentar la compra.	If the receipt doesn’t appear after payment, shoppers might try to place the order again.

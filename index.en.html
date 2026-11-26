@@ -18,7 +18,7 @@
 <link rel="alternate" hreflang="en" href="./index.en.html">
 <link rel="stylesheet" href="./assets/css/preview-eter-botanico.css?v=release-01">
 <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
-<link rel="stylesheet" href="./assets/css/home-case-examples.css">
+<link rel="stylesheet" href="./assets/css/home-case-examples.css?v=checkout-matrix-01">
 </head>
 <body>
 <a href="#contenido" style="position:absolute;left:-9999px;top:0" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Skip to content</a>
@@ -37,17 +37,81 @@
   <p class="description">I designed and used an AI-assisted system for several months to analyze open-ended NPS survey responses, standardize their classification, and identify recurring friction, trends, and opportunities for product teams to improve the experience.</p>
   <p class="description">For confidentiality, this case study reconstructs the work using a fictional e-commerce checkout and fully synthetic data.</p>
 </div>
-<div class="visual case-example analysis-example">
-  <div class="example-entry">
-    <div class="example-label">Synthetic comment</div>
-    <blockquote>At payment, I saw <mark>the shipping cost</mark> for the first time.</blockquote>
-  </div>
-  <dl class="example-result">
-    <div><dt class="example-label">Category</dt><dd>Shipping</dd></div>
-    <div><dt class="example-label">Recurring friction</dt><dd>Shipping costs only appear at the end of checkout.</dd></div>
-  </dl>
 </div>
-</div></article>
+<figure class="visual analysis-matrix">
+  <figcaption>
+    <p class="matrix-title" id="analysis-matrix-title">From NPS responses to product hypotheses</p>
+    <p class="matrix-note" id="analysis-matrix-note">Illustrative example using synthetic NPS responses.</p>
+  </figcaption>
+  <table class="matrix-table" role="table" aria-labelledby="analysis-matrix-title" aria-describedby="analysis-matrix-note">
+    <thead role="rowgroup">
+      <tr role="row">
+      <th id="analysis-comments" scope="col" role="columnheader">Source comments</th>
+      <th id="analysis-category" scope="col" role="columnheader">Category</th>
+      <th id="analysis-stage" scope="col" role="columnheader">Affected stage</th>
+      <th id="analysis-hypothesis" scope="col" role="columnheader">Friction hypothesis</th>
+      </tr>
+    </thead>
+    <tbody role="rowgroup">
+    <tr role="row">
+      <td headers="analysis-comments" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Source comments</span>
+        <blockquote>I only found out the shipping cost when I went to pay.</blockquote>
+        <blockquote>Shipping wasn’t shown in the summary. The total went up at the end.</blockquote>
+      </td>
+      <td headers="analysis-category" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Category</span>
+        <p>Shipping costs</p>
+      </td>
+      <td headers="analysis-stage" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Affected stage</span>
+        <p>Order summary</p>
+      </td>
+      <td headers="analysis-hypothesis" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Friction hypothesis</span>
+        <p>Showing shipping costs only at payment could lead shoppers to reconsider the purchase.</p>
+      </td>
+    </tr>
+    <tr role="row">
+      <td headers="analysis-comments" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Source comments</span>
+        <blockquote>My card was declined and all I got was ‘An error occurred.’</blockquote>
+      </td>
+      <td headers="analysis-category" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Category</span>
+        <p>Payment errors</p>
+      </td>
+      <td headers="analysis-stage" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Affected stage</span>
+        <p>Payment</p>
+      </td>
+      <td headers="analysis-hypothesis" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Friction hypothesis</span>
+        <p>A generic error message could make it harder to figure out how to complete the payment.</p>
+      </td>
+    </tr>
+    <tr role="row">
+      <td headers="analysis-comments" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Source comments</span>
+        <blockquote>After paying, I was sent back to the home page and couldn’t tell if my order went through.</blockquote>
+      </td>
+      <td headers="analysis-category" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Category</span>
+        <p>Order confirmation</p>
+      </td>
+      <td headers="analysis-stage" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Affected stage</span>
+        <p>Purchase receipt</p>
+      </td>
+      <td headers="analysis-hypothesis" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Friction hypothesis</span>
+        <p>If the receipt doesn’t appear after payment, shoppers might try to place the order again.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</figure>
+</article>
 <article class="section project-card" id="juego-rol"><div class="left"><div class="index">03</div><h2 class="card-heading">Role-playing game with natural language processing</h2><span class="eyebrow">Case study in progress</span></div>
 <div class="right">
 <h3>Playing through conversation and imagination.</h3>

@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="./assets/css/preview-eter-botanico.css?v=release-04">
 
 <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
-<link rel="stylesheet" href="./assets/css/home-case-examples.css">
+<link rel="stylesheet" href="./assets/css/home-case-examples.css?v=checkout-matrix-01">
 </head>
 <body>
 <a href="#contenido" style="position:absolute;left:-9999px;top:0" onfocus="this.style.left='10px'" onblur="this.style.left='-9999px'">Saltar al contenido</a>
@@ -45,17 +45,81 @@
   <p class="description">Diseñé y utilicé durante meses un sistema asistido por IA para analizar respuestas abiertas de encuestas NPS, estandarizar su clasificación e identificar fricciones recurrentes, tendencias y oportunidades de mejora para los equipos de producto.</p>
   <p class="description">Por confidencialidad, el caso se presenta mediante una reconstrucción aplicada al checkout de un e-commerce ficticio, con datos completamente sintéticos.</p>
 </div>
-<div class="visual case-example analysis-example">
-  <div class="example-entry">
-    <div class="example-label">Comentario sintético</div>
-    <blockquote>Al pagar vi <mark>el costo de envío</mark> por primera vez.</blockquote>
-  </div>
-  <dl class="example-result">
-    <div><dt class="example-label">Categoría</dt><dd>Despacho</dd></div>
-    <div><dt class="example-label">Fricción recurrente</dt><dd>Costo de envío visible al final del checkout.</dd></div>
-  </dl>
 </div>
-</div></article>
+<figure class="visual analysis-matrix">
+  <figcaption>
+    <p class="matrix-title" id="analysis-matrix-title">De respuestas NPS a hipótesis de producto</p>
+    <p class="matrix-note" id="analysis-matrix-note">Ejemplo ilustrativo con respuestas NPS sintéticas.</p>
+  </figcaption>
+  <table class="matrix-table" role="table" aria-labelledby="analysis-matrix-title" aria-describedby="analysis-matrix-note">
+    <thead role="rowgroup">
+      <tr role="row">
+      <th id="analysis-comments" scope="col" role="columnheader">Comentarios de origen</th>
+      <th id="analysis-category" scope="col" role="columnheader">Categoría</th>
+      <th id="analysis-stage" scope="col" role="columnheader">Etapa afectada</th>
+      <th id="analysis-hypothesis" scope="col" role="columnheader">Hipótesis de fricción</th>
+      </tr>
+    </thead>
+    <tbody role="rowgroup">
+    <tr role="row">
+      <td headers="analysis-comments" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Comentarios de origen</span>
+        <blockquote>Supe cuánto costaba el envío recién al pagar.</blockquote>
+        <blockquote>En el resumen no salía el despacho. El total subió al final.</blockquote>
+      </td>
+      <td headers="analysis-category" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Categoría</span>
+        <p>Costos de despacho</p>
+      </td>
+      <td headers="analysis-stage" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Etapa afectada</span>
+        <p>Resumen del pedido</p>
+      </td>
+      <td headers="analysis-hypothesis" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Hipótesis de fricción</span>
+        <p>Mostrar el costo de envío recién al pagar podría llevar a reconsiderar la compra.</p>
+      </td>
+    </tr>
+    <tr role="row">
+      <td headers="analysis-comments" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Comentarios de origen</span>
+        <blockquote>Mi tarjeta fue rechazada y solo apareció «Ocurrió un error».</blockquote>
+      </td>
+      <td headers="analysis-category" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Categoría</span>
+        <p>Errores de pago</p>
+      </td>
+      <td headers="analysis-stage" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Etapa afectada</span>
+        <p>Pago</p>
+      </td>
+      <td headers="analysis-hypothesis" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Hipótesis de fricción</span>
+        <p>Un mensaje genérico podría dificultar saber cómo completar el pago.</p>
+      </td>
+    </tr>
+    <tr role="row">
+      <td headers="analysis-comments" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Comentarios de origen</span>
+        <blockquote>Después de pagar, volví al inicio y no supe si se hizo el pedido.</blockquote>
+      </td>
+      <td headers="analysis-category" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Categoría</span>
+        <p>Confirmación del pedido</p>
+      </td>
+      <td headers="analysis-stage" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Etapa afectada</span>
+        <p>Comprobante de compra</p>
+      </td>
+      <td headers="analysis-hypothesis" role="cell">
+        <span class="matrix-cell-label" aria-hidden="true">Hipótesis de fricción</span>
+        <p>Si el comprobante no aparece al finalizar el pago, el cliente podría volver a intentar la compra.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</figure>
+</article>
 <article class="section project-card" id="juego-rol"><div class="left"><div class="index">03</div><h2 class="card-heading">Juego de rol con procesamiento del lenguaje natural</h2><span class="eyebrow">Caso en preparación</span></div>
 <div class="right">
 <h3>Jugar a través de la conversación y la imaginación.</h3>

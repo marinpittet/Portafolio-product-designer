@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F7F8F5">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="description" content="Transformando la voz del cliente en evidencia para la toma de decisiones y la mejora continua de productos digitales.">
+<meta name="robots" content="noindex">
+<title>Analizador semántico [IA] — Andrés Marín</title>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/isotype-andres-marin-eter.svg">
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/brand.css?v=layout-01">
+<link rel="stylesheet" href="../caso-tef/styles.css?v=layout-01">
+<script src="../caso-tef/script.js?v=lang-01" defer></script>
+<link rel="stylesheet" href="../caso-tef/preview-eter-botanico.css?v=release-06">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+<script defer src="../caso-tef/rail-back.js"></script>
+<style>
+.analisis-ia .case-hero .hero-layout { display: block; }
+.analisis-ia .hero-layout h1 { max-width: 12ch; }
+.analisis-ia .hero-intro { padding-top: clamp(32px, 5vw, 70px); }
+.analisis-ia .hero-intro p { margin-bottom: 1em; }
+.analisis-ia .hero-intro p:last-child { margin-bottom: 0; }
+.analisis-ia .rail { padding-block: 24px; }
+.analisis-ia .chapter-nav { margin-top: 18px; }
+.analisis-ia .chapter-nav a { padding-block: 7px; }
+.analisis-ia .rail .rail-back { margin-top: 20px; }
+.analisis-ia .reading-copy ul,
+.analisis-ia .reading-copy ol { padding-inline-start: 1.5em; margin: 0 0 1.5em; }
+.analisis-ia .reading-copy li + li { margin-top: .35em; }
+.analisis-ia .reading-copy li p { margin: 0; }
+.analisis-ia .chapter-subhead { margin: clamp(44px, 6vw, 88px) 0 24px; }
+.analisis-ia .reading-copy table { width: 100%; margin: 24px 0; border-collapse: collapse; font-size: .9em; line-height: 1.55; }
+.analisis-ia :is(th, td) { padding: 12px clamp(6px, 1.5vw, 16px); border-bottom: 1px solid var(--hair); text-align: start; vertical-align: top; overflow-wrap: anywhere; }
+.analisis-ia th { background: var(--light); color: var(--ink); }
+.analisis-ia :is(th, td) p { margin: 0; }
+.analisis-ia .small-index { display: none; }
+@media (max-width: 1279px) {
+  .analisis-ia .chapter { scroll-margin-top: calc(var(--portfolio-header-height) + 12px); }
+  .analisis-ia .small-index { display: block; padding: 20px clamp(24px, 5.1vw, 100px); border-top: 1px solid var(--hair); }
+  .analisis-ia .small-index summary { cursor: pointer; font-weight: 700; }
+  .analisis-ia .small-index .chapter-nav { max-width: 730px; }
+}
+@media (max-width: 799px) {
+  .analisis-ia .chapter { scroll-margin-top: 0; }
+  .analisis-ia .small-index { padding-inline: 20px; }
+}
+@media print {
+  .analisis-ia .small-index { display: none; }
+}
+</style>
+</head>
+<body class="analisis-ia">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="topbar">
+<a class="brand" href="../#/" aria-label="Ir al inicio del portafolio"><img class="brand-icon" src="../assets/images/isotype-andres-marin-eter.svg" alt="" width="30" height="30" aria-hidden="true"> Andrés Marín</a>
+<a class="back-link" href="../#/" aria-label="Volver al portafolio"><svg class="back-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="../assets/icons/lucide/sprite.svg?v=nav-01#chevron-left"></use></svg><span class="back-label-desktop">Volver al portafolio</span><span class="back-label-mobile">Volver</span></a>
+</header>
+<div class="reading-meter" aria-hidden="true"><span id="reading-progress"></span></div>
+<div class="shell">
+<aside class="rail" aria-label="Índice del caso">
+<div class="rail-label">Caso de estudio</div>
+<nav class="chapter-nav" aria-label="Capítulos">
+  <a href="#project-overview">Project overview</a>
+  <a href="#contexto"><span aria-hidden="true">01</span> Contexto</a>
+  <a href="#diagnostico"><span aria-hidden="true">02</span> Diagnóstico</a>
+  <a href="#primera-incursion"><span aria-hidden="true">03</span> Primera incursión</a>
+  <a href="#instrumentacion"><span aria-hidden="true">04</span> Instrumentación</a>
+  <a href="#arquitectura"><span aria-hidden="true">05</span> Arquitectura</a>
+  <a href="#validacion"><span aria-hidden="true">06</span> Validación</a>
+  <a href="#reporteria"><span aria-hidden="true">07</span> Reportería</a>
+  <a href="#prueba-de-concepto"><span aria-hidden="true">08</span> Prueba de concepto</a>
+  <a href="#resultados"><span aria-hidden="true">09</span> Resultados</a>
+  <a href="#limites"><span aria-hidden="true">10</span> Límites</a>
+  <a href="#retrospectiva"><span aria-hidden="true">11</span> Retrospectiva</a>
+  <a href="#reflexion"><span aria-hidden="true">12</span> Reflexión final</a>
+  <a href="#demostracion"><span aria-hidden="true">13</span> Demostración</a>
+</nav>
+<a class="back-link rail-back" hidden href="../#/"><svg class="back-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Volver al portafolio</a>
+</aside>
+<main id="contenido" class="story">
+<section class="case-hero" aria-labelledby="title">
+<div class="hero-layout"><div>
+<h1 id="title">Analizador <em>semántico [IA]</em></h1>
+<p class="hero-statement">Transformando la voz del cliente en evidencia para la toma de decisiones y la mejora continua de productos digitales.</p>
+</div></div>
+<div class="hero-intro reading-copy">
+<p><strong>Product Design · Inteligencia artificial · Análisis de datos · Automatización</strong></p>
+<p><em>Caso de estudio profesional real.</em></p>
+<p class="case-confidentiality">Por motivos de confidencialidad, se han abstraído determinados antecedentes del producto original. La demostración funcional se realizará sobre un escenario independiente de comercio electrónico, utilizando datos completamente sintéticos.</p>
+</div>
+</section>
+<details class="small-index"><summary>Índice del caso</summary>
+<nav class="chapter-nav" aria-label="Capítulos">
+  <a href="#project-overview">Project overview</a>
+  <a href="#contexto"><span aria-hidden="true">01</span> Contexto</a>
+  <a href="#diagnostico"><span aria-hidden="true">02</span> Diagnóstico</a>
+  <a href="#primera-incursion"><span aria-hidden="true">03</span> Primera incursión</a>
+  <a href="#instrumentacion"><span aria-hidden="true">04</span> Instrumentación</a>
+  <a href="#arquitectura"><span aria-hidden="true">05</span> Arquitectura</a>
+  <a href="#validacion"><span aria-hidden="true">06</span> Validación</a>
+  <a href="#reporteria"><span aria-hidden="true">07</span> Reportería</a>
+  <a href="#prueba-de-concepto"><span aria-hidden="true">08</span> Prueba de concepto</a>
+  <a href="#resultados"><span aria-hidden="true">09</span> Resultados</a>
+  <a href="#limites"><span aria-hidden="true">10</span> Límites</a>
+  <a href="#retrospectiva"><span aria-hidden="true">11</span> Retrospectiva</a>
+  <a href="#reflexion"><span aria-hidden="true">12</span> Reflexión final</a>
+  <a href="#demostracion"><span aria-hidden="true">13</span> Demostración</a>
+</nav>
+</details>
+<section class="chapter" id="project-overview" aria-labelledby="project-overview-title">
+<div class="chapter-head"><h2 id="project-overview-title">Project overview</h2></div>
+<div class="reading-copy">
+<ul><li><p><strong>Industria:</strong> Banca digital.</p></li>
+<li><p><strong>Rol:</strong> Product Designer e impulsor de la iniciativa.</p></li>
+<li><p><strong>Responsabilidades:</strong> Investigación, conceptualización, diseño de la metodología de análisis, instrumentación, experimentación, validación y desarrollo asistido por IA.</p></li>
+<li><p><strong>Usuarios de la solución:</strong> Equipos de Diseño, Producto, Negocio y Postventa.</p></li>
+<li><p><strong>Alcance alcanzado:</strong> Solución de uso operativo mediante IA generativa y posterior prueba de concepto automatizada en Python.</p></li></ul>
+</div>
+</section>
+<section class="chapter" id="contexto" aria-labelledby="contexto-title">
+<div class="chapter-head"><h2 id="contexto-title"><span class="eyebrow">01.</span> Muchos datos, pocas respuestas</h2></div>
+<div class="reading-copy">
+<p>Como parte de mis iniciativas de seguimiento y mejora continua de un producto transaccional de banca digital, buscaba comprender qué factores estaban condicionando la satisfacción de nuestros clientes y dónde existían las mayores oportunidades de mejora.</p>
+<p>Contábamos con una plataforma especializada en la medición del Net Promoter Score (NPS), que proporcionaba indicadores cuantitativos, gráficos de tendencias, segmentaciones y comentarios espontáneos de clientes.</p>
+<p>Sin embargo, existía una brecha importante entre disponer de información y poder utilizarla.</p>
+<p>Las herramientas de análisis cualitativo se limitaban principalmente a visualizar los comentarios agrupados por nivel de satisfacción y generar nubes de palabras. Estas últimas tendían a destacar adjetivos y expresiones genéricas que, si bien permitían reconocer el tono de los comentarios, aportaban poco valor para comprender su contexto.</p>
+<p>Saber que una experiencia era percibida como lenta, mala o frustrante no permitía comprender necesariamente qué estaba ocurriendo, dónde ni por qué.</p>
+<p>Para obtener respuestas, debíamos revisar manualmente los comentarios, identificar patrones y tratar de asociarlos a problemas específicos del producto. Era un proceso que podía extenderse durante días o semanas, condicionado por la disponibilidad de las personas y sin criterios de clasificación estandarizados que permitieran comparar sus resultados en el tiempo.</p>
+<p class="pull-small"><strong>El problema no era la falta de información, sino nuestra capacidad para transformarla en conocimiento.</strong></p>
+</div>
+</section>
+<section class="chapter" id="diagnostico" aria-labelledby="diagnostico-title">
+<div class="chapter-head"><h2 id="diagnostico-title"><span class="eyebrow">02.</span> Cuestionar el diagnóstico</h2></div>
+<div class="reading-copy">
+<p>Durante mis revisiones de los comentarios, comencé a identificar patrones que contrastaban con la interpretación que se estaba haciendo del deterioro del NPS.</p>
+<p>Gran parte de la discusión se concentraba en la calidad de la experiencia desde una perspectiva de UX/UI. Sin embargo, los relatos de los clientes describían recurrentemente interrupciones, demoras, pérdida de continuidad y la necesidad de repetir operaciones para completarlas.</p>
+<p>Los registros de monitoreo técnico disponibles mostraban una cantidad reducida de errores, lo que dificultaba dimensionar estos problemas y respaldar la necesidad de priorizar su investigación.</p>
+<p>Existía, por tanto, una discrepancia entre la estabilidad que reflejaban los indicadores técnicos consultados y la experiencia que describían los usuarios.</p>
+<p>Mi objetivo era determinar qué factores estaban impulsando la detracción, distinguir su naturaleza y comprender su relevancia relativa dentro de la experiencia.</p>
+<p>No buscaba demostrar que el diseño estuviera exento de problemas, sino contar con evidencia suficiente para orientar los esfuerzos hacia las intervenciones con mayor potencial de impacto.</p>
+<p>Coincidiendo con la incorporación de herramientas de inteligencia artificial generativa al entorno corporativo, encontré una oportunidad para explorar una solución.</p>
+</div>
+</section>
+<section class="chapter" id="primera-incursion" aria-labelledby="primera-incursion-title">
+<div class="chapter-head"><h2 id="primera-incursion-title"><span class="eyebrow">03.</span> Mi primera incursión profesional en la IA</h2></div>
+<div class="reading-copy">
+<p>Hasta ese momento, mi experiencia con modelos de inteligencia artificial generativa se limitaba a usos personales y casuales. No había desarrollado soluciones profesionales con IA ni contaba con experiencia en programación o procesamiento avanzado de datos.</p>
+<p>Comencé experimentando con los archivos exportados desde la plataforma de NPS, buscando automatizar el ejercicio de análisis cualitativo que realizábamos manualmente.</p>
+<p>Los primeros resultados fueron prometedores desde una perspectiva interpretativa. El modelo era capaz de reconocer temas recurrentes, resumir grandes cantidades de información y sugerir posibles agrupaciones.</p>
+<p>Sin embargo, al repetir los ejercicios comenzaron a aparecer inconsistencias.</p>
+<p>Un mismo conjunto de datos podía producir diferentes cantidades de comentarios por categoría, distintas interpretaciones y variaciones en las conclusiones.</p>
+<p>También encontré dificultades relacionadas con la estructura de los archivos, su extensión y la capacidad del modelo para recuperar y procesar consistentemente la información a lo largo de una conversación.</p>
+<p>Estas limitaciones me obligaron a replantear el problema.</p>
+<p class="pull-small"><strong>No necesitaba simplemente un asistente capaz de analizar comentarios. Necesitaba diseñar un sistema de análisis confiable, trazable y reproducible.</strong></p>
+<p>El desafío pasó de formular instrucciones para un modelo de IA a diseñar una arquitectura de información, procesamiento y validación que permitiera aprovechar sus capacidades sin depender completamente de su criterio interpretativo.</p>
+</div>
+</section>
+<section class="chapter" id="instrumentacion" aria-labelledby="instrumentacion-title">
+<div class="chapter-head"><h2 id="instrumentacion-title"><span class="eyebrow">04.</span> Instrumentación: enseñar al sistema a comprender el producto</h2></div>
+<div class="reading-copy">
+<p>Uno de los mayores desafíos era trasladar al modelo el conocimiento que yo tenía como diseñador del producto.</p>
+<p>Los comentarios de los usuarios contenían referencias a componentes, funcionalidades, interacciones y términos cuyo significado dependía directamente del contexto de la experiencia.</p>
+<p>Un modelo de lenguaje podía comprender las palabras de un comentario, pero no necesariamente reconocer a qué elemento del producto hacían referencia, cuál era su propósito o en qué momento del recorrido aparecían.</p>
+<p>Para resolverlo, desarrollé distintos instrumentos de contextualización, procesamiento y clasificación.</p>
+<div class="chapter-subhead"><h3>4.1. Convertir una experiencia visual en conocimiento estructurado</h3></div>
+<p>Inicialmente consideré utilizar capturas de pantalla como fuente de información para comunicar al modelo cómo funcionaba el producto.</p>
+<p>Sin embargo, interpretar imágenes implicaba un consumo adicional de recursos y volvía a introducir un margen de incertidumbre. Reconocer visualmente una interfaz no era equivalente a comprender su comportamiento, sus reglas o las relaciones entre sus componentes.</p>
+<p>Decidí abordar el problema desde otra perspectiva:</p>
+<p class="pull-small"><strong>¿Cómo describiría una experiencia digital a alguien que no puede verla ni interactuar directamente con ella?</strong></p>
+<p>A partir de esta pregunta, desarrollé un documento Markdown que representaba textualmente la experiencia del producto.</p>
+<p>El documento describía de manera estructurada cada pantalla, considerando:</p>
+<ul><li><p>Su propósito dentro del recorrido.</p></li>
+<li><p>La jerarquía y el orden de sus contenidos.</p></li>
+<li><p>Los componentes presentes y sus características visuales.</p></li>
+<li><p>Los textos y mensajes de la interfaz.</p></li>
+<li><p>Las interacciones y microinteracciones.</p></li>
+<li><p>El comportamiento de los elementos.</p></li>
+<li><p>La secuencia esperada para completar cada tarea.</p></li>
+<li><p>Las relaciones y diferencias entre las variantes del flujo.</p></li></ul>
+<p>No se trataba simplemente de documentar un journey, sino de construir una representación del producto que pudiera ser comprendida por un sistema sin acceso directo a la experiencia.</p>
+<p>De esta manera, el conocimiento que habitualmente reside en interfaces, prototipos y en la propia experiencia del diseñador podía ser incorporado como contexto estructurado para la IA.</p>
+<div class="chapter-subhead"><h3 id="instrumentacion-table-title">4.2. Contextualizar los comentarios dentro del journey</h3></div>
+<p>El relato de la experiencia permitía comprender qué elementos pertenecían a cada etapa del recorrido.</p>
+<p>De forma abstracta, el proceso transaccional analizado podía representarse mediante cinco etapas:</p>
+<table aria-labelledby="instrumentacion-table-title"><thead><tr><th scope="col">Etapa</th><th scope="col">Propósito</th></tr></thead><tbody>
+<tr><td>01. Selección de objetivo o destino</td><td>Definir qué operación se desea realizar.</td></tr>
+<tr><td>02. Ingreso de datos y montos</td><td>Configurar los parámetros de la operación.</td></tr>
+<tr><td>03. Revisión y confirmación</td><td>Verificar la información y confirmar la intención.</td></tr>
+<tr><td>04. Autorización</td><td>Validar y autorizar la operación.</td></tr>
+<tr><td>05. Resultado y cierre</td><td>Comunicar el resultado y finalizar el proceso.</td></tr>
+</tbody></table>
+<p>Determinados elementos eran exclusivos de una etapa, mientras que otros estaban presentes de forma transversal.</p>
+<p>Por ejemplo, una referencia a un elemento exclusivo de la pantalla de cierre permitía asociar un comentario a ese momento del recorrido. En cambio, mencionar genéricamente un botón no proporcionaba información suficiente para determinar su ubicación.</p>
+<p>Esta distinción fue fundamental para establecer reglas de asociación contextual y evitar que el modelo asignara arbitrariamente los comentarios a una etapa.</p>
+<div class="chapter-subhead"><h3>4.3. Construcción del glosario y la taxonomía</h3></div>
+<p>Paralelamente, necesitaba establecer un lenguaje común para clasificar los comentarios.</p>
+<p>Comencé revisando manualmente las respuestas de un período, identificando temas recurrentes y definiendo categorías relevantes para el producto.</p>
+<p>Posteriormente utilicé IA generativa para ampliar el levantamiento de palabras clave, reconocer expresiones frecuentes y explorar posibles relaciones entre términos.</p>
+<p>La validación humana seguía siendo indispensable. Los clientes utilizaban abreviaturas, errores ortográficos, denominaciones informales y expresiones propias del contexto del producto que no siempre podían interpretarse correctamente de forma aislada.</p>
+<p>Construí un glosario que contemplaba palabras clave, variantes lingüísticas, sinónimos y posibles errores de escritura, relacionándolos con categorías funcionales y etapas del recorrido.</p>
+<p>También experimenté con mecanismos para automatizar el descubrimiento de nuevos términos, mediante análisis de unigramas y bigramas, similitud ortográfica y guías taxonómicas generadas con IA.</p>
+<p>Estas aproximaciones no alcanzaron la estabilidad que necesitaba. Decidí entonces conservar un glosario controlado, cuya ampliación dependiera de la revisión de evidencia y del conocimiento del producto.</p>
+<p>Para resolver coincidencias entre categorías, incorporé reglas de precedencia que establecían qué términos debían tener prioridad ante una ambigüedad.</p>
+<div class="chapter-subhead"><h3>4.4. Reconocer los límites de la información</h3></div>
+<p>Una proporción importante de los comentarios contenía únicamente valoraciones genéricas, sin información suficiente para identificar una funcionalidad, un problema o una etapa concreta.</p>
+<p>En lugar de intentar interpretar aquello que el usuario no había expresado, establecí una categoría para los comentarios no clasificables y contemplé la posibilidad de no asignarles una etapa del recorrido.</p>
+<p>El objetivo no era maximizar artificialmente la cantidad de comentarios clasificados, sino preservar la calidad de la evidencia.</p>
+<p class="pull-small"><strong>La ausencia de información también debía ser representada correctamente por el sistema.</strong></p>
+<div class="chapter-subhead"><h3>4.5. Una metodología transferible a otros productos</h3></div>
+<p>El desarrollo de estos instrumentos permitió separar el conocimiento específico del producto de la lógica general de análisis.</p>
+<p>La intención era que, para aplicar la metodología a otro flujo, fuera posible adaptar su documentación, glosario y reglas sin tener que reconstruir conceptualmente todo el sistema.</p>
+<p>El relato estructurado de la experiencia adquirió además un valor independiente del analizador.</p>
+<p>Posteriormente reutilicé este método de documentación en otros proyectos, incluyendo ejercicios de revisión de experiencias digitales frente a requerimientos regulatorios de la Comisión para el Mercado Financiero (CMF).</p>
+<p>Lo que había surgido como una solución para contextualizar comentarios se convirtió en una forma de comunicar conocimiento de producto a sistemas de inteligencia artificial para distintos propósitos profesionales.</p>
+</div>
+</section>
+<section class="chapter" id="arquitectura" aria-labelledby="arquitectura-title">
+<div class="chapter-head"><h2 id="arquitectura-title"><span class="eyebrow">05.</span> Diseñar la arquitectura de análisis</h2></div>
+<div class="reading-copy">
+<p>La experimentación me permitió comprender que no todas las tareas debían resolverse utilizando las capacidades generativas de un LLM.</p>
+<p>Los cálculos, las clasificaciones y las comparaciones temporales requerían consistencia. La interpretación de patrones, la síntesis y la exploración de hipótesis podían beneficiarse de una aproximación más flexible.</p>
+<p>A partir de esta distinción, diseñé una solución compuesta por dos asistentes especializados dentro del entorno corporativo de ChatGPT.</p>
+<div class="chapter-subhead"><h3 id="arquitectura-table-title">Motor de análisis</h3></div>
+<p>El primer asistente era responsable de procesar los datos mediante una secuencia de cinco fases.</p>
+<table aria-labelledby="arquitectura-table-title"><thead><tr><th scope="col">Fase</th><th scope="col">Función</th></tr></thead><tbody>
+<tr><td>00. Normalización</td><td>Procesar los archivos CSV, extraer la información relevante y convertirla en registros estructurados.</td></tr>
+<tr><td>01. Análisis cuantitativo</td><td>Calcular indicadores y segmentaciones, contrastables con la fuente original.</td></tr>
+<tr><td>02. Análisis cualitativo</td><td>Clasificar los comentarios mediante glosarios, reglas de coincidencia y contexto del producto.</td></tr>
+<tr><td>03. Consolidación</td><td>Reunir los resultados de las fases anteriores en un paquete de información estructurada.</td></tr>
+<tr><td>04. Handoff</td><td>Generar un archivo exportable para su procesamiento por el segundo asistente.</td></tr>
+</tbody></table>
+<p>La normalización permitía trabajar con registros JSON y JSONL, evitando la necesidad de consultar repetidamente los archivos originales y reduciendo los problemas asociados a su estructura.</p>
+<p>También incorporé una huella digital SHA-256 como mecanismo de identificación e integridad de los datos procesados.</p>
+<p>Cada fase tenía un propósito delimitado y debía utilizar los resultados correspondientes a las etapas anteriores.</p>
+<div class="chapter-subhead"><h3>Motor de interpretación y reportería</h3></div>
+<p>El segundo asistente recibía los resultados del motor de análisis y los transformaba en un informe orientado a la toma de decisiones.</p>
+<p>Su responsabilidad era comunicar los indicadores, contextualizar los hallazgos y generar recomendaciones sin reinterpretar ni recalcular los resultados estructurados.</p>
+<p>Adicionalmente, incorporaba una capa de exploración semántica basada en los comentarios originales.</p>
+<p>Esta capa permitía identificar conceptos relacionados, intenciones, patrones recurrentes y posibles mecanismos de fricción que no necesariamente estaban contemplados en las categorías predefinidas.</p>
+<p>La interpretación semántica funcionaba como un complemento exploratorio, separado de los resultados reproducibles del motor.</p>
+<p class="pull-small"><strong>La IA podía ampliar nuestra comprensión de la información, pero no debía alterar la evidencia sobre la que se construía el análisis.</strong></p>
+</div>
+</section>
+<section class="chapter" id="validacion" aria-labelledby="validacion-title">
+<div class="chapter-head"><h2 id="validacion-title"><span class="eyebrow">06.</span> Iterar, cuestionar y validar</h2></div>
+<div class="reading-copy">
+<p>La arquitectura final fue el resultado de decenas de iteraciones y cientos de pruebas.</p>
+<p>Durante las primeras etapas de experimentación, utilizaba principalmente la capacidad interpretativa del modelo para clasificar los comentarios. Sin embargo, cada nueva ejecución podía producir resultados diferentes.</p>
+<p>Para identificar el origen de estas variaciones, comencé a aislar responsabilidades, estructurar las entradas y restringir progresivamente las decisiones que delegaba al modelo.</p>
+<p>La validación se desarrolló en tres niveles.</p>
+<div class="chapter-subhead"><h3>Integridad cuantitativa</h3></div>
+<p>Contrastaba los indicadores calculados por el motor con los proporcionados por la plataforma original.</p>
+<p>Este ejercicio permitía detectar registros omitidos, errores de procesamiento o inconsistencias en la lectura de los archivos antes de continuar con el análisis cualitativo.</p>
+<div class="chapter-subhead"><h3>Exactitud de la clasificación</h3></div>
+<p>Durante las iteraciones incorporé anexos que agrupaban los comentarios literales según las categorías asignadas.</p>
+<p>Revisaba manualmente estos resultados para identificar errores, ajustar las palabras clave, corregir ambigüedades y refinar las reglas de precedencia.</p>
+<p>Esta auditoría permitía comprender no solo qué resultados entregaba el sistema, sino por qué determinados comentarios estaban siendo clasificados incorrectamente.</p>
+<div class="chapter-subhead"><h3>Reproducibilidad</h3></div>
+<p>Ejecutaba repetidamente el análisis sobre un mismo conjunto de datos para identificar variaciones.</p>
+<p>A medida que refinaba la arquitectura y las reglas, las ejecuciones comenzaron a producir resultados cada vez más consistentes.</p>
+<p>Una vez alcanzada una estabilidad suficiente, desarrollé con apoyo de IA un conjunto de pruebas de referencia, o <em>golden tests</em>, para estresar el sistema y comprobar su comportamiento ante distintos escenarios.</p>
+<p>Este proceso permitió avanzar desde informes aislados hacia análisis evolutivos entre períodos, manteniendo criterios de evaluación comparables.</p>
+<p>La separación en fases, inicialmente concebida como un mecanismo de control de calidad, también resolvía limitaciones propias del entorno conversacional: permitía finalizar cada operación, disponer de sus archivos resultantes y continuar el procesamiento a partir de ellos.</p>
+</div>
+</section>
+<section class="chapter" id="reporteria" aria-labelledby="reporteria-title">
+<div class="chapter-head"><h2 id="reporteria-title"><span class="eyebrow">07.</span> Diseñar información para tomar decisiones</h2></div>
+<div class="reading-copy">
+<p>La solución no terminaba con la clasificación de comentarios.</p>
+<p>El valor del sistema dependía de cómo esos resultados podían ser comprendidos y utilizados por personas con distintas responsabilidades dentro de la organización.</p>
+<p>Diseñé un informe que integraba diferentes niveles de lectura, desde una visión ejecutiva hasta el detalle de la evidencia utilizada.</p>
+<p>Su estructura contemplaba:</p>
+<ol><li><p>Resumen ejecutivo.</p></li>
+<li><p>Panorama general del NPS.</p></li>
+<li><p>Contexto comparativo.</p></li>
+<li><p>Desempeño por flujo.</p></li>
+<li><p>Desempeño por dispositivo.</p></li>
+<li><p>Fortalezas de la experiencia.</p></li>
+<li><p>Fricciones clasificadas por el motor.</p></li>
+<li><p>Patrones semánticos.</p></li>
+<li><p>Journey y concentración de puntos de fricción.</p></li>
+<li><p>Síntesis diagnóstica.</p></li>
+<li><p>Priorización de iniciativas según impacto y esfuerzo.</p></li>
+<li><p>Plan de acción y seguimiento.</p></li>
+<li><p>Anexos, metodología y transparencia.</p></li></ol>
+<p>La intención era facilitar distintos niveles de consumo de la información sin perder la posibilidad de consultar su fundamento.</p>
+<p>Los informes permitían comprender cómo evolucionaban los indicadores, qué segmentos presentaban mayores dificultades, qué problemas se repetían y dónde existían oportunidades que merecían ser investigadas.</p>
+<p>Inspirándome en Google Trends, incorporé también visualizaciones de evolución temporal de los conceptos recurrentes, buscando comprender no solo qué estaban comentando los clientes, sino cuándo aparecían determinados patrones y cómo se comportaban a lo largo del período analizado.</p>
+<p>El informe HTML incorporaba elementos interactivos que facilitaban la exploración de esta información.</p>
+<p>De esta manera, el resultado evolucionó desde una automatización del análisis manual hacia un instrumento de diagnóstico y apoyo a la priorización de producto.</p>
+</div>
+</section>
+<section class="chapter" id="prueba-de-concepto" aria-labelledby="prueba-de-concepto-title">
+<div class="chapter-head"><h2 id="prueba-de-concepto-title"><span class="eyebrow">08.</span> Del asistente a una prueba de concepto automatizada</h2></div>
+<div class="reading-copy">
+<p>Aunque la solución basada en dos Custom GPTs era funcional y se utilizaba operativamente, todavía dependía de mi intervención para ejecutar las fases, validar los resultados y trasladar la información entre asistentes.</p>
+<p>El proceso estaba condicionado por las características del entorno conversacional y por la disponibilidad de la plataforma corporativa de IA.</p>
+<p>Buscando superar estas limitaciones, exploré una implementación independiente basada en Python.</p>
+<p>No tenía conocimientos de programación en este lenguaje, por lo que utilicé Devin como herramienta de desarrollo asistido por inteligencia artificial.</p>
+<p>Mi responsabilidad consistía en definir el funcionamiento del producto, trasladar la metodología desarrollada, establecer los requerimientos y validar los resultados de su implementación.</p>
+<p>La prueba de concepto permitió:</p>
+<ul><li><p>Importar archivos CSV mediante un explorador de archivos o drag &amp; drop.</p></li>
+<li><p>Automatizar la normalización y el procesamiento de los datos.</p></li>
+<li><p>Ejecutar la secuencia de análisis sin comandos manuales.</p></li>
+<li><p>Reproducir la clasificación y categorización estructurada.</p></li>
+<li><p>Generar el informe HTML completo.</p></li></ul>
+<p>La POC consiguió reproducir el alcance funcional de la solución anterior en menos de tres minutos, según las pruebas realizadas en el entorno de desarrollo.</p>
+<p>El siguiente paso era convertirla en un producto independiente y distribuible, con una interfaz terminada y accesible para otros equipos.</p>
+<p>Esta etapa quedó pendiente. Su distribución dentro del entorno corporativo requería procesos adicionales de evaluación y aprobación por parte del área de ciberseguridad, así como la habilitación de un canal autorizado para su utilización.</p>
+</div>
+</section>
+<section class="chapter" id="resultados" aria-labelledby="resultados-title">
+<div class="chapter-head"><h2 id="resultados-title"><span class="eyebrow">09.</span> Resultados e impacto</h2></div>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 id="resultados-table-title">De días de análisis a minutos de procesamiento</h3></div>
+<table aria-labelledby="resultados-table-title"><thead><tr><th scope="col">Análisis manual</th><th scope="col">Custom GPTs</th><th scope="col">POC en Python</th></tr></thead><tbody>
+<tr><td>Días o semanas</td><td>Menos de una hora</td><td>Menos de tres minutos</td></tr>
+<tr><td>Revisión y categorización manual</td><td>Procesamiento automatizado por fases y supervisión humana</td><td>Ejecución automatizada y generación del informe</td></tr>
+</tbody></table>
+<p><em>Tiempos aproximados observados durante el proyecto. No corresponden a un benchmark controlado.</em></p>
+<p>La reducción del tiempo de procesamiento cambió nuestra capacidad para consultar y analizar la información.</p>
+<p>Podía generar informes de períodos específicos a solicitud de los stakeholders, comparar distintos segmentos dentro de una misma jornada y realizar análisis evolutivos mensuales utilizando criterios consistentes.</p>
+<p>Esto permitió transformar una actividad ocasional, condicionada por el tiempo disponible para revisar comentarios, en un ejercicio de seguimiento mucho más ágil.</p>
+<div class="chapter-subhead"><h3>Un instrumento compartido de diagnóstico</h3></div>
+<p>Los informes se utilizaron en mesas de trabajo con representantes de Producto, Postventa y Diseño.</p>
+<p>Postventa valoró especialmente la solución como un instrumento complementario para comprender los problemas que experimentaban los clientes y contextualizar las incidencias reportadas a través de los canales de atención.</p>
+<p>La herramienta proporcionaba una dimensión de análisis que no estaba disponible en la plataforma original: la posibilidad de asociar comentarios a funcionalidades, etapas del recorrido y patrones de comportamiento recurrentes.</p>
+<p>También permitía identificar diferencias relevantes entre segmentos y dispositivos, facilitando una lectura más específica de las oportunidades de intervención.</p>
+<div class="chapter-subhead"><h3>Un diagnóstico respaldado por la evolución del producto</h3></div>
+<p>Uno de los principales aportes de los informes fue visibilizar la relevancia de las dificultades operativas dentro del deterioro de la satisfacción.</p>
+<p>Mientras los registros técnicos consultados mostraban una cantidad limitada de errores, los comentarios de los clientes describían recurrentemente interrupciones, reintentos y pérdida de continuidad durante las operaciones.</p>
+<p>El análisis estructurado permitió dimensionar estos relatos, identificar su recurrencia y señalar la estabilidad operativa como uno de los ámbitos prioritarios de intervención.</p>
+<p>Durante los últimos meses del proyecto, los esfuerzos de desarrollo se concentraron en resolver incidencias técnicas y mejorar la continuidad operativa, sin introducir modificaciones en el diseño de la experiencia.</p>
+<p>El NPS experimentó un repunte significativo durante este período.</p>
+<p>Esta evolución fue consistente con el diagnóstico y las prioridades de intervención identificadas en los informes, aportando respaldo a sus hallazgos: el deterioro de la satisfacción no podía explicarse exclusivamente desde el diseño de la interfaz o su usabilidad.</p>
+<p>Más allá del origen de las decisiones de priorización, los resultados observados reforzaron el valor del analizador como instrumento de diagnóstico para distinguir problemas de distinta naturaleza y orientar la investigación hacia oportunidades de mayor impacto potencial.</p>
+<div class="chapter-subhead"><h3>Adopción y alcance organizacional</h3></div>
+<p>A pesar de su utilidad operativa, la solución no consiguió una adopción transversal dentro de la organización.</p>
+<p>Las dinámicas de colaboración entre áreas, la resistencia a modificar procesos establecidos y las restricciones para distribuir la herramienta limitaron su incorporación a los flujos de trabajo de otros equipos.</p>
+<p>La generación de informes continuó dependiendo principalmente de mí.</p>
+<p>Esta experiencia puso de manifiesto que la calidad de una solución analítica no es suficiente para garantizar su adopción. Su accesibilidad, integración en los procesos de trabajo y participación de quienes deben utilizar sus resultados son igualmente determinantes.</p>
+</div>
+</section>
+<section class="chapter" id="limites" aria-labelledby="limites-title">
+<div class="chapter-head"><h2 id="limites-title"><span class="eyebrow">10.</span> Los límites del análisis</h2></div>
+<div class="reading-copy">
+<p>El proyecto permitió identificar una limitación que no podía resolverse exclusivamente mejorando el motor de análisis.</p>
+<p>La encuesta NPS se presentaba de forma contextual únicamente después de que el usuario completara exitosamente el proceso transaccional.</p>
+<p>Esto implicaba que los usuarios que abandonaban el flujo o no conseguían finalizar la operación quedaban fuera de la captura de feedback.</p>
+<p>Al contrastar los comentarios con las métricas de conversión, observé que algunas de las etapas con mayor abandono no contaban con suficiente evidencia cualitativa para comprender sus causas.</p>
+<p>El sistema podía identificar con mayor precisión las dificultades relatadas por quienes lograban completar la operación, pero no podía recuperar información de quienes nunca habían tenido la oportunidad de expresarlas.</p>
+<p>Exploré conceptualmente alternativas para ampliar la captura de feedback a otros momentos del recorrido. Sin embargo, las restricciones existentes sobre los mecanismos de contacto con clientes limitaron su implementación.</p>
+<p class="pull-small"><strong>La calidad del análisis no puede compensar la ausencia de información en su fuente.</strong></p>
+<p>Este aprendizaje amplió mi perspectiva sobre el diseño de soluciones analíticas: no basta con procesar correctamente los datos; también es necesario comprender cómo, cuándo y bajo qué condiciones fueron recopilados.</p>
+</div>
+</section>
+<section class="chapter" id="retrospectiva" aria-labelledby="retrospectiva-title">
+<div class="chapter-head"><h2 id="retrospectiva-title"><span class="eyebrow">11.</span> Retrospectiva: qué haría diferente</h2></div>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3>Separar las dimensiones de clasificación</h3></div>
+<p>Una de las principales oportunidades de mejora se encuentra en el diseño de la taxonomía original.</p>
+<p>Algunas categorías representaban la naturaleza de un problema, mientras que otras correspondían a funcionalidades o momentos específicos del journey.</p>
+<p>Esto generaba conflictos de clasificación que debía resolver mediante reglas de precedencia.</p>
+<p>En una nueva implementación, separaría estas dimensiones para permitir que un comentario describiera simultáneamente la naturaleza de una fricción, su ubicación dentro del recorrido, sus síntomas y sus consecuencias.</p>
+<p>También dedicaría mayor atención a la construcción y validación de la taxonomía inicial, evitando que las hipótesis del investigador condicionen excesivamente los resultados del análisis.</p>
+<div class="chapter-subhead"><h3>Combinar reproducibilidad y exploración semántica</h3></div>
+<p>Desarrollaría el sistema directamente sobre una arquitectura independiente, utilizando Python para las operaciones estructuradas y evaluando tecnologías de procesamiento semántico que permitan reconocer similitudes conceptuales más allá de las coincidencias literales.</p>
+<p>Mantendría una separación explícita entre los indicadores reproducibles y los resultados interpretativos, incorporando pruebas automatizadas y conjuntos de datos de referencia para evaluar la calidad de ambos.</p>
+<div class="chapter-subhead"><h3>Diseñar una herramienta, no únicamente un informe</h3></div>
+<p>Evolucionaría la solución hacia una plataforma autoservicio, con una interfaz que permita importar información, explorar segmentos, configurar búsquedas y consultar resultados sin depender de conocimientos especializados en análisis de datos.</p>
+<p>Me interesa especialmente la posibilidad de permitir que los usuarios definan conceptos o palabras clave y estudien su comportamiento a lo largo del tiempo, facilitando la exploración de nuevas hipótesis.</p>
+<p>La intención sería reducir las barreras de entrada que presentan las plataformas analíticas más especializadas y acercar sus capacidades a quienes toman decisiones de producto.</p>
+<div class="chapter-subhead"><h3>Facilitar la adopción desde el inicio</h3></div>
+<p>Involucraría a los stakeholders clave desde las primeras etapas de definición, buscando comprender sus necesidades, validar la utilidad de las funcionalidades y facilitar la incorporación de la herramienta a sus procesos habituales.</p>
+<p>Priorizaría una aplicación accesible y distribuible, diseñada para procesar inicialmente la información de forma local y evitar su exposición a servicios externos.</p>
+<p>En una segunda etapa, exploraría mecanismos de integración directa con las fuentes de información, sujetos a los requerimientos de seguridad correspondientes, para reducir la dependencia de la importación manual y habilitar reportería actualizada automáticamente.</p>
+</div>
+</section>
+<section class="chapter" id="reflexion" aria-labelledby="reflexion-title">
+<div class="chapter-head"><h2 id="reflexion-title"><span class="eyebrow">12.</span> Reflexión final</h2></div>
+<div class="reading-copy">
+<p>Este proyecto representó mi primera experiencia profesional utilizando inteligencia artificial y transformó mi manera de entender sus posibilidades dentro del Product Design.</p>
+<p>Comencé buscando automatizar una actividad repetitiva y terminé diseñando una metodología que integraba conocimiento del producto, estructuración de información, clasificación, validación, interpretación y comunicación de resultados.</p>
+<p>Aprendí a reconocer qué problemas podían resolverse aprovechando las capacidades interpretativas de un modelo de lenguaje y cuáles requerían mecanismos de procesamiento más controlados.</p>
+<p>También descubrí el valor de estructurar y comunicar el conocimiento que poseemos como diseñadores para convertirlo en un recurso reutilizable por sistemas de inteligencia artificial.</p>
+<p>Más allá de las tecnologías utilizadas, el proyecto reforzó mi interés por diseñar productos que amplíen las capacidades de las personas, reduzcan barreras de acceso a la información y permitan tomar decisiones mejor fundamentadas.</p>
+<p class="pull-small"><strong>El mayor valor de la IA no estaba en sustituir el análisis humano, sino en ampliar nuestra capacidad para comprender la información y actuar sobre ella.</strong></p>
+</div>
+</section>
+<section class="chapter chapter-decision" id="demostracion" aria-labelledby="demostracion-title">
+<div class="chapter-head"><h2 id="demostracion-title"><span class="eyebrow">13.</span> Demostración independiente</h2></div>
+<div class="reading-copy">
+<p><em>En desarrollo.</em></p>
+<p>Para demostrar el funcionamiento del sistema sin exponer información confidencial del proyecto original, se desarrollará una implementación independiente aplicada al journey completo de compra de un comercio electrónico ficticio.</p>
+<p>Esta reconstrucción utilizará datos completamente sintéticos y permitirá incorporar los aprendizajes obtenidos durante el desarrollo del proyecto profesional.</p>
+<p>El objetivo es evolucionar la prueba de concepto hacia un producto funcional e independiente, con una arquitectura tecnológica verificable, procesamiento local, exploración semántica, visualización interactiva y generación automatizada de informes.</p>
+<p>La demostración, sus decisiones de implementación y los resultados de su validación se incorporarán a esta sección una vez completado su desarrollo.</p>
+</div>
+</section>
+<footer class="case-footer"><a href="../#/" class="back-cta"><span class="back-cta-label"><svg class="back-icon" width="18" height="18" aria-hidden="true" focusable="false"><use href="../assets/icons/lucide/sprite.svg?v=nav-01#chevron-left"></use></svg>Volver al portafolio</span><strong>Continuar explorando</strong></a><span>Andrés Marín · Product Design · 2026</span></footer>
+</main>
+</div>
+</body>
+</html>

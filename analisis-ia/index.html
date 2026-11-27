@@ -26,10 +26,10 @@
 .analisis-ia .overview-details dd { margin: 5px 0 18px; }
 .analisis-ia .overview-details dd:last-child { margin-bottom: 0; }
 .analisis-ia .rail-bottom { padding-top: 22px; }
-.analisis-ia .reading-copy :is(ul, ol) { padding-inline-start: 1.5em; margin: 0 0 1.5em; }
-.analisis-ia .reading-copy li + li { margin-top: .35em; }
-.analisis-ia .reading-copy li p { margin: 0; }
-.analisis-ia .reading-copy table { width: 100%; margin: 32px 0 24px; border-collapse: collapse; font-size: .9em; line-height: 1.55; }
+
+
+
+
 .analisis-ia :is(th, td) { padding: 12px clamp(6px, 1.5vw, 16px); border-bottom: 1px solid var(--hair); text-align: start; vertical-align: top; overflow-wrap: anywhere; }
 .analisis-ia thead { border-top: 2px solid var(--ink); }
 .analisis-ia th { color: var(--ink); }
@@ -40,6 +40,197 @@
 .analisis-ia .question-followup { margin-top: clamp(32px, 5vw, 68px); }
 @media (800px <= width <= 1279px) {
   .analisis-ia .chapter { scroll-margin-top: calc(var(--portfolio-header-height) + 16px); }
+}
+.analisis-ia .ia-process-track {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: clamp(24px, 4vw, 56px) 0 0;
+  padding: 0;
+  list-style: none;
+  overflow: visible;
+}
+.analisis-ia .ia-process-track li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  min-height: 140px;
+  padding: 20px clamp(10px, 1.4vw, 18px);
+  border-top: 3px solid var(--hair);
+  background: var(--paper);
+}
+.analisis-ia .ia-process-track li > span { color: var(--accent); }
+.analisis-ia .ia-process-track small { font-size: 12px; }
+.analisis-ia .ia-process-track .active {
+  color: #fff;
+  background: var(--amber-on-white);
+  border-color: var(--amber-on-white);
+}
+.analisis-ia .ia-process-track .active > span { color: inherit; }
+
+.analisis-ia .ia-diagnostic { grid-template-columns: minmax(0, 1.65fr) minmax(0, .8fr); }
+.analisis-ia .ia-signals { align-self: start; }
+.analisis-ia .ia-signals figcaption { margin: 0 0 20px; }
+.analisis-ia .ia-signal-list { margin: 0; }
+.analisis-ia .ia-signal-list > div { padding: 20px 0; border-top: 1px solid #666d66; }
+.analisis-ia .ia-signal-list dt { font: 400 clamp(21px, 2vw, 30px)/1.2 var(--serif); color: var(--paper); }
+.analisis-ia .ia-signal-list dd { margin: 8px 0 0; color: #e8ede7; }
+
+.analisis-ia .ia-block {
+  max-width: 1080px;
+  margin: clamp(32px, 5vw, 64px) 0;
+  padding: clamp(18px, 3.2vw, 40px);
+  background: var(--light);
+  border-top: 1px solid var(--ink);
+}
+.analisis-ia .ia-block figcaption { margin: 0 0 clamp(22px, 4vw, 40px); padding: 0; }
+.analisis-ia .ia-block figcaption strong {
+  display: block;
+  margin-top: 8px;
+  font: 400 clamp(23px, 3vw, 41px)/1.2 var(--serif);
+  letter-spacing: -.025em;
+  color: var(--ink);
+}
+.analisis-ia .ia-group-title { margin: 0 0 12px; color: var(--ink); font: 600 18px/1.3 var(--serif); }
+.analisis-ia .ia-doc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--hair); }
+.analisis-ia .ia-doc-grid > div { min-width: 0; padding: clamp(16px, 2.4vw, 30px); background: var(--paper); }
+.analisis-ia :is(.ia-doc-grid, .ia-poc-grid) ul { margin: 0; padding: 0; list-style: none; }
+.analisis-ia :is(.ia-doc-grid, .ia-poc-grid) li {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--hair);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.analisis-ia :is(.ia-doc-grid, .ia-poc-grid) li::before {
+  content: "";
+  inline-size: 7px;
+  block-size: 1px;
+  margin-top: .75em;
+  background: var(--green);
+}
+
+.analisis-ia .ia-architecture { background: var(--paper); }
+.analisis-ia :is(.ia-flow-source, .ia-flow-outcome, .ia-node) {
+  padding: clamp(14px, 2.2vw, 26px);
+  border: 1px solid var(--hair);
+  background: var(--paper);
+}
+.analisis-ia :is(.ia-flow-source, .ia-flow-outcome) {
+  position: relative;
+  max-width: 440px;
+  margin-inline: auto;
+  text-align: center;
+  background: var(--green-soft);
+  border-color: var(--green);
+}
+.analisis-ia :is(.ia-flow-source, .ia-flow-outcome, .ia-node) strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  font: 500 clamp(16px, 2vw, 23px)/1.3 var(--serif);
+}
+.analisis-ia :is(.ia-flow-outcome, .ia-node) p { margin: 8px 0 0; font-size: 14px; line-height: 1.5; }
+.analisis-ia .ia-node .eyebrow,
+.analisis-ia :is(.ia-flow-source, .ia-flow-outcome) .eyebrow { color: var(--green); }
+.analisis-ia :is(.ia-flow-lanes, .ia-limit-branches) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  --lane-gap: clamp(12px, 2vw, 26px);
+  gap: var(--lane-gap);
+  margin-top: 24px;
+}
+.analisis-ia .ia-flow-lanes { margin-bottom: 24px; }
+.analisis-ia .ia-flow-lane { display: grid; grid-template-rows: repeat(2, 1fr); grid-template-rows: subgrid; grid-row: span 2; row-gap: 24px; }
+.analisis-ia :is(.ia-flow-lane, .ia-limit-branches) > .ia-node { position: relative; }
+.analisis-ia :is(.ia-flow-lane, .ia-limit-branches) > .ia-node::before,
+.analisis-ia .ia-flow-outcome::before {
+  content: "";
+  position: absolute;
+  inset: auto auto 100% 50%;
+  height: 24px;
+  border-left: 1px solid var(--green);
+}
+.analisis-ia .ia-flow-source::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: 12px;
+  border-left: 1px solid var(--green);
+}
+.analisis-ia .ia-flow-lane > .ia-node:first-child::before,
+.analisis-ia .ia-limit-branches > .ia-node::before { height: 12px; }
+.analisis-ia :is(.ia-flow-lanes, .ia-limit-branches) { position: relative; }
+.analisis-ia :is(.ia-flow-lanes, .ia-limit-branches)::before,
+.analisis-ia .ia-flow-lanes::after {
+  content: "";
+  position: absolute;
+  left: calc(25% - var(--lane-gap) / 4);
+  right: calc(25% - var(--lane-gap) / 4);
+  top: -12px;
+  border-top: 1px solid var(--green);
+}
+.analisis-ia .ia-flow-lanes::after { top: auto; bottom: -12px; }
+.analisis-ia .ia-flow-lane > .ia-node:last-child::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: 12px;
+  border-left: 1px solid var(--green);
+}
+.analisis-ia .ia-flow-outcome::before { height: 12px; }
+.analisis-ia :is(.ia-flow-explore .ia-node, .ia-unobserved) { border-style: dashed; }
+.analisis-ia :is(.ia-flow-explore, .ia-unobserved) .eyebrow { color: var(--accent); }
+
+.analisis-ia .ia-methods { max-width: 1080px; margin-block: clamp(36px, 5vw, 62px); }
+.analisis-ia .ia-methods p { margin-bottom: 14px; }
+.analisis-ia .ia-report-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.5vw, 32px); }
+.analisis-ia .ia-report-grid > div { border-top: 1px solid var(--ink); padding-top: 16px; }
+.analisis-ia .ia-report-grid ol { padding: 0; margin: 0; list-style: none; }
+.analisis-ia .ia-report-grid li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 9px;
+  padding: 9px 0;
+  border-top: 1px solid var(--hair);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.analisis-ia .ia-report-grid li span { color: var(--green); font-size: 12px; font-weight: 800; }
+.analisis-ia .ia-poc { background: var(--paper); }
+.analisis-ia .ia-poc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
+.analisis-ia .ia-poc-grid > div { min-height: 0; }
+.analisis-ia .ia-poc-grid strong { margin: 10px 0 16px; }
+.analisis-ia .ia-poc-grid > div:nth-child(2) { border-right: 1px solid var(--hair); }
+.analisis-ia .ia-poc-grid > div:nth-child(3) { padding-left: 18px; }
+
+.analisis-ia .ia-table { max-width: 930px; margin: 32px 0 24px; }
+.analisis-ia .ia-table table { width: 100%; border-collapse: collapse; font-size: clamp(13px, 1.2vw, 17px); line-height: 1.55; }
+.analisis-ia .ia-table tbody th { font-weight: 700; }
+.analisis-ia .ia-table thead th { font-size: .85em; letter-spacing: .05em; text-transform: uppercase; }
+.analisis-ia .ia-table .result-table { table-layout: fixed; }
+.analisis-ia .result-table :is(th, td):last-child { background: var(--green-soft); }
+.analisis-ia .result-table tbody tr:first-child td:last-child { color: var(--color-highlight-text); }
+
+@media (max-width: 799px) {
+  .analisis-ia .ia-process-track { grid-template-columns: 1fr; }
+  .analisis-ia .ia-process-track li { display: grid; grid-template-columns: 24px 1fr; gap: 4px 10px; min-height: 0; padding: 12px 14px; }
+  .analisis-ia .ia-process-track li small { grid-column: 2; }
+  .analisis-ia .ia-diagnostic, .analisis-ia .ia-report-grid, .analisis-ia .ia-poc-grid { grid-template-columns: 1fr; }
+  .analisis-ia .ia-poc-grid > div:nth-child(n) { padding: 16px 0; border-right: 0; border-bottom: 1px solid var(--hair); }
+  .analisis-ia .ia-poc-grid > div:last-child { border-bottom: 0; }
+  .analisis-ia .ia-doc-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 479px) {
+  .analisis-ia :is(.ia-flow-lanes, .ia-limit-branches) { --lane-gap: 10px; }
+  .analisis-ia .ia-node { padding: 11px 9px; overflow-wrap: anywhere; }
+  .analisis-ia .ia-node .eyebrow { font-size: 10px; letter-spacing: .07em; }
+}
+@media print {
+  .analisis-ia .ia-block, .analisis-ia .ia-table { break-inside: avoid; }
 }
 </style>
 </head>
@@ -101,12 +292,23 @@
 </div>
 </section>
 </section>
+<section class="process-overview ia-process" aria-labelledby="ia-process-title">
+  <div class="eyebrow">El proceso</div>
+  <h2 id="ia-process-title">De los comentarios al informe</h2>
+  <ol class="process-track ia-process-track" role="list">
+    <li><span aria-hidden="true">01</span><strong>Exploración</strong><small>Revisar el NPS y ensayar con IA</small></li>
+    <li><span aria-hidden="true">02</span><strong>Instrumentación</strong><small>Describir el flujo y construir el glosario</small></li>
+    <li class="active"><span aria-hidden="true">03</span><strong>Análisis</strong><small>Procesar y validar los datos</small></li>
+    <li><span aria-hidden="true">04</span><strong>Reportería</strong><small>Interpretar hallazgos y orientar la acción</small></li>
+    <li><span aria-hidden="true">05</span><strong>Automatización</strong><small>Integrar el proceso en una POC</small></li>
+  </ol>
+</section>
 <section class="chapter chapter-narrow" id="contexto" aria-labelledby="contexto-title">
 <div class="chapter-head"><div class="eyebrow">01 / Contexto</div><h2 id="contexto-title">Muchos datos, pocas respuestas</h2></div>
 <div class="reading-copy">
 <p>Como parte de mis iniciativas de seguimiento y mejora continua de un producto transaccional de banca digital, buscaba comprender qué factores estaban condicionando la satisfacción de nuestros clientes y dónde existían las mayores oportunidades de mejora.</p>
 <p>Contábamos con una plataforma especializada en la medición del Net Promoter Score (NPS), que proporcionaba indicadores cuantitativos, gráficos de tendencias, segmentaciones y comentarios espontáneos de clientes.</p>
-<p>Sin embargo, existía una brecha importante entre disponer de información y poder utilizarla.</p>
+<p>Sin embargo, existía una brecha importante entre <strong>disponer de información y poder utilizarla</strong>.</p>
 <p>Las herramientas de análisis cualitativo se limitaban principalmente a visualizar los comentarios agrupados por nivel de satisfacción y generar nubes de palabras. Estas últimas tendían a destacar adjetivos y expresiones genéricas que, si bien permitían reconocer el tono de los comentarios, aportaban poco valor para comprender su contexto.</p>
 <p>Saber que una experiencia era percibida como lenta, mala o frustrante no permitía comprender necesariamente qué estaba ocurriendo, dónde ni por qué.</p>
 <p>Para obtener respuestas, debíamos revisar manualmente los comentarios, identificar patrones y tratar de asociarlos a problemas específicos del producto. Era un proceso que podía extenderse durante días o semanas, condicionado por la disponibilidad de las personas y sin criterios de clasificación estandarizados que permitieran comparar sus resultados en el tiempo.</p>
@@ -115,6 +317,7 @@
 </section>
 <section class="chapter chapter-invert" id="diagnostico" aria-labelledby="diagnostico-title">
 <div class="chapter-head"><div class="eyebrow">02 / Diagnóstico</div><h2 id="diagnostico-title">Cuestionar el diagnóstico</h2></div>
+<div class="diagnostic-layout ia-diagnostic">
 <div class="reading-copy">
 <p>Durante mis revisiones de los comentarios, comencé a identificar patrones que contrastaban con la interpretación que se estaba haciendo del deterioro del NPS.</p>
 <p>Gran parte de la discusión se concentraba en la calidad de la experiencia desde una perspectiva de UX/UI. Sin embargo, los relatos de los clientes describían recurrentemente interrupciones, demoras, pérdida de continuidad y la necesidad de repetir operaciones para completarlas.</p>
@@ -123,6 +326,14 @@
 <p>Mi objetivo era determinar qué factores estaban impulsando la detracción, distinguir su naturaleza y comprender su relevancia relativa dentro de la experiencia.</p>
 <p>No buscaba demostrar que el diseño estuviera exento de problemas, sino contar con evidencia suficiente para orientar los esfuerzos hacia las intervenciones con mayor potencial de impacto.</p>
 <p>Coincidiendo con la incorporación de herramientas de inteligencia artificial generativa al entorno corporativo, encontré una oportunidad para explorar una solución.</p>
+</div>
+<figure class="ia-signals">
+  <figcaption class="eyebrow">Dos señales sobre la misma experiencia</figcaption>
+  <dl class="ia-signal-list">
+    <div><dt>Monitoreo técnico</dt><dd>Pocos errores en los registros consultados.</dd></div>
+    <div><dt>Voz de los clientes</dt><dd>Demoras, interrupciones y reintentos recurrentes.</dd></div>
+  </dl>
+</figure>
 </div>
 </section>
 <section class="chapter" id="primera-incursion" aria-labelledby="primera-incursion-title">
@@ -155,26 +366,33 @@
 <div class="reading-copy question-followup">
 <p>A partir de esta pregunta, desarrollé un documento Markdown que representaba textualmente la experiencia del producto.</p>
 <p>El documento describía de manera estructurada cada pantalla, considerando:</p>
-<ul><li><p>Su propósito dentro del recorrido.</p></li>
-<li><p>La jerarquía y el orden de sus contenidos.</p></li>
-<li><p>Los componentes presentes y sus características visuales.</p></li>
-<li><p>Los textos y mensajes de la interfaz.</p></li>
-<li><p>Las interacciones y microinteracciones.</p></li>
-<li><p>El comportamiento de los elementos.</p></li>
-<li><p>La secuencia esperada para completar cada tarea.</p></li>
-<li><p>Las relaciones y diferencias entre las variantes del flujo.</p></li></ul>
+</div>
+<figure class="ia-block ia-doc" aria-labelledby="ia-doc-caption">
+  <figcaption id="ia-doc-caption"><span class="eyebrow">Instrumentación / Markdown</span><strong>Anatomía de una pantalla escrita</strong></figcaption>
+  <div class="ia-doc-grid">
+    <div><p class="ia-group-title">Contexto y jerarquía</p><ul role="list"><li>Su propósito dentro del recorrido.</li><li>La jerarquía y el orden de sus contenidos.</li></ul></div>
+    <div><p class="ia-group-title">Componentes y contenidos</p><ul role="list"><li>Los componentes presentes y sus características visuales.</li><li>Los textos y mensajes de la interfaz.</li></ul></div>
+    <div><p class="ia-group-title">Interacción y comportamiento</p><ul role="list"><li>Las interacciones y microinteracciones.</li><li>El comportamiento de los elementos.</li></ul></div>
+    <div><p class="ia-group-title">Tareas y variantes</p><ul role="list"><li>La secuencia esperada para completar cada tarea.</li><li>Las relaciones y diferencias entre las variantes del flujo.</li></ul></div>
+  </div>
+</figure>
+<div class="reading-copy">
 <p>No se trataba simplemente de documentar un journey, sino de construir una representación del producto que pudiera ser comprendida por un sistema sin acceso directo a la experiencia.</p>
 <p>De esta manera, el conocimiento que habitualmente reside en interfaces, prototipos y en la propia experiencia del diseñador podía ser incorporado como contexto estructurado para la IA.</p>
 <div class="chapter-subhead"><div class="eyebrow">4.2</div><h3 id="instrumentacion-table-title">Contextualizar los comentarios dentro del journey</h3></div>
 <p>El relato de la experiencia permitía comprender qué elementos pertenecían a cada etapa del recorrido.</p>
 <p>De forma abstracta, el proceso transaccional analizado podía representarse mediante cinco etapas:</p>
+</div>
+<div class="ia-table">
 <table aria-labelledby="instrumentacion-table-title"><thead><tr><th scope="col">Etapa</th><th scope="col">Propósito</th></tr></thead><tbody>
-<tr><td><span class="table-step">01.</span> Selección de objetivo o destino</td><td>Definir qué operación se desea realizar.</td></tr>
-<tr><td><span class="table-step">02.</span> Ingreso de datos y montos</td><td>Configurar los parámetros de la operación.</td></tr>
-<tr><td><span class="table-step">03.</span> Revisión y confirmación</td><td>Verificar la información y confirmar la intención.</td></tr>
-<tr><td><span class="table-step">04.</span> Autorización</td><td>Validar y autorizar la operación.</td></tr>
-<tr><td><span class="table-step">05.</span> Resultado y cierre</td><td>Comunicar el resultado y finalizar el proceso.</td></tr>
+<tr><th scope="row"><span class="table-step">01.</span> Selección de objetivo o destino</th><td>Definir qué operación se desea realizar.</td></tr>
+<tr><th scope="row"><span class="table-step">02.</span> Ingreso de datos y montos</th><td>Configurar los parámetros de la operación.</td></tr>
+<tr><th scope="row"><span class="table-step">03.</span> Revisión y confirmación</th><td>Verificar la información y confirmar la intención.</td></tr>
+<tr><th scope="row"><span class="table-step">04.</span> Autorización</th><td>Validar y autorizar la operación.</td></tr>
+<tr><th scope="row"><span class="table-step">05.</span> Resultado y cierre</th><td>Comunicar el resultado y finalizar el proceso.</td></tr>
 </tbody></table>
+</div>
+<div class="reading-copy">
 <p>Determinados elementos eran exclusivos de una etapa, mientras que otros estaban presentes de forma transversal.</p>
 <p>Por ejemplo, una referencia a un elemento exclusivo de la pantalla de cierre permitía asociar un comentario a ese momento del recorrido. En cambio, mencionar genéricamente un botón no proporcionaba información suficiente para determinar su ubicación.</p>
 <p>Esta distinción fue fundamental para establecer reglas de asociación contextual y evitar que el modelo asignara arbitrariamente los comentarios a una etapa.</p>
@@ -182,7 +400,7 @@
 <p>Paralelamente, necesitaba establecer un lenguaje común para clasificar los comentarios.</p>
 <p>Comencé revisando manualmente las respuestas de un período, identificando temas recurrentes y definiendo categorías relevantes para el producto.</p>
 <p>Posteriormente utilicé IA generativa para ampliar el levantamiento de palabras clave, reconocer expresiones frecuentes y explorar posibles relaciones entre términos.</p>
-<p>La validación humana seguía siendo indispensable. Los clientes utilizaban abreviaturas, errores ortográficos, denominaciones informales y expresiones propias del contexto del producto que no siempre podían interpretarse correctamente de forma aislada.</p>
+<p><strong>La validación humana</strong> seguía siendo indispensable. Los clientes utilizaban abreviaturas, errores ortográficos, denominaciones informales y expresiones propias del contexto del producto que no siempre podían interpretarse correctamente de forma aislada.</p>
 <p>Construí un glosario que contemplaba palabras clave, variantes lingüísticas, sinónimos y posibles errores de escritura, relacionándolos con categorías funcionales y etapas del recorrido.</p>
 <p>También experimenté con mecanismos para automatizar el descubrimiento de nuevos términos, mediante análisis de unigramas y bigramas, similitud ortográfica y guías taxonómicas generadas con IA.</p>
 <p>Estas aproximaciones no alcanzaron la estabilidad que necesitaba. Decidí entonces conservar un glosario controlado, cuya ampliación dependiera de la revisión de evidencia y del conocimiento del producto.</p>
@@ -206,15 +424,36 @@
 <p>La experimentación me permitió comprender que no todas las tareas debían resolverse utilizando las capacidades generativas de un LLM.</p>
 <p>Los cálculos, las clasificaciones y las comparaciones temporales requerían consistencia. La interpretación de patrones, la síntesis y la exploración de hipótesis podían beneficiarse de una aproximación más flexible.</p>
 <p>A partir de esta distinción, diseñé una solución compuesta por dos asistentes especializados dentro del entorno corporativo de ChatGPT.</p>
+</div>
+<figure class="ia-block ia-architecture" aria-labelledby="ia-architecture-caption">
+  <figcaption id="ia-architecture-caption"><span class="eyebrow">Flujo de información</span><strong>Dos asistentes, un informe</strong></figcaption>
+  <div class="ia-flow-source"><span class="eyebrow">Entrada común</span><strong>Exportación de NPS · CSV</strong></div>
+  <div class="ia-flow-lanes">
+    <div class="ia-flow-lane">
+      <div class="ia-node"><span class="eyebrow">Motor de análisis</span><strong>Normalizar, calcular y clasificar</strong><p>Genera el paquete de resultados estructurados.</p></div>
+      <div class="ia-node"><span class="eyebrow">Motor de interpretación</span><strong>Comunicar los resultados</strong><p>Usa los indicadores del paquete sin recalcularlos.</p></div>
+    </div>
+    <div class="ia-flow-lane ia-flow-explore">
+      <div class="ia-node"><span class="eyebrow">Comentarios originales</span><strong>Conservar los textos para exploración</strong></div>
+      <div class="ia-node"><span class="eyebrow">Motor de interpretación</span><strong>Explorar patrones semánticos</strong><p>Identifica conceptos e hipótesis complementarias.</p></div>
+    </div>
+  </div>
+  <div class="ia-flow-outcome"><span class="eyebrow">Salida</span><strong>Informe HTML</strong><p>Resultados reproducibles y hallazgos exploratorios.</p></div>
+</figure>
+<div class="reading-copy">
 <div class="chapter-subhead"><h3 id="arquitectura-table-title">Motor de análisis</h3></div>
 <p>El primer asistente era responsable de procesar los datos mediante una secuencia de cinco fases.</p>
+</div>
+<div class="ia-table">
 <table aria-labelledby="arquitectura-table-title"><thead><tr><th scope="col">Fase</th><th scope="col">Función</th></tr></thead><tbody>
-<tr><td><span class="table-step">00.</span> Normalización</td><td>Procesar los archivos CSV, extraer la información relevante y convertirla en registros estructurados.</td></tr>
-<tr><td><span class="table-step">01.</span> Análisis cuantitativo</td><td>Calcular indicadores y segmentaciones, contrastables con la fuente original.</td></tr>
-<tr><td><span class="table-step">02.</span> Análisis cualitativo</td><td>Clasificar los comentarios mediante glosarios, reglas de coincidencia y contexto del producto.</td></tr>
-<tr><td><span class="table-step">03.</span> Consolidación</td><td>Reunir los resultados de las fases anteriores en un paquete de información estructurada.</td></tr>
-<tr><td><span class="table-step">04.</span> Handoff</td><td>Generar un archivo exportable para su procesamiento por el segundo asistente.</td></tr>
+<tr><th scope="row"><span class="table-step">00.</span> Normalización</th><td>Procesar los archivos CSV, extraer la información relevante y convertirla en registros estructurados.</td></tr>
+<tr><th scope="row"><span class="table-step">01.</span> Análisis cuantitativo</th><td>Calcular indicadores y segmentaciones, contrastables con la fuente original.</td></tr>
+<tr><th scope="row"><span class="table-step">02.</span> Análisis cualitativo</th><td>Clasificar los comentarios mediante glosarios, reglas de coincidencia y contexto del producto.</td></tr>
+<tr><th scope="row"><span class="table-step">03.</span> Consolidación</th><td>Reunir los resultados de las fases anteriores en un paquete de información estructurada.</td></tr>
+<tr><th scope="row"><span class="table-step">04.</span> Handoff</th><td>Generar un archivo exportable para su procesamiento por el segundo asistente.</td></tr>
 </tbody></table>
+</div>
+<div class="reading-copy">
 <p>La normalización permitía trabajar con registros JSON y JSONL, evitando la necesidad de consultar repetidamente los archivos originales y reduciendo los problemas asociados a su estructura.</p>
 <p>También incorporé una huella digital SHA-256 como mecanismo de identificación e integridad de los datos procesados.</p>
 <p>Cada fase tenía un propósito delimitado y debía utilizar los resultados correspondientes a las etapas anteriores.</p>
@@ -234,17 +473,24 @@
 <p>Durante las primeras etapas de experimentación, utilizaba principalmente la capacidad interpretativa del modelo para clasificar los comentarios. Sin embargo, cada nueva ejecución podía producir resultados diferentes.</p>
 <p>Para identificar el origen de estas variaciones, comencé a aislar responsabilidades, estructurar las entradas y restringir progresivamente las decisiones que delegaba al modelo.</p>
 <p>La validación se desarrolló en tres niveles.</p>
-<div class="chapter-subhead"><h3>Integridad cuantitativa</h3></div>
+</div>
+<div class="methods ia-methods">
+  <div><span class="method-no" aria-hidden="true">01</span><h3>Integridad cuantitativa</h3>
 <p>Contrastaba los indicadores calculados por el motor con los proporcionados por la plataforma original.</p>
 <p>Este ejercicio permitía detectar registros omitidos, errores de procesamiento o inconsistencias en la lectura de los archivos antes de continuar con el análisis cualitativo.</p>
-<div class="chapter-subhead"><h3>Exactitud de la clasificación</h3></div>
+  </div>
+  <div><span class="method-no" aria-hidden="true">02</span><h3>Exactitud de la clasificación</h3>
 <p>Durante las iteraciones incorporé anexos que agrupaban los comentarios literales según las categorías asignadas.</p>
 <p>Revisaba manualmente estos resultados para identificar errores, ajustar las palabras clave, corregir ambigüedades y refinar las reglas de precedencia.</p>
 <p>Esta auditoría permitía comprender no solo qué resultados entregaba el sistema, sino por qué determinados comentarios estaban siendo clasificados incorrectamente.</p>
-<div class="chapter-subhead"><h3>Reproducibilidad</h3></div>
+  </div>
+  <div><span class="method-no" aria-hidden="true">03</span><h3>Reproducibilidad</h3>
 <p>Ejecutaba repetidamente el análisis sobre un mismo conjunto de datos para identificar variaciones.</p>
 <p>A medida que refinaba la arquitectura y las reglas, las ejecuciones comenzaron a producir resultados cada vez más consistentes.</p>
 <p>Una vez alcanzada una estabilidad suficiente, desarrollé con apoyo de IA un conjunto de pruebas de referencia, o <em>golden tests</em>, para estresar el sistema y comprobar su comportamiento ante distintos escenarios.</p>
+  </div>
+</div>
+<div class="reading-copy">
 <p>Este proceso permitió avanzar desde informes aislados hacia análisis evolutivos entre períodos, manteniendo criterios de evaluación comparables.</p>
 <p>La separación en fases, inicialmente concebida como un mecanismo de control de calidad, también resolvía limitaciones propias del entorno conversacional: permitía finalizar cada operación, disponer de sus archivos resultantes y continuar el procesamiento a partir de ellos.</p>
 </div>
@@ -256,19 +502,32 @@
 <p>El valor del sistema dependía de cómo esos resultados podían ser comprendidos y utilizados por personas con distintas responsabilidades dentro de la organización.</p>
 <p>Diseñé un informe que integraba diferentes niveles de lectura, desde una visión ejecutiva hasta el detalle de la evidencia utilizada.</p>
 <p>Su estructura contemplaba:</p>
-<ol><li><p>Resumen ejecutivo.</p></li>
-<li><p>Panorama general del NPS.</p></li>
-<li><p>Contexto comparativo.</p></li>
-<li><p>Desempeño por flujo.</p></li>
-<li><p>Desempeño por dispositivo.</p></li>
-<li><p>Fortalezas de la experiencia.</p></li>
-<li><p>Fricciones clasificadas por el motor.</p></li>
-<li><p>Patrones semánticos.</p></li>
-<li><p>Journey y concentración de puntos de fricción.</p></li>
-<li><p>Síntesis diagnóstica.</p></li>
-<li><p>Priorización de iniciativas según impacto y esfuerzo.</p></li>
-<li><p>Plan de acción y seguimiento.</p></li>
-<li><p>Anexos, metodología y transparencia.</p></li></ol>
+</div>
+<figure class="ia-block ia-report" aria-labelledby="ia-report-caption">
+  <figcaption id="ia-report-caption"><span class="eyebrow">Reportería</span><strong>Cómo se lee el informe</strong></figcaption>
+  <div class="ia-report-grid">
+    <div><p class="ia-group-title">Panorama de la experiencia</p><ol start="1" role="list">
+      <li><span aria-hidden="true">01</span>Resumen ejecutivo.</li>
+      <li><span aria-hidden="true">02</span>Panorama general del NPS.</li>
+      <li><span aria-hidden="true">03</span>Contexto comparativo.</li>
+      <li><span aria-hidden="true">04</span>Desempeño por flujo.</li>
+      <li><span aria-hidden="true">05</span>Desempeño por dispositivo.</li>
+      <li><span aria-hidden="true">06</span>Fortalezas de la experiencia.</li>
+    </ol></div>
+    <div><p class="ia-group-title">Diagnóstico</p><ol start="7" role="list">
+      <li><span aria-hidden="true">07</span>Fricciones clasificadas por el motor.</li>
+      <li><span aria-hidden="true">08</span>Patrones semánticos.</li>
+      <li><span aria-hidden="true">09</span>Journey y concentración de puntos de fricción.</li>
+      <li><span aria-hidden="true">10</span>Síntesis diagnóstica.</li>
+    </ol></div>
+    <div><p class="ia-group-title">Acción y respaldo</p><ol start="11" role="list">
+      <li><span aria-hidden="true">11</span>Priorización de iniciativas según impacto y esfuerzo.</li>
+      <li><span aria-hidden="true">12</span>Plan de acción y seguimiento.</li>
+      <li><span aria-hidden="true">13</span>Anexos, metodología y transparencia.</li>
+    </ol></div>
+  </div>
+</figure>
+<div class="reading-copy">
 <p>La intención era facilitar distintos niveles de consumo de la información sin perder la posibilidad de consultar su fundamento.</p>
 <p>Los informes permitían comprender cómo evolucionaban los indicadores, qué segmentos presentaban mayores dificultades, qué problemas se repetían y dónde existían oportunidades que merecían ser investigadas.</p>
 <p>Inspirándome en Google Trends, incorporé también visualizaciones de evolución temporal de los conceptos recurrentes, buscando comprender no solo qué estaban comentando los clientes, sino cuándo aparecían determinados patrones y cómo se comportaban a lo largo del período analizado.</p>
@@ -276,7 +535,7 @@
 <p>De esta manera, el resultado evolucionó desde una automatización del análisis manual hacia un instrumento de diagnóstico y apoyo a la priorización de producto.</p>
 </div>
 </section>
-<section class="chapter" id="prueba-de-concepto" aria-labelledby="prueba-de-concepto-title">
+<section class="chapter chapter-decision" id="prueba-de-concepto" aria-labelledby="prueba-de-concepto-title">
 <div class="chapter-head"><div class="eyebrow">08 / Prueba de concepto</div><h2 id="prueba-de-concepto-title">Del asistente a una <em>prueba de concepto automatizada</em></h2></div>
 <div class="reading-copy">
 <p>Aunque la solución basada en dos Custom GPTs era funcional y se utilizaba operativamente, todavía dependía de mi intervención para ejecutar las fases, validar los resultados y trasladar la información entre asistentes.</p>
@@ -285,11 +544,16 @@
 <p>No tenía conocimientos de programación en este lenguaje, por lo que utilicé Devin como herramienta de desarrollo asistido por inteligencia artificial.</p>
 <p>Mi responsabilidad consistía en definir el funcionamiento del producto, trasladar la metodología desarrollada, establecer los requerimientos y validar los resultados de su implementación.</p>
 <p>La prueba de concepto permitió:</p>
-<ul><li><p>Importar archivos CSV mediante un explorador de archivos o drag &amp; drop.</p></li>
-<li><p>Automatizar la normalización y el procesamiento de los datos.</p></li>
-<li><p>Ejecutar la secuencia de análisis sin comandos manuales.</p></li>
-<li><p>Reproducir la clasificación y categorización estructurada.</p></li>
-<li><p>Generar el informe HTML completo.</p></li></ul>
+</div>
+<figure class="ia-block ia-poc" aria-labelledby="ia-poc-caption">
+  <figcaption id="ia-poc-caption"><span class="eyebrow">Prueba de concepto / Python</span><strong>Del CSV al informe HTML</strong></figcaption>
+  <div class="rollout ia-poc-grid">
+    <div><span>Entrada</span><strong>Carga de archivos</strong><ul role="list"><li>Importar archivos CSV mediante un explorador de archivos o drag &amp; drop.</li></ul></div>
+    <div><span>Procesamiento</span><strong>Ejecución automática</strong><ul role="list"><li>Automatizar la normalización y el procesamiento de los datos.</li><li>Ejecutar la secuencia de análisis sin comandos manuales.</li><li>Reproducir la clasificación y categorización estructurada.</li></ul></div>
+    <div><span>Salida</span><strong>Informe listo para consultar</strong><ul role="list"><li>Generar el informe HTML completo.</li></ul></div>
+  </div>
+</figure>
+<div class="reading-copy">
 <p>La POC consiguió reproducir el alcance funcional de la solución anterior en menos de tres minutos, según las pruebas realizadas en el entorno de desarrollo.</p>
 <p>El siguiente paso era convertirla en un producto independiente y distribuible, con una interfaz terminada y accesible para otros equipos.</p>
 <p>Esta etapa quedó pendiente. Su distribución dentro del entorno corporativo requería procesos adicionales de evaluación y aprobación por parte del área de ciberseguridad, así como la habilitación de un canal autorizado para su utilización.</p>
@@ -299,10 +563,14 @@
 <div class="chapter-head"><div class="eyebrow">09 / Impacto</div><h2 id="resultados-title">Resultados e impacto</h2></div>
 <div class="reading-copy">
 <div class="chapter-subhead"><h3 id="resultados-table-title">De días de análisis a minutos de procesamiento</h3></div>
+</div>
+<div class="ia-table">
 <table class="result-table" aria-labelledby="resultados-table-title"><thead><tr><th scope="col">Análisis manual</th><th scope="col">Custom GPTs</th><th scope="col">POC en Python</th></tr></thead><tbody>
 <tr><td>Días o semanas</td><td>Menos de una hora</td><td>Menos de tres minutos</td></tr>
 <tr><td>Revisión y categorización manual</td><td>Procesamiento automatizado por fases y supervisión humana</td><td>Ejecución automatizada y generación del informe</td></tr>
 </tbody></table>
+</div>
+<div class="reading-copy">
 <p class="editorial-note">Tiempos aproximados observados durante el proyecto. No corresponden a un benchmark controlado.</p>
 <p>La reducción del tiempo de procesamiento cambió nuestra capacidad para consultar y analizar la información.</p>
 <p>Podía generar informes de períodos específicos a solicitud de los stakeholders, comparar distintos segmentos dentro de una misma jornada y realizar análisis evolutivos mensuales utilizando criterios consistentes.</p>
@@ -317,7 +585,7 @@
 <p>Mientras los registros técnicos consultados mostraban una cantidad limitada de errores, los comentarios de los clientes describían recurrentemente interrupciones, reintentos y pérdida de continuidad durante las operaciones.</p>
 <p>El análisis estructurado permitió dimensionar estos relatos, identificar su recurrencia y señalar la estabilidad operativa como uno de los ámbitos prioritarios de intervención.</p>
 <p>Durante los últimos meses del proyecto, los esfuerzos de desarrollo se concentraron en resolver incidencias técnicas y mejorar la continuidad operativa, sin introducir modificaciones en el diseño de la experiencia.</p>
-<p>El NPS experimentó un repunte significativo durante este período.</p>
+<p>El NPS experimentó un <strong>repunte significativo</strong> durante este período.</p>
 <p>Esta evolución fue consistente con el diagnóstico y las prioridades de intervención identificadas en los informes, aportando respaldo a sus hallazgos: el deterioro de la satisfacción no podía explicarse exclusivamente desde el diseño de la interfaz o su usabilidad.</p>
 <p>Más allá del origen de las decisiones de priorización, los resultados observados reforzaron el valor del analizador como instrumento de diagnóstico para distinguir problemas de distinta naturaleza y orientar la investigación hacia oportunidades de mayor impacto potencial.</p>
 <div class="chapter-subhead"><h3>Adopción y alcance organizacional</h3></div>
@@ -333,6 +601,16 @@
 <p>El proyecto permitió identificar una limitación que no podía resolverse exclusivamente mejorando el motor de análisis.</p>
 <p>La encuesta NPS se presentaba de forma contextual únicamente después de que el usuario completara exitosamente el proceso transaccional.</p>
 <p>Esto implicaba que los usuarios que abandonaban el flujo o no conseguían finalizar la operación quedaban fuera de la captura de feedback.</p>
+</div>
+<figure class="ia-block ia-limits" aria-labelledby="ia-limits-caption">
+  <figcaption id="ia-limits-caption"><span class="eyebrow">Cobertura de la fuente</span><strong>¿A quiénes llegaba la encuesta?</strong></figcaption>
+  <div class="ia-flow-source"><span class="eyebrow">Punto de partida</span><strong>Inicio de la operación</strong></div>
+  <div class="ia-limit-branches">
+    <div class="ia-node"><span class="eyebrow">Completa la operación</span><strong>Puede responder la encuesta NPS</strong></div>
+    <div class="ia-node ia-unobserved"><span class="eyebrow">Abandona o no logra completarla</span><strong>Queda fuera de la encuesta</strong></div>
+  </div>
+</figure>
+<div class="reading-copy">
 <p>Al contrastar los comentarios con las métricas de conversión, observé que algunas de las etapas con mayor abandono no contaban con suficiente evidencia cualitativa para comprender sus causas.</p>
 <p>El sistema podía identificar con mayor precisión las dificultades relatadas por quienes lograban completar la operación, pero no podía recuperar información de quienes nunca habían tenido la oportunidad de expresarlas.</p>
 <p>Exploré conceptualmente alternativas para ampliar la captura de feedback a otros momentos del recorrido. Sin embargo, las restricciones existentes sobre los mecanismos de contacto con clientes limitaron su implementación.</p>

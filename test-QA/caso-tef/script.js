@@ -22,18 +22,6 @@
   addEventListener('scroll', () => { if (!pending) { pending = true; requestAnimationFrame(progress); } }, {passive:true});
   addEventListener('resize', progress);
   progress();
-  const nav = [...document.querySelectorAll('.chapter-nav a')];
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      for (const entry of entries) if (entry.isIntersecting) {
-        for (const a of nav) {
-          if (a.getAttribute('href') === `#${entry.target.id}`) a.setAttribute('aria-current', 'location');
-          else a.removeAttribute('aria-current');
-        }
-      }
-    }, {rootMargin:'-10% 0px -68% 0px'});
-    document.querySelectorAll('section.chapter[id]').forEach(section => observer.observe(section));
-  }
   const player = document.getElementById('success-video');
   const toggle = document.getElementById('video-toggle');
   if (player && toggle) {

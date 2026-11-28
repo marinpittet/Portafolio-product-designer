@@ -7,7 +7,7 @@ El portafolio se lee como una publicación especializada en diseño de producto.
 - **Caso visual.** Transferencias es la referencia para interfaces, comparativas, galerías, hitos y evidencias. Conserva la secuencia y las proporciones de los materiales.
 - **Artículo técnico.** El Analizador semántico es la referencia para explicación, diagramas legibles, matrices, tablas y destacados laterales.
 - **Ensayo.** Usa una columna continua, citas motivadas por el argumento y espacio para las transiciones.
-- **Inicio.** Usa una presentación más sintética de la identidad, los casos y sus accesos.
+- **Inicio.** Usa una presentación más sintética de la identidad, los casos y sus accesos. El subíndice lateral y el índice de la sección Casos de estudio enlazan a las fichas de Inicio. Los botones de las fichas abren los casos publicados.
 
 ## Fuente de verdad e identidad
 

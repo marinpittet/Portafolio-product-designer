@@ -294,3 +294,19 @@
   .editorial-case .chapter { padding: 40px 20px; }
   .editorial-figure, .editorial-statline > * { break-inside: avoid; }
 }
+
+/* Subíndice de casos en la navegación lateral de Inicio. */
+.case-subindex {
+  list-style: none;
+  margin: 0 0 0 .5rem;
+  padding: 0 0 0 .65rem;
+  border-inline-start: 1px solid var(--hair);
+}
+.case-subindex a {
+  display: grid;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+  column-gap: .4rem;
+  font-size: .8125rem;
+  line-height: 1.35;
+}
+.case-subindex a span { color: var(--accent); }

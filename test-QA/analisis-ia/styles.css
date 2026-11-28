@@ -15,31 +15,6 @@
 @media (800px <= width < 1280px) {
   .analisis-ia .chapter { scroll-margin-top: calc(var(--portfolio-header-height) + 16px); }
 }
-.analisis-ia .ia-process-track {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  margin: clamp(24px, 4vw, 56px) 0 0;
-  padding: 0;
-  list-style: none;
-  overflow: visible;
-}
-.analisis-ia .ia-process-track li {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-width: 0;
-  min-height: 140px;
-  padding: 20px clamp(10px, 1.4vw, 18px);
-  border-top: 3px solid var(--hair);
-  background: var(--paper);
-}
-.analisis-ia .ia-process-track li > span { color: var(--accent); }
-.analisis-ia .ia-process-track small { font-size: 12px; }
-.analisis-ia .ia-process-track .active {
-  color: #fff;
-  background: var(--amber-on-white);
-  border-color: var(--amber-on-white);
-}
-.analisis-ia .ia-process-track .active > span { color: inherit; }
 
 .analisis-ia .ia-signals { align-self: start; }
 .analisis-ia .ia-signals figcaption { margin: 0 0 20px; }
@@ -165,10 +140,7 @@
 
 
 @media (width < 800px) {
-  .analisis-ia .ia-process-track { grid-template-columns: 1fr; }
-  .analisis-ia .ia-process-track li { display: grid; grid-template-columns: 24px 1fr; gap: 4px 10px; min-height: 0; padding: 12px 14px; }
-  .analisis-ia .ia-process-track li small { grid-column: 2; }
-  .analisis-ia .ia-poc-grid { grid-template-columns: 1fr; }
+        .analisis-ia .ia-poc-grid { grid-template-columns: 1fr; }
   .analisis-ia .ia-poc-grid > div:nth-child(n) { padding: 16px 0; border-right: 0; border-bottom: 1px solid var(--hair); }
   .analisis-ia .ia-poc-grid > div:last-child { border-bottom: 0; }
 }
@@ -183,12 +155,16 @@
 
 .analisis-ia .hero-intro { padding-block: clamp(44px, 5.5vw, 86px) clamp(36px, 5vw, 72px); }
 .analisis-ia .case-status { color: var(--muted); margin-block-end: 12px; }
-.analisis-ia .ia-process { padding-block: clamp(40px, 5vw, 72px); }
+.analisis-ia .ia-process {
+  --process-margin: clamp(24px, 4vw, 56px);
+  --process-step-height: 140px;
+  --process-step-inset: 20px clamp(10px, 1.4vw, 18px);
+  --process-detail-size: 12px;
+  padding-block: clamp(40px, 5vw, 72px); }
 .analisis-ia .ia-methods { margin-block: var(--editorial-figure); }
 .analisis-ia .ia-methods p { line-height: 1.62; }
 .analisis-ia .editorial-grid--split + .reading-copy { margin-block-start: clamp(18px, 2.8vw, 36px); }
 .analisis-ia .editorial-grid--split + .reading-copy > .chapter-subhead:first-child { margin-top: var(--editorial-subsection); }
 @media (max-width: 479px) {
-  .analisis-ia .ia-process-track strong { overflow-wrap: normal; }
-  .analisis-ia .case-overview h2 { margin-bottom: 16px; }
+    .analisis-ia .case-overview h2 { margin-bottom: 16px; }
 }

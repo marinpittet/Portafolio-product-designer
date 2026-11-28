@@ -19,6 +19,7 @@ Analizador semántico [IA]	Semantic analyzer [AI]
 Analizador	Semantic
 semántico [IA]	analyzer [AI]
 Ver caso de estudio	View case study
+Ver caso del Analizador	View case study (Spanish)
 Rediseñar transferencias significó separar la navegación de la transacción.	Redesigning transfers meant separating navigation from the transaction itself.
 La investigación mostró que concentrar tareas en menos pantallas no reducía el esfuerzo. Reorganicé el acceso a las funciones, dividí el formulario para nuevos destinatarios y mejoré el comprobante. Tras las pruebas y ajustes con desarrollo, la nueva experiencia se lanzó gradualmente en 2025; el patrón de navegación se adoptó también en otros módulos.	Research showed that putting tasks on fewer screens did not reduce effort. I reorganized access to features, split the form for new recipients, and improved the receipt. After testing and adjustments with engineering, the new experience was rolled out gradually in 2025; its navigation pattern was also adopted in other modules.
 Etapas del flujo de transferencias	Stages of the transfer flow
@@ -226,7 +227,7 @@ Centro de ayuda	Help Center
 02 / Pagos	02 / Payments
 03 / Centro de ayuda	03 / Help Center
 La adopción del patrón de navegación está documentada. Otros equipos mostraron interés en el comprobante y la animación, pero no está confirmada su implementación en esos productos.	Adoption of the navigation pattern is documented. Other teams expressed interest in the receipt and animation, but their implementation in those products has not been confirmed.
-Retrospectiva / La pregunta que quedó abierta	Retrospective / The question left open
+08 / Retrospectiva / La pregunta que quedó abierta	08 / Retrospective / The question left open
 El problema que debí	The problem I should have
 cuestionar antes.	questioned sooner.
 Al revisar el proyecto completo, hay algo que hoy haría de otra manera: investigaría con mayor profundidad el origen de la insatisfacción antes de comprometer un rediseño de esta magnitud.	Looking back at the entire project, there is one thing I would do differently today: investigate the source of dissatisfaction more deeply before committing to a redesign of this scale.

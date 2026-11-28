@@ -11,7 +11,7 @@ El portafolio se lee como una publicación especializada en diseño de producto.
 
 ## Fuente de verdad e identidad
 
-El sistema está en revisión en [test-QA](test-QA/index.html). [editorial.css](test-QA/assets/css/editorial.css) reúne la paleta Éter Botánico, las familias Raleway y Roboto Slab, la escala tipográfica, el espaciado y las composiciones compartidas. Las páginas cargan primero las fuentes locales y sus componentes de base, y después la hoja editorial. Las variantes propias de un artículo se cargan al final. Los estilos de Inicio y las hojas compartidas por los casos mantienen las composiciones y recursos específicos que ya funcionan.
+El sistema se aplica en [producción](index.html) y se previsualiza en [test-QA](test-QA/index.html). [editorial.css](assets/css/editorial.css) reúne la paleta Éter Botánico, las familias Raleway y Roboto Slab, la escala tipográfica, el espaciado y las composiciones compartidas. Las páginas cargan primero las fuentes locales y sus componentes de base, y después la hoja editorial. Las variantes propias de un artículo se cargan al final. Los estilos de Inicio y las hojas compartidas por los casos mantienen las composiciones y recursos específicos que ya funcionan.
 
 | Función | Tokens y aplicación |
 | --- | --- |
@@ -61,11 +61,11 @@ Usa `<strong>` con peso 600 o 700 para una idea que se entienda al escanear, com
 | Patrón | Función y regla de uso |
 | --- | --- |
 | Portada, entradilla y ficha | `.case-hero`, `.hero-layout`, `.editorial-deck`, `.hero-meta` y `.editorial-intro`. Presenta el argumento y los datos del proyecto. La portada puede ser tipográfica o combinarse con una figura cuando aporta contexto. |
-| Índice y capítulos | `.rail`, `.chapter-nav`, `.chapter-head` y `.chapter-subhead`. Mantén correspondencia entre número, rótulo y ancla. Conserva las anclas publicadas y la jerarquía H1–H3. |
+| Índice y capítulos | `.rail`, `.chapter-nav`, `.chapter-head` y `.chapter-subhead`. Usa números de dos dígitos en el índice, incluida la retrospectiva, y mantén su correspondencia con el rótulo y el ancla. Conserva las anclas publicadas y la jerarquía H1–H3. |
 | Destacados | Usa `.pull-small` dentro de la prosa, `.editorial-aside` en la retícula 4 + 2 y `.editorial-quote` o `.closing-quote` para una pausa mayor. Reutiliza una frase del artículo cuando haya evidencia o una conclusión que merezca ese espacio. |
 | Cifras y resultados | Usa `.editorial-statline` con `dt` y `dd` para comparar resultados cualitativos o intervalos aproximados. Identifica el resultado protagonista con posición, tipografía y color. Conserva la nota metodológica junto a las cifras. Reserva escalas y barras para mediciones comparables. |
 | Tablas | Usa `.editorial-table` y HTML semántico con encabezados de fila y columna. Identifica la tabla por título o pie. En móvil deja replegar el texto y reserva el desplazamiento horizontal para una matriz que realmente lo requiera. |
-| Diagramas, procesos y matrices | Combina `.editorial-figure` con `.editorial-figure--open` para alinear la figura con la prosa o con `.editorial-figure--contained` cuando un fondo o marco agrupa su contenido. Usa un `figcaption`, conserva el orden de lectura y apila las columnas al estrecharse la vista. |
+| Diagramas, procesos y matrices | Combina `.editorial-figure` con `.editorial-figure--open` para alinear la figura con la prosa o con `.editorial-figure--contained` cuando un fondo o marco agrupa su contenido. Usa un `figcaption`, conserva el orden de lectura y apila las columnas al estrecharse la vista. El componente `.process-track` muestra las etapas en una lista vertical por debajo de 800 px y respeta su orden de lectura en ambas vistas. |
 | Imágenes y comparativas | Usa `.media-frame`, `.figure-pair`, las galerías o `.landing-comparison-grid` de Transferencias. Respeta proporciones, estado anterior y posterior, pies y texto alternativo útil. La comparación y el video conservan sus controles. |
 | Nota y confidencialidad | Usa `.editorial-note` para metodología, alcance o estado editorial y `.case-confidentiality` para condiciones específicas. Mantén la nota junto al elemento que contextualiza. |
 | Retrospectiva y cierre | La retrospectiva admite una matriz cuando hay unidades independientes. La reflexión final puede cerrar con `.chapter-retro` y `.closing-quote`. Mantén un anexo o demostración con `.editorial-appendix` y un estado legible. |

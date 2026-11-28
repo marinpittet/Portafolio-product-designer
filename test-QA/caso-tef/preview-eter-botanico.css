@@ -10,9 +10,6 @@ body, .topbar, .rail, .story { background: var(--paper); }
 .direction-arrow { fill: none; stroke: currentColor; stroke-width: 2;
   stroke-linecap: round; stroke-linejoin: round; }
 .process-overview, .chapter-decision { background: var(--light); }
-.process-track>div { background: var(--paper); border-top-color: var(--hair); }
-.process-track>div.active { background: var(--amber-on-white); border-color: var(--amber-on-white); color: #FFFFFF; }
-.process-track .active span, .process-track .active small { color: #FFFFFF; }
 .chapter-head .eyebrow, .chapter-subhead .eyebrow { color: var(--accent); }
 .chapter-head .eyebrow { display: block; padding-bottom: 0; border-bottom: 0; }
 .chapter-subhead .eyebrow { color: var(--green); }
@@ -27,8 +24,6 @@ body, .topbar, .rail, .story { background: var(--paper); }
 .flow-editorial, .benchmark { background: var(--paper); }
 .flow-old>span { background: var(--light); }
 .flow-new>div { background: var(--amber-soft); }
-.process-track>div:not(.active) span { color: var(--accent); }
-.process-track>div.active strong { color: #FFFFFF; }
 .rollout span { color: var(--green); }
 .editorial-quote { border-left: 0; padding-left: 0; }
 .closing-quote { border-top: 0; padding-top: 0; }

@@ -1,74 +1,39 @@
-/* Vista local del caso con Éter Botánico. */
-:root {
-  --paper: #F7F8F5;
-  --ink: #1E2221;
-  --text: #454E49;
-  --muted: #56605A;
-  --light: #EAEDE6;
-  --hair: #D5DCD5;
-  --accent: #9A4F00;
-  --amber: #D97706;
-  --amber-on-white: #B45B00;
-  --green: #087650;
-  --green-bright: #059669;
-  --green-soft: #DDF4EA;
-  --amber-soft: #FFF0D9;
-  --color-highlight-text: #07553E;
-  --color-highlight-on-dark: #F4B45D;
-  --highlight-mark: linear-gradient(to bottom, transparent 68%, var(--amber-soft) 68%, var(--amber-soft) 91%, transparent 91%);
-}
+/* Componentes visuales compartidos por los casos de estudio. */
 body, .topbar, .rail, .story { background: var(--paper); }
 ::selection { background: var(--amber-soft); color: var(--ink); }
 .brand { color: var(--ink); }
 .reading-meter span { background: var(--green-bright); }
 .kicker, .eyebrow, .rail-label span, .chapter-nav a span,
 .method-no, .insight-list b { color: var(--accent); }
-.hero-layout h1 em { color: var(--color-highlight-text); font-weight: 400;
-  background: var(--highlight-mark);
-  box-shadow: none;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hero-layout h1 em { font-weight: 400; }
 .hero-statement { color: var(--ink); font-weight: 300; }
 .direction-arrow { fill: none; stroke: currentColor; stroke-width: 2;
   stroke-linecap: round; stroke-linejoin: round; }
 .process-overview, .chapter-decision { background: var(--light); }
-.process-track>div { background: var(--paper); border-top-color: var(--hair); }
-.process-track>div.active { background: var(--amber-on-white); border-color: var(--amber-on-white); color: #FFFFFF; }
-.process-track .active span, .process-track .active small { color: #FFFFFF; }
-.chapter-head h2 em, .chapter-subhead h3 em,
-.editorial-quote em, .closing-quote em, .big-quote em { color: var(--color-highlight-text);
-  background: var(--highlight-mark);
-  box-shadow: none;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .chapter-head .eyebrow, .chapter-subhead .eyebrow { color: var(--accent); }
 .chapter-head .eyebrow { display: block; padding-bottom: 0; border-bottom: 0; }
 .chapter-subhead .eyebrow { color: var(--green); }
 .editorial-stat strong, .big-number { color: var(--accent); }
 .methods .method-no { color: var(--green); }
 .chapter-invert { background: var(--ink); color: #EAEDE6; }
-.chapter-invert .eyebrow, .chapter-invert .insight-list b { color: #F4B45D; }
-.chapter-invert h2 em, .chapter-invert .big-quote em {
-  color: var(--color-highlight-on-dark);
-  background: none;
-}
+.chapter-invert .eyebrow, .chapter-invert .insight-list b { color: var(--color-highlight-on-dark); }
 .pull-small { color: var(--green); }
 .wireframe { background: var(--light); border-top-color: var(--hair); }
 .wireframe.is-featured { border-top-color: var(--amber); }
-.wireframe figcaption, .hero-image figcaption { background: var(--paper); }
+.hero-image figcaption { background: var(--paper); }
 .flow-editorial, .benchmark { background: var(--paper); }
 .flow-old>span { background: var(--light); }
 .flow-new>div { background: var(--amber-soft); }
-.process-track>div:not(.active) span { color: var(--accent); }
-.process-track>div.active strong { color: #FFFFFF; }
 .rollout span { color: var(--green); }
 .editorial-quote { border-left: 0; padding-left: 0; }
 .closing-quote { border-top: 0; padding-top: 0; }
 .case-footer { background: var(--ink); }
-.case-footer .back-cta:hover { color: #F4B45D; }
+.case-footer .back-cta:hover { color: var(--color-highlight-on-dark); }
 .language-switch { background: var(--paper); }
 .language-switch a[aria-current="page"] { background: var(--ink); color: var(--paper); }
 .back-link .back-icon { color: var(--green); }
 .back-link:hover .back-icon { color: var(--accent); }
-.case-footer .back-icon { color: #A9E8CC; }
+.case-footer .back-icon { color: var(--green-on-dark); }
 .brand-icon { background: transparent; }
 .preview-label { position: fixed; right: 18px; bottom: 18px; z-index: 100;
   padding: 8px 11px; background: var(--ink); color: var(--paper);
@@ -82,14 +47,12 @@ body, .topbar, .rail, .story { background: var(--paper); }
 .rail > .rail-label, .rail > .chapter-nav, .rail > .rail-bottom { flex-shrink: 0; }
 
 @media (min-width: 800px) {
-  #reconstruccion > .split-text, #reconstruccion > .methods {
+  #reconstruccion > .methods {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
   }
-  #reconstruccion > .split-text > .reading-copy { grid-column: span 2; }
 }
 
-.wireframe figcaption { margin-top: 16px; }
 
 .rail .rail-back { margin: 0; flex-shrink: 0; }
 .rail .rail-back[hidden] { display: none; }

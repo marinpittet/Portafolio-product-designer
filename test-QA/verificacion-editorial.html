@@ -63,6 +63,15 @@ function openFrame(env, page, w, anchor) {
       const win = frame.contentWindow;
       const doc = frame.contentDocument;
       await doc.fonts.ready;
+      // El ancho de iframe puede quedar una fracción por debajo del umbral con zoom.
+      const threshold = (w === 800 || w === 1280) && '(min-width: ' + w + 'px)';
+      if (threshold && !win.matchMedia(threshold).matches) {
+        for (const delta of [.25, .5, .75, 1]) {
+          frame.style.width = (w + delta) + 'px';
+          await new Promise(resolve => setTimeout(resolve, 0));
+          if (win.matchMedia(threshold).matches) break;
+        }
+      }
       resolve({frame, win, doc, container});
     }, {once: true});
     frame.src = (env === 'baseline' ? '../' : './') + page + '?revision=' + Date.now() + (anchor ? '#' + anchor : '');
@@ -175,6 +184,11 @@ function inspect({win, doc}, w, proposal = false) {
   const header = doc.querySelector('.chapter-nav, .site-nav');
   return {
     w, actual:win.innerWidth, scroll:doc.documentElement.scrollWidth - area,
+    intervalOK: (
+      (w === 800 || w === 1280)
+        ? win.matchMedia('(min-width: ' + w + 'px) and (width < ' + (w + 1) + 'px)').matches
+        : win.innerWidth === w
+    ),
     editorial: doc.querySelector('link[href*="/editorial.css"]')?.getAttribute('href') ?? null,
     h1:size(doc.querySelector('h1')), h2:size(h2), h3:size(h3),
     lines:longestLine(win, copy),
@@ -191,7 +205,7 @@ function listIssues(a) {
   const issues = [...a.typography.issues, ...a.figures.issues];
   if (!a.editorial) issues.push('Falta la hoja editorial compartida');
   if (a.rail !== null && a.rail !== (a.w >= 1280)) issues.push('El índice lateral no coincide con el punto de quiebre de 1280 px');
-  if (a.actual !== a.w) issues.push('El ancho renderizado difiere del solicitado');
+  if (!a.intervalOK) issues.push('El ancho CSS renderizado queda fuera de la medida solicitada');
   if (a.scroll > 1 || a.over.length) issues.push('Desbordamiento horizontal' + (a.over.length ? ' · ' + a.over.join(', ') : ''));
   if (a.missingImages.length) issues.push('Imágenes sin cargar · ' + a.missingImages.join(', '));
   if (a.missingStyles.length) issues.push('Hojas de estilo sin cargar · ' + a.missingStyles.join(', '));

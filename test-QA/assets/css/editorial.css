@@ -318,5 +318,6 @@
 .cv-page .chapter h2 { margin-block-end: var(--editorial-gap); }
 .cv-page article + article { border-block-start: 1px solid var(--hair); margin-block-start: 2rem; padding-block-start: 2rem; }
 .cv-contact { display: flex; gap: .75rem 1.5rem; flex-wrap: wrap; padding: 0; list-style: none; }
+.cv-contact a[href^="tel:"] { font-variant-numeric: lining-nums; }
 .cv-education dt { font-weight: 700; color: var(--ink); }
 .cv-education dd { margin-inline-start: 0; }

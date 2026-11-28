@@ -54,7 +54,7 @@ Usa `<strong>` con peso 600 o 700 para una idea que se entienda al escanear, com
 - `.reading-copy` limita la medida a aproximadamente 60–75 caracteres según la composición, el contenido y la fuente. Una columna lateral o dispositivo estrecho puede requerir una medida menor. Los hallazgos laterales usan `.editorial-aside` con una línea superior y una sola idea.
 - Las figuras de gran ancho se reservan para diagramas, matrices, comparativas y otros elementos que requieren ese espacio. Alinea el borde de la figura con el inicio del texto. Verifica que el orden de lectura del HTML siga funcionando al apilar las columnas.
 - Usa `--editorial-chapter-gap`, `--editorial-subsection`, `--editorial-figure` y `--editorial-paragraph` para distinguir capítulos, apartados, pausas gráficas y párrafos. Los subcapítulos se separan 64–88 px en escritorio y 40–56 px en móvil.
-- El índice fijo de los casos se muestra a partir de 1280 px. La composición del artículo cambia a una columna por debajo de 800 px, incluidos los anchos fraccionarios. El intervalo a partir de 800 px admite comparativas y bloques modulares cuando cada columna conserva una lectura cómoda.
+- El índice lateral de los casos se muestra desde 1024 px. En anchos menores, el índice se abre desde un botón flotante. La composición del artículo cambia a una columna por debajo de 800 px, incluidos los anchos fraccionarios. El intervalo a partir de 800 px admite comparativas y bloques modulares cuando cada columna conserva una lectura cómoda.
 
 ## Patrones de composición
 
@@ -92,3 +92,9 @@ Usa `--editorial-figure-inset` para el espacio interior de una figura contenida 
 3. Conserva las palabras del relato, sus datos, enlaces y funcionalidades. Revisa ambos idiomas cuando el contenido esté disponible en ES / EN.
 4. Comprueba en navegador 1920, 1440, 1280, 1279, 1024, 800, 799, 393 y 320 px. Revisa la carga de fuentes, contraste, reflujo, longitud de línea, navegación, interacciones y contenido. Usa [la matriz de revisión](test-QA/verificacion-editorial.html) para comprobar las relaciones entre tamaños, el espaciado interior y el reflujo. Completa la matriz con inspección visual en los cambios de composición. Registra los tamaños y las pruebas que se ejecutaron.
 5. Durante una revisión, utiliza los archivos bajo `test-QA/`. Publica los cambios de producción únicamente tras la aprobación explícita del propietario.
+
+## Navegación de producción
+
+La hoja `assets/css/navigation.css` utiliza tres variantes: móvil por debajo de 599 px, tablet desde 599 px y escritorio desde 1024 px. Los cortes editoriales se mantienen independientes. Los enlaces y botones de menú tienen un área mínima de 44 px, con excepción del selector de idioma. El estado activo combina peso 700, verde oscuro e indicador de 3 px. Los separadores agrupan funciones y el foco visible usa un contorno verde de 2 px.
+
+El CV se enlaza desde Sobre mí y comparte la cabecera de los casos. Sus encabezados informativos contienen títulos de módulo y el teléfono usa cifras de caja alta.

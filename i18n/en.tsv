@@ -679,3 +679,7 @@ Esta reconstrucción utilizará datos completamente sintéticos y permitirá inc
 El objetivo es evolucionar la prueba de concepto hacia un producto funcional e independiente, con una arquitectura tecnológica verificable, procesamiento local, exploración semántica, visualización interactiva y generación automatizada de informes.	The goal is to evolve the proof of concept into a working standalone product with a verifiable technical architecture, local processing, semantic exploration, interactive visualization, and automated report generation.
 La demostración, sus decisiones de implementación y los resultados de su validación se incorporarán a esta sección una vez completado su desarrollo.	The demonstration, the decisions behind its implementation, and the results of validation will be added to this section once development is complete.
 Capítulos	Chapters
+
+Antes / Después	Before / After
+Pantalla anterior del módulo Transferencias, con pestañas, favoritos y agenda	Previous Transfers screen, with tabs, favorites, and saved recipients
+Pantalla rediseñada de Transferencias, con accesos organizados por tarea	Redesigned Transfers screen, with shortcuts organized by task

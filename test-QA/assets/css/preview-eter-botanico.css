@@ -3,7 +3,7 @@
 body { background: var(--paper); color: var(--gray); }
 ::selection { background: var(--amber-soft); color: var(--ink); }
 .site-nav, .mobile-nav { background: var(--paper); border-color: var(--line); }
-.brand, .hero h1, .section-label, .section-title, .card-heading,
+.brand, .hero h1, .section-title, .card-heading,
 .project-card h3, .hero .subtitle, .hero .subtitle strong { color: var(--ink); }
 .nav-links a[aria-current], .mobile-nav .links a[aria-current],
 .nav-links a:hover, .mobile-nav .links a:hover,
@@ -12,13 +12,12 @@ body { background: var(--paper); color: var(--gray); }
 .nav-links a[aria-current], .mobile-nav .links a[aria-current] {
   box-shadow: inset 0 -3px var(--orange);
 }
-.section-label, .contents a span, .project-card .index, .number-indicator,
+.contents a span, .project-card .index, .number-indicator,
 .metric-visual .giant { color: var(--color-index); }
 .project-card .card-heading { color: var(--ink); }
 .eyebrow { color: var(--color-index); }
 .project-card { border-color: var(--line); }
 .project-card .left { border-top: 0; padding-top: 0; }
-.section-label { display: block; padding-bottom: 0; border-bottom: 0; }
 .contents a { text-decoration: none; }
 .contents a:hover { box-shadow: inset 0 -5px var(--amber-soft); }
 .project-card .card-heading { text-decoration: none; }

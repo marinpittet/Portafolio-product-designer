@@ -52,7 +52,7 @@
   ).join("");
   old.outerHTML =
     '<div class="benchmark" id="benchmark-demostrativo" aria-label="Reconstrucción ilustrativa del benchmark">'+
-    '<div class="benchmark-heading"><div><span class="eyebrow">Recurso reconstruido / Modelo de trabajo</span><h3>Un benchmark, dos perspectivas.</h3></div>'+
+    '<div class="benchmark-heading"><div><span class="eyebrow">Recurso reconstruido / Modelo de trabajo</span><h3 class="editorial-info-title">Un benchmark, dos perspectivas.</h3></div>'+
     '<p><strong>Datos sintéticos.</strong> Reconstrucción editorial para mostrar exclusivamente el formato de análisis. Pantallas y estados son ficticios; no reflejan resultados originales ni capacidades verificadas de estos bancos.</p></div>'+
     '<div class="benchmark-tabs" role="tablist" aria-label="Tipo de benchmark">'+
     '<button type="button" role="tab" id="bench-tab-features" aria-controls="bench-features" aria-selected="true" tabindex="0">01 &nbsp; Funcionalidades</button>'+

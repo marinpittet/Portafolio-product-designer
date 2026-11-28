@@ -23,7 +23,7 @@ body, .topbar, .rail, .story { background: var(--paper); }
 .pull-small { color: var(--green); }
 .wireframe { background: var(--light); border-top-color: var(--hair); }
 .wireframe.is-featured { border-top-color: var(--amber); }
-.wireframe figcaption, .hero-image figcaption { background: var(--paper); }
+.hero-image figcaption { background: var(--paper); }
 .flow-editorial, .benchmark { background: var(--paper); }
 .flow-old>span { background: var(--light); }
 .flow-new>div { background: var(--amber-soft); }
@@ -58,7 +58,6 @@ body, .topbar, .rail, .story { background: var(--paper); }
   }
 }
 
-.wireframe figcaption { margin-top: 16px; }
 
 .rail .rail-back { margin: 0; flex-shrink: 0; }
 .rail .rail-back[hidden] { display: none; }

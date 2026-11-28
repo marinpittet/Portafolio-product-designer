@@ -14,9 +14,10 @@ pre { white-space: pre-wrap }
 <button id="run">Ejecutar matriz</button>
 <label>Página <select id="page"></select></label>
 <label>Ancho <select id="width"></select></label>
-<label>Sección <select id="section"><option value="">Portada</option><option>sobre-mi</option><option>contexto</option><option>instrumentacion</option><option>arquitectura</option><option>resultados</option><option>retrospectiva</option><option>implementacion</option></select></label>
+<label>Sección <select id="section"><option value="">Portada</option><option>sobre-mi</option><option>proyectos</option><option>project-overview</option><option>contexto</option><option>instrumentacion</option><option>arquitectura</option><option>prueba-de-concepto</option><option>resultados</option><option>retrospectiva</option><option>implementacion</option></select></label>
 <button id="compare">Comparar</button>
 <p id="result" aria-live="polite"></p>
+<ul id="findings" hidden></ul>
 <details id="report" hidden><summary>Resultados por página y ancho</summary><pre id="details"></pre></details>
 <div class="frames" id="frames"></div>
 <script>
@@ -27,6 +28,9 @@ const pageInput = document.getElementById('page');
 const widthInput = document.getElementById('width');
 const frames = document.getElementById('frames');
 const result = document.getElementById('result');
+const findings = document.getElementById('findings');
+const run = document.getElementById('run');
+const compare = document.getElementById('compare');
 pages.forEach(p => pageInput.add(new Option(p)));
 widths.forEach(w => widthInput.add(new Option(w)));
 function longestLine(win, p) {
@@ -66,7 +70,97 @@ function openFrame(env, page, w, anchor) {
     frames.append(container);
   });
 }
-function inspect({win, doc}, w) {
+const headingRoles = [
+  'editorial-main-title', 'editorial-chapter-title', 'editorial-info-title',
+  'editorial-home-heading', 'editorial-subchapter-title', 'editorial-module-title',
+  'editorial-card-title', 'editorial-card-summary'
+];
+function inspectTypography(doc, win) {
+  const issues = [];
+  const sizes = {};
+  const labels = el => el.textContent.trim().replace(/\s+/g, ' ').slice(0, 86);
+  const size = el => parseFloat(win.getComputedStyle(el).fontSize);
+  const nodes = selector => [...doc.querySelectorAll(selector)].filter(el => el.getClientRects().length);
+  const range = (selector, min, max) => {
+    for (const el of nodes(selector)) {
+      const value = size(el);
+      if (value < min - .05 || value > max + .05) {
+        issues.push('Escala de «' + labels(el) + '» fuera de ' + min + '–' + max + ' px (' + value.toFixed(1) + ' px)');
+      }
+    }
+  };
+  const above = (large, small) => {
+    if (large && small && size(large) <= size(small)) {
+      issues.push('Jerarquía invertida entre «' + labels(large) + '» y «' + labels(small) + '»');
+    }
+  };
+  for (const el of nodes('main h1, main h2, main h3')) {
+    const roles = headingRoles.filter(role => el.classList.contains(role));
+    if (roles.length !== 1) issues.push('Función tipográfica sin definir para «' + labels(el) + '»');
+    for (const role of roles) (sizes[role] ||= []).push(Math.round(size(el) * 10) / 10);
+  }
+  const title = doc.querySelector('main h1.editorial-main-title');
+  if (!title || nodes('.editorial-main-title').length !== 1) issues.push('Se esperaba un titular principal único');
+  for (const el of nodes(headingRoles.slice(1).map(role => '.' + role).join(','))) above(title, el);
+  for (const el of nodes('.chapter .editorial-subchapter-title, .chapter .editorial-module-title')) {
+    const chapterTitle = el.closest('.chapter').querySelector('.editorial-chapter-title');
+    above(chapterTitle, el);
+  }
+  for (const el of nodes('.editorial-card-summary')) {
+    above(el.closest('.project-card').querySelector('.editorial-card-title'), el);
+  }
+  const narrow = win.matchMedia('(max-width: 799px)').matches;
+  range('.editorial-info-title', narrow ? 22 : 28, narrow ? 28 : 36);
+  range('.editorial-home-heading', narrow ? 23 : 26, narrow ? 26 : 32);
+  range('.editorial-body, .reading-copy, .body-copy, .description', 16, 18);
+  range('.editorial-note', 12, 14);
+  range('.editorial-label', 11, 13);
+  range('.editorial-deck, .editorial-home-deck', 22, 32);
+  const copy = nodes('.reading-copy, .editorial-body, .body-copy')[0];
+  for (const el of nodes('.editorial-deck, .editorial-home-deck, .editorial-home-heading')) above(el, copy);
+  for (const el of nodes('.editorial-note, .editorial-label')) above(copy, el);
+  const summary = doc.querySelector('.editorial-case #project-overview');
+  if (summary) {
+    const body = summary.querySelector('p.editorial-body');
+    const info = summary.querySelector('.editorial-info-title');
+    if (!body || !info || !summary.querySelector('.editorial-note') || summary.querySelector('.editorial-deck')) {
+      issues.push('El resumen debe tener un encabezado informativo, antecedentes en prosa y aclaraciones en nota');
+    }
+    above(info, body);
+    for (const note of summary.querySelectorAll('.editorial-note')) above(body, note);
+  }
+  return {issues: [...new Set(issues)], sizes};
+}
+function inspectFigures(doc, win) {
+  const narrow = win.matchMedia('(max-width: 799px)').matches;
+  const min = narrow ? 16 : 24;
+  const max = narrow ? 20 : 32;
+  const issues = [];
+  const insets = [];
+  const edges = ['Top', 'Right', 'Bottom', 'Left'];
+  for (const box of doc.querySelectorAll('main figure, main .editorial-figure--contained, .benchmark-heading, .benchmark-panel')) {
+    if (!box.getClientRects().length) continue;
+    const s = win.getComputedStyle(box);
+    const name = box.getAttribute('aria-labelledby') || box.className || 'figure';
+    const contained = box.classList.contains('editorial-figure--contained') || box.matches('.benchmark-heading, .benchmark-panel');
+    const open = box.classList.contains('editorial-figure--open');
+    const surface = s.backgroundImage !== 'none' || !['transparent', 'rgba(0, 0, 0, 0)'].includes(s.backgroundColor);
+    const borders = edges.filter(edge => parseFloat(s['border' + edge + 'Width']) > 0);
+    const framed = borders.some(edge => edge !== 'Top') || (borders.length > 0 && !open);
+    if (!contained && (surface || framed)) {
+      issues.push('Figura con superficie o marco sin variante contenida · ' + name);
+    }
+    if (contained) {
+      const padding = edges.map(edge => parseFloat(s['padding' + edge]));
+      insets.push({name, padding});
+      if (padding.some(value => value < min - .05 || value > max + .05)) {
+        issues.push('Espaciado interior fuera de ' + min + '–' + max + ' px · ' + name + ' (' + padding.join(' / ') + ' px)');
+      }
+    }
+  }
+  return {issues, insets};
+}
+function inspect({win, doc}, w, proposal = false) {
   const area = doc.documentElement.clientWidth;
   const over = [...doc.querySelectorAll(selectors.join(','))].filter(el => {
     const box = el.getBoundingClientRect();
@@ -84,29 +178,56 @@ function inspect({win, doc}, w) {
     editorial: doc.querySelector('link[href*="/editorial.css"]')?.getAttribute('href') ?? null,
     h1:size(doc.querySelector('h1')), h2:size(h2), h3:size(h3),
     lines:longestLine(win, copy),
+    typography: proposal ? inspectTypography(doc, win) : null,
+    figures: proposal ? inspectFigures(doc, win) : null,
     header: header ? win.getComputedStyle(header.closest('aside') || header).display : null,
     fonts:[...doc.fonts].filter(f => f.status === 'loaded').map(f => f.family),
     over:[...new Set(over)], missingImages, missingStyles,
     tables:doc.querySelectorAll('table').length, dialogs:doc.querySelectorAll('dialog,[role="dialog"]').length
   };
 }
-document.getElementById('run').onclick = async () => {
+function listIssues(a) {
+  const issues = [...a.typography.issues, ...a.figures.issues];
+  if (!a.editorial) issues.push('Falta la hoja editorial compartida');
+  if (a.actual !== a.w) issues.push('El ancho renderizado difiere del solicitado');
+  if (a.scroll > 1 || a.over.length) issues.push('Desbordamiento horizontal' + (a.over.length ? ' · ' + a.over.join(', ') : ''));
+  if (a.missingImages.length) issues.push('Imágenes sin cargar · ' + a.missingImages.join(', '));
+  if (a.missingStyles.length) issues.push('Hojas de estilo sin cargar · ' + a.missingStyles.join(', '));
+  if (!a.fonts.includes('Raleway') || !a.fonts.includes('Roboto Slab')) issues.push('Carga incompleta de fuentes');
+  return issues;
+}
+run.onclick = async () => {
   frames.replaceChildren();
+  findings.replaceChildren();
+  findings.hidden = true;
+  document.getElementById('report').hidden = true;
+  run.disabled = compare.disabled = true;
   result.textContent = 'En curso';
   const report = [];
-  for (const [page, width] of pages.flatMap(p => widths.map(w => [p,w]))) {
-    const pair = await Promise.all(['baseline','test-QA'].map(env => openFrame(env,page,width,'')));
-    report.push({page, before:inspect(pair[0],width), after:inspect(pair[1],width)});
-    result.textContent = 'Revisadas ' + report.length + ' de ' + (pages.length * widths.length) + ' combinaciones';
-    pair.forEach(x => x.container.remove());
+  try {
+    for (const [page, width] of pages.flatMap(p => widths.map(w => [p,w]))) {
+      const pair = await Promise.all(['baseline','test-QA'].map(env => openFrame(env,page,width,'')));
+      const before = inspect(pair[0],width);
+      const after = inspect(pair[1],width,true);
+      report.push({page, before, after, issues:listIssues(after)});
+      result.textContent = 'Revisadas ' + report.length + ' de ' + (pages.length * widths.length) + ' combinaciones';
+      pair.forEach(x => x.container.remove());
+    }
+    const failures = report.filter(row => row.issues.length);
+    result.textContent = report.length + ' combinaciones revisadas · ' + failures.length + ' con incidencias';
+    for (const row of failures) {
+      const item = document.createElement('li');
+      item.textContent = row.page + ' · ' + row.after.w + ' px · ' + row.issues.join(' · ');
+      findings.append(item);
+    }
+    findings.hidden = !failures.length;
+    document.getElementById('details').textContent = JSON.stringify(report, null, 2);
+    document.getElementById('report').hidden = false;
+  } finally {
+    run.disabled = compare.disabled = false;
   }
-  const issues = report.filter(({after:a}) => !a.editorial || a.actual !== a.w || a.scroll > 1 || a.over.length || a.missingImages.length || a.missingStyles.length);
-  result.textContent = report.length + ' combinaciones revisadas · ' + issues.length + ' con incidencias';
-  const details = document.getElementById('details');
-  details.textContent = JSON.stringify(report);
-  document.getElementById('report').hidden = false;
 };
-document.getElementById('compare').onclick = () => {
+compare.onclick = () => {
   frames.replaceChildren();
   const anchor = document.getElementById('section').value;
   for (const env of ['baseline','test-QA']) openFrame(env,pageInput.value,Number(widthInput.value),anchor);

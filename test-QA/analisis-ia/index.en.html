@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
 <script defer src="../caso-tef/rail-back.js"></script>
 <link rel="stylesheet" href="../assets/css/editorial.css?v=editorial-05">
-<link rel="stylesheet" href="./styles.css?v=editorial-05">
+<link rel="stylesheet" href="./styles.css?v=semantic-01">
 <link rel="alternate" hreflang="es" href="./index.html">
 <link rel="alternate" hreflang="en" href="./index.en.html">
 <script src="../assets/js/language.js" defer></script>
@@ -202,6 +202,7 @@
 <p>A substantial share of comments contained only generic ratings, with too little information to identify a feature, issue, or specific stage.</p>
 <p>I created a category for comments that could not be classified and allowed the system to leave the journey stage unassigned when users had not provided enough information.</p>
 <p>The goal was to preserve the quality of the evidence and avoid inflating the number of classified comments.</p>
+<p>To make that limitation visible, I introduced two custom metrics: <strong>ICQ</strong>, the share of valid responses with usable comments, and <strong>IEF</strong>, the share of those comments that could be explicitly linked to a journey stage. This helped distinguish information coverage from its usefulness for diagnosis, without treating either as statistical accuracy.</p>
 </div>
 <aside class="editorial-aside"><p>The system also needed to represent missing information accurately.</p></aside>
 </div>
@@ -226,11 +227,11 @@
   <div class="ia-flow-source"><span class="eyebrow editorial-label">Shared input</span><strong>NPS export · CSV</strong></div>
   <div class="ia-flow-lanes">
     <div class="ia-flow-lane">
-      <div class="ia-node"><span class="eyebrow editorial-label">Analysis engine</span><strong>Normalize, calculate, and classify</strong><p>Produces a package of structured results.</p></div>
+      <div class="ia-node"><span class="eyebrow editorial-label">Analysis engine</span><strong>Normalize, calculate, and classify</strong><p>Produces a package of structured results and an auditable classification record.</p></div>
       <div class="ia-node"><span class="eyebrow editorial-label">Interpretation engine</span><strong>Communicate the results</strong><p>Uses the metrics in the package without recalculating them.</p></div>
     </div>
     <div class="ia-flow-lane ia-flow-explore">
-      <div class="ia-node"><span class="eyebrow editorial-label">Original comments</span><strong>Keep the original text for exploration</strong></div>
+      <div class="ia-node"><span class="eyebrow editorial-label">Classification record</span><strong>Keep the original text and evidence for exploration</strong></div>
       <div class="ia-node"><span class="eyebrow editorial-label">Interpretation engine</span><strong>Explore semantic patterns</strong><p>Identifies additional concepts and hypotheses.</p></div>
     </div>
   </div>
@@ -253,6 +254,7 @@
 <p>Normalization let me work with JSON and JSONL records, avoiding repeated reads of the original files and reducing issues arising from their structure.</p>
 <p>I also added a SHA-256 hash to identify the processed data and verify its integrity.</p>
 <p>Each stage had a defined purpose and used the relevant outputs from the preceding stages.</p>
+<p>The qualitative analysis also produced an <strong>auditable record for each comment (ledger)</strong>, preserving the original text, the terms that triggered the rules, and the assigned classification. Qualitative metrics were derived from this record, making it possible to trace an aggregate result back to its evidence and review the classification decision.</p>
 <div class="chapter-subhead"><h3 class="editorial-subchapter-title">Interpretation and reporting engine</h3></div>
 </div>
 <div class="editorial-grid editorial-grid--split">
@@ -287,7 +289,7 @@
   <div><span class="method-no" aria-hidden="true">03</span><h3 class="editorial-module-title">Reproducibility</h3>
 <p>I ran the analysis repeatedly on the same dataset to identify variations.</p>
 <p>As I refined the architecture and rules, the runs produced increasingly consistent results.</p>
-<p>Once the system was stable enough, I used AI to help develop a set of reference tests, or <em>golden tests</em>, to stress-test the system and verify how it behaved in different scenarios.</p>
+<p>Once the system was stable enough, I used AI to help develop a documented suite of <strong>18 reference test cases</strong>, or <em>golden tests</em>, covering incomplete files, classification ambiguities, result integrity, and repeatability.</p>
   </div>
 </div>
 <div class="reading-copy">
@@ -329,6 +331,22 @@
 </figure>
 <div class="reading-copy">
 <p>The aim was to support different levels of reading while keeping the underlying evidence accessible.</p>
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Cross-checking interpretations before turning them into findings</h3></div>
+<p>To reduce dependence on a single interpretation, I designed a protocol that examined the same corpus from three perspectives: recurring topics, their effect on the experience, and when or how they occurred. A final cross-check sought to consolidate coherent patterns supported by evidence, without altering the analysis engine's metrics.</p>
+</div>
+<figure class="editorial-figure editorial-figure--open ia-consensus" aria-labelledby="ia-consensus-caption">
+  <figcaption id="ia-consensus-caption"><span class="eyebrow editorial-label">Semantic exploration</span><strong>Three perspectives, one synthesis</strong></figcaption>
+  <div class="ia-consensus-source ia-node"><span class="eyebrow editorial-label">Same source</span><strong>Customer comments</strong></div>
+  <ol class="ia-consensus-perspectives" role="list">
+    <li class="ia-node"><span class="eyebrow editorial-label">01 / Topic</span><strong>What are customers talking about?</strong></li>
+    <li class="ia-node"><span class="eyebrow editorial-label">02 / Experience</span><strong>How does it affect them?</strong></li>
+    <li class="ia-node"><span class="eyebrow editorial-label">03 / Context</span><strong>Where and how does it happen?</strong></li>
+  </ol>
+  <div class="ia-consensus-merge ia-node"><strong>Cross-check and consensus</strong><p>Patterns are compared, retaining those supported by converging evidence.</p></div>
+  <div class="ia-consensus-result ia-node"><span class="eyebrow editorial-label">Output</span><strong>Findings supported by evidence</strong><p>Product hypotheses and opportunities for intervention.</p></div>
+  <p class="editorial-note ia-consensus-note">Three analytical perspectives within the original assistant; not three independently executed models.</p>
+</figure>
+<div class="reading-copy">
 <p>The reports showed how metrics changed, which segments experienced the most difficulty, which problems recurred, and what opportunities warranted further investigation.</p>
 <p>Taking inspiration from Google Trends, I also visualized recurring concepts over time to see what customers were commenting on, when patterns emerged, and how they evolved throughout the reporting period.</p>
 <p>Interactive elements in the HTML report made this information easier to explore.</p>

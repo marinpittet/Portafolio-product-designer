@@ -28,7 +28,7 @@
   --editorial-pull: clamp(1.5rem, 2vw, 1.75rem);
   --editorial-note: .8125rem;
   --editorial-label: .6875rem;
-  --editorial-measure: 71ch;
+  --editorial-measure: 58ch;
   --editorial-gutter: clamp(20px, 5.1vw, 100px);
   --editorial-gap: clamp(20px, 3.2vw, 48px);
   --editorial-figure: clamp(28px, 4vw, 58px);
@@ -56,7 +56,7 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.editorial-home :is(.hero h1, .hero .subtitle) .editorial-highlight { color: var(--color-highlight-text); }
+.editorial-home :is(.hero h1, .hero .subtitle) .editorial-highlight { color: var(--color-highlight-text); font-weight: 700; }
 .chapter-invert .editorial-highlight { color: var(--color-highlight-on-dark); background: none; }
 .editorial-case :is(.reading-copy, .lead) strong,
 .editorial-home :is(.body-copy, .description) strong { font-weight: 700; }
@@ -180,6 +180,7 @@
   margin-block: 10px;
   font: 400 clamp(1.5rem, 2.85vw, 2.625rem)/1.13 var(--serif);
   letter-spacing: -.045em;
+  text-wrap: balance;
   color: var(--accent);
 }
 .editorial-statline .editorial-stat-featured {

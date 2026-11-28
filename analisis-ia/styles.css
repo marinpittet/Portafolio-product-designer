@@ -168,3 +168,75 @@
 @media (max-width: 479px) {
     .analisis-ia .case-overview h2 { margin-bottom: 16px; }
 }
+
+/* Semantic protocol: editorial, responsive, text-based diagram. */
+.analisis-ia .ia-consensus { --consensus-gap: 24px; --consensus-column-gap: clamp(10px, 2vw, 24px); }
+.analisis-ia .ia-consensus :is(.ia-consensus-source,.ia-consensus-merge,.ia-consensus-result) {
+  max-width: 520px; margin-inline: auto; text-align: center; position: relative;
+}
+.analisis-ia .ia-consensus :is(.ia-consensus-source,.ia-consensus-result) { background: var(--green-soft); border-color: var(--green); }
+.analisis-ia .ia-consensus-perspectives {
+  display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--consensus-column-gap);
+  margin: var(--consensus-gap) 0; padding: 0; list-style: none; position: relative;
+  --branch-inset: calc((100% - var(--consensus-column-gap) - var(--consensus-column-gap)) / 6 - 1px);
+}
+.analisis-ia .ia-consensus-perspectives > li { min-width: 0; position: relative; text-align: center; }
+.analisis-ia .ia-consensus-perspectives::before,
+.analisis-ia .ia-consensus-perspectives::after {
+  content: ""; position: absolute; left: var(--branch-inset); right: var(--branch-inset); border-top: 1px solid var(--green);
+}
+.analisis-ia .ia-consensus-perspectives::before { top: -12px; }
+.analisis-ia .ia-consensus-perspectives::after { bottom: -12px; }
+.analisis-ia .ia-consensus-perspectives > li::before,
+.analisis-ia .ia-consensus-perspectives > li::after,
+.analisis-ia .ia-consensus-source::after,
+.analisis-ia .ia-consensus-merge::before,
+.analisis-ia .ia-consensus-result::before {
+  content: ""; position: absolute; left: 50%; height: 14px; border-left: 1px solid var(--green);
+}
+.analisis-ia .ia-consensus-perspectives > li::before,
+.analisis-ia .ia-consensus-merge::before,
+.analisis-ia .ia-consensus-result::before { bottom: 100%; }
+.analisis-ia .ia-consensus-perspectives > li::after,
+.analisis-ia .ia-consensus-source::after { top: 100%; }
+.analisis-ia .ia-consensus-result { margin-top: var(--consensus-gap); }
+.analisis-ia .ia-consensus-result::before { height: calc(var(--consensus-gap) + 2px); }
+.analisis-ia .ia-consensus > .ia-consensus-note { width: 100%; max-width: none; margin: 16px auto 0; text-align: center; }
+/* Each outer elbow is one continuous border, anchored to its own card.
+   The horizontal arm overlaps the central stem instead of meeting a separate
+   line at the outer corner (avoids fractional-pixel gaps in WebKit). */
+@media (min-width: 700px) {
+  .analisis-ia .ia-consensus-perspectives::before,
+  .analisis-ia .ia-consensus-perspectives::after { display: none; }
+  .analisis-ia .ia-consensus-perspectives > li:first-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:first-child::after,
+  .analisis-ia .ia-consensus-perspectives > li:last-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:last-child::after {
+    width: calc(100% + var(--consensus-column-gap) + 4px);
+    height: 13px;
+  }
+  .analisis-ia .ia-consensus-perspectives > li:first-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:first-child::after {
+    left: 50%; right: auto; border-left: 1px solid var(--green);
+  }
+  .analisis-ia .ia-consensus-perspectives > li:last-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:last-child::after {
+    right: 50%; left: auto; border-left: 0; border-right: 1px solid var(--green);
+  }
+  .analisis-ia .ia-consensus-perspectives > li:is(:first-child,:last-child)::before {
+    border-top: 1px solid var(--green);
+  }
+  .analisis-ia .ia-consensus-perspectives > li:is(:first-child,:last-child)::after {
+    border-bottom: 1px solid var(--green);
+  }
+}
+@media (max-width: 699px) {
+  .analisis-ia .ia-consensus-perspectives { grid-template-columns: minmax(0,1fr); gap: 8px; padding-left: 16px; border-left: 1px solid var(--green); }
+  .analisis-ia .ia-consensus-perspectives::before,
+  .analisis-ia .ia-consensus-perspectives::after { left: -1px; right: calc(50% - 1px); height: 12px; border-left: 1px solid var(--green); }
+  .analisis-ia .ia-consensus-perspectives::after { border-top: 0; border-bottom: 1px solid var(--green); }
+  .analisis-ia .ia-consensus-perspectives > li { text-align: left; }
+  .analisis-ia .ia-consensus-perspectives > li::before { left: auto; right: 100%; top: 50%; bottom: auto; width: 18px; height: 0; border-left: 0; border-top: 1px solid var(--green); }
+  .analisis-ia .ia-consensus-perspectives > li::after { display: none; }
+}
+@media print { .analisis-ia .ia-consensus { break-inside: avoid; } }

@@ -33,3 +33,11 @@ HTML original recuperado desde Portfolio/MVP/sitio-web/sitio-web. Se conserva un
 1. Extrae `sitio-web.zip`. Abre una terminal en la carpeta `sitio-web` y ejecuta `python -m http.server 8000`.
 2. Abre `http://localhost:8000/#proyectos` en el navegador. El selector ES / EN conserva la sección abierta.
 3. Tras aprobar QA, copia el contenido de la carpeta a la raíz de la rama que GitHub Pages tiene configurada para publicar. Conserva el archivo `.nojekyll`. Para este repositorio, la fuente documentada es `main` y la carpeta raíz.
+
+
+## Publicación del caso 02 · 2026-11-28
+
+- Se promueven desde `/test-QA/` exclusivamente las mejoras aprobadas de portada y capítulos 04–07 del Analizador semántico (ES/EN), incluidos ICQ/IEF, ledger, golden tests y diagrama de exploración semántica. CSS `semantic-03` con nota centrada y codos continuos.
+- Se conserva íntegra la navegación productiva (`navigation.css?v=2`, `navigation.js?v=1`). Las páginas productivas no incluyen `noindex`; QA conserva esa etiqueta.
+- No se regeneraron traducciones con `i18n/build_english.py`; se publican las páginas ES/EN revisadas. Antes de usar el generador, actualizar su diccionario y comprobar que conserva la navegación y las traducciones aprobadas.
+- Verificación: las cuatro páginas publicadas coinciden con las versiones QA salvo la etiqueta `noindex`. CSS específico idéntico a QA. Validación visual y estado del despliegue de Pages pendientes de comprobar en navegador.

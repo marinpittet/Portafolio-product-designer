@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
 <script defer src="../caso-tef/rail-back.js"></script>
 <link rel="stylesheet" href="../assets/css/editorial.css?v=editorial-05">
-<link rel="stylesheet" href="./styles.css?v=editorial-05">
+<link rel="stylesheet" href="./styles.css?v=semantic-01">
 <link rel="alternate" hreflang="es" href="./index.html">
 <link rel="alternate" hreflang="en" href="./index.en.html">
 <script src="../assets/js/language.js" defer></script>
@@ -202,6 +202,7 @@
 <p>Una proporción importante de los comentarios contenía únicamente valoraciones genéricas, sin información suficiente para identificar una funcionalidad, un problema o una etapa concreta.</p>
 <p>En lugar de intentar interpretar aquello que el usuario no había expresado, establecí una categoría para los comentarios no clasificables y contemplé la posibilidad de no asignarles una etapa del recorrido.</p>
 <p>El objetivo no era maximizar artificialmente la cantidad de comentarios clasificados, sino preservar la calidad de la evidencia.</p>
+<p>Para hacer visible ese límite, incorporé dos indicadores propios: el <strong>ICQ</strong>, que medía qué proporción de respuestas incluía comentarios utilizables, y el <strong>IEF</strong>, que medía qué proporción de esos comentarios podía asociarse explícitamente a una etapa del recorrido. Así podía distinguir la cobertura de la información de su capacidad para orientar un diagnóstico, sin confundirlas con precisión estadística.</p>
 </div>
 <aside class="editorial-aside"><p>La ausencia de información también debía ser representada correctamente por el sistema.</p></aside>
 </div>
@@ -226,11 +227,11 @@
   <div class="ia-flow-source"><span class="eyebrow editorial-label">Entrada común</span><strong>Exportación de NPS · CSV</strong></div>
   <div class="ia-flow-lanes">
     <div class="ia-flow-lane">
-      <div class="ia-node"><span class="eyebrow editorial-label">Motor de análisis</span><strong>Normalizar, calcular y clasificar</strong><p>Genera el paquete de resultados estructurados.</p></div>
+      <div class="ia-node"><span class="eyebrow editorial-label">Motor de análisis</span><strong>Normalizar, calcular y clasificar</strong><p>Genera el paquete de resultados estructurados y un registro de clasificación auditable.</p></div>
       <div class="ia-node"><span class="eyebrow editorial-label">Motor de interpretación</span><strong>Comunicar los resultados</strong><p>Usa los indicadores del paquete sin recalcularlos.</p></div>
     </div>
     <div class="ia-flow-lane ia-flow-explore">
-      <div class="ia-node"><span class="eyebrow editorial-label">Comentarios originales</span><strong>Conservar los textos para exploración</strong></div>
+      <div class="ia-node"><span class="eyebrow editorial-label">Registro de clasificación</span><strong>Conservar los textos y su evidencia para exploración</strong></div>
       <div class="ia-node"><span class="eyebrow editorial-label">Motor de interpretación</span><strong>Explorar patrones semánticos</strong><p>Identifica conceptos e hipótesis complementarias.</p></div>
     </div>
   </div>
@@ -253,6 +254,7 @@
 <p>La normalización permitía trabajar con registros JSON y JSONL, evitando la necesidad de consultar repetidamente los archivos originales y reduciendo los problemas asociados a su estructura.</p>
 <p>También incorporé una huella digital SHA-256 como mecanismo de identificación e integridad de los datos procesados.</p>
 <p>Cada fase tenía un propósito delimitado y debía utilizar los resultados correspondientes a las etapas anteriores.</p>
+<p>El análisis cualitativo generaba además un <strong>registro auditable de cada comentario (ledger)</strong>: conservaba el texto original, los términos que habían activado las reglas y la clasificación asignada. Los indicadores cualitativos se derivaban de ese registro, lo que permitía rastrear un resultado agregado hasta su evidencia y revisar la decisión de clasificación.</p>
 <div class="chapter-subhead"><h3 class="editorial-subchapter-title">Motor de interpretación y reportería</h3></div>
 </div>
 <div class="editorial-grid editorial-grid--split">
@@ -287,7 +289,7 @@
   <div><span class="method-no" aria-hidden="true">03</span><h3 class="editorial-module-title">Reproducibilidad</h3>
 <p>Ejecutaba repetidamente el análisis sobre un mismo conjunto de datos para identificar variaciones.</p>
 <p>A medida que refinaba la arquitectura y las reglas, las ejecuciones comenzaron a producir resultados cada vez más consistentes.</p>
-<p>Una vez alcanzada una estabilidad suficiente, desarrollé con apoyo de IA un conjunto de pruebas de referencia, o <em>golden tests</em>, para estresar el sistema y comprobar su comportamiento ante distintos escenarios.</p>
+<p>Una vez alcanzada una estabilidad suficiente, desarrollé con apoyo de IA una suite documentada de <strong>18 casos de prueba de referencia</strong>, o <em>golden tests</em>, que cubrían desde archivos incompletos y ambigüedades de clasificación hasta la integridad de los resultados y la repetibilidad de la ejecución.</p>
   </div>
 </div>
 <div class="reading-copy">
@@ -329,6 +331,22 @@
 </figure>
 <div class="reading-copy">
 <p>La intención era facilitar distintos niveles de consumo de la información sin perder la posibilidad de consultar su fundamento.</p>
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Contrastar interpretaciones antes de convertirlas en hallazgos</h3></div>
+<p>Para reducir la dependencia de una única lectura interpretativa, diseñé un protocolo que abordaba el mismo corpus desde tres perspectivas: los temas recurrentes, su efecto en la experiencia y el momento o mecanismo en que ocurrían. Un contraste final buscaba consolidar patrones coherentes y respaldados por evidencia, sin alterar los indicadores del motor de análisis.</p>
+</div>
+<figure class="editorial-figure editorial-figure--open ia-consensus" aria-labelledby="ia-consensus-caption">
+  <figcaption id="ia-consensus-caption"><span class="eyebrow editorial-label">Exploración semántica</span><strong>Tres perspectivas, una síntesis</strong></figcaption>
+  <div class="ia-consensus-source ia-node"><span class="eyebrow editorial-label">Misma fuente</span><strong>Comentarios de clientes</strong></div>
+  <ol class="ia-consensus-perspectives" role="list">
+    <li class="ia-node"><span class="eyebrow editorial-label">01 / Temática</span><strong>¿De qué hablan los usuarios?</strong></li>
+    <li class="ia-node"><span class="eyebrow editorial-label">02 / Experiencia</span><strong>¿Cómo les afecta?</strong></li>
+    <li class="ia-node"><span class="eyebrow editorial-label">03 / Contexto</span><strong>¿Dónde y cómo ocurre?</strong></li>
+  </ol>
+  <div class="ia-consensus-merge ia-node"><strong>Contraste y consenso</strong><p>Se contrastan los patrones y se conservan aquellos respaldados por evidencia convergente.</p></div>
+  <div class="ia-consensus-result ia-node"><span class="eyebrow editorial-label">Salida</span><strong>Hallazgos respaldados por evidencia</strong><p>Hipótesis y oportunidades de intervención.</p></div>
+  <p class="editorial-note ia-consensus-note">Tres perspectivas de análisis dentro del asistente original, no tres modelos ejecutados de forma independiente.</p>
+</figure>
+<div class="reading-copy">
 <p>Los informes permitían comprender cómo evolucionaban los indicadores, qué segmentos presentaban mayores dificultades, qué problemas se repetían y dónde existían oportunidades que merecían ser investigadas.</p>
 <p>Inspirándome en Google Trends, incorporé también visualizaciones de evolución temporal de los conceptos recurrentes, buscando comprender no solo qué estaban comentando los clientes, sino cuándo aparecían determinados patrones y cómo se comportaban a lo largo del período analizado.</p>
 <p>El informe HTML incorporaba elementos interactivos que facilitaban la exploración de esta información.</p>

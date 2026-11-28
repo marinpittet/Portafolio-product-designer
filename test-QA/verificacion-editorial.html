@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Revisión del sistema editorial</title>
+<meta name="robots" content="noindex">
+<style>
+body { font: 14px system-ui; margin: 12px }
+button, select { margin: 4px; font: inherit }
+.frames { display: grid; gap: 12px; grid-template-columns: max-content max-content }
+iframe { display: block; border: none; height: 810px }
+pre { white-space: pre-wrap }
+</style>
+<h1>Revisión del sistema editorial</h1>
+<button id="run">Ejecutar matriz</button>
+<label>Página <select id="page"></select></label>
+<label>Ancho <select id="width"></select></label>
+<label>Sección <select id="section"><option value="">Portada</option><option>sobre-mi</option><option>contexto</option><option>instrumentacion</option><option>arquitectura</option><option>resultados</option><option>retrospectiva</option><option>implementacion</option></select></label>
+<button id="compare">Comparar</button>
+<p id="result" aria-live="polite"></p>
+<details id="report" hidden><summary>Resultados por página y ancho</summary><pre id="details"></pre></details>
+<div class="frames" id="frames"></div>
+<script>
+const widths = [1920, 1440, 1280, 1279, 1024, 800, 799, 393, 320];
+const pages = ['index.html', 'index.en.html', 'caso-tef/index.html', 'caso-tef/index.en.html', 'analisis-ia/index.html'];
+const selectors = ['h1','h2','h3','.reading-copy','.editorial-grid','.ia-flow-lanes','.ia-poc-grid','.editorial-table','.hero-meta','.hero-layout','.project-card','.topbar'];
+const pageInput = document.getElementById('page');
+const widthInput = document.getElementById('width');
+const frames = document.getElementById('frames');
+const result = document.getElementById('result');
+pages.forEach(p => pageInput.add(new Option(p)));
+widths.forEach(w => widthInput.add(new Option(w)));
+function longestLine(win, p) {
+  if (!p) return null;
+  const walker = win.document.createTreeWalker(p, NodeFilter.SHOW_TEXT);
+  const lines = new Map();
+  let node;
+  while ((node = walker.nextNode())) {
+    const range = win.document.createRange();
+    for (let i = 0; i < node.length; i++) {
+      range.setStart(node, i);
+      range.setEnd(node, i + 1);
+      const rect = range.getBoundingClientRect();
+      if (rect.width === 0) continue;
+      const line = Math.round(rect.top);
+      lines.set(line, 1 + (lines.get(line) || 0));
+    }
+  }
+  return Math.max(...lines.values());
+}
+function openFrame(env, page, w, anchor) {
+  return new Promise(resolve => {
+    const container = document.createElement('div');
+    const label = document.createElement('p');
+    label.textContent = (env === 'baseline' ? 'Producción' : 'Propuesta') + ' · ' + page + ' · ' + w + ' px';
+    const frame = document.createElement('iframe');
+    frame.title = label.textContent;
+    frame.width = w;
+    frame.addEventListener('load', async () => {
+      const win = frame.contentWindow;
+      const doc = frame.contentDocument;
+      await doc.fonts.ready;
+      resolve({frame, win, doc, container});
+    }, {once: true});
+    frame.src = (env === 'baseline' ? '../' : './') + page + (anchor ? '#' + anchor : '');
+    container.append(label, frame);
+    frames.append(container);
+  });
+}
+function inspect({win, doc}, w) {
+  const area = doc.documentElement.clientWidth;
+  const over = [...doc.querySelectorAll(selectors.join(','))].filter(el => {
+    const box = el.getBoundingClientRect();
+    return box.width && (box.right > area + 2 || box.left < -2 || el.scrollWidth > el.clientWidth + 2);
+  }).map(e => e.id || (typeof e.className === 'string' && e.className) || e.tagName);
+  const missingImages = [...doc.images].filter(i => i.complete && !i.naturalWidth).map(i => i.getAttribute('src'));
+  const missingStyles = [...doc.querySelectorAll('link[rel="stylesheet"]')].filter(l => !l.sheet).map(l => l.getAttribute('href'));
+  const h2 = doc.querySelector('.chapter-head h2');
+  const h3 = doc.querySelector('.chapter-subhead h3');
+  const size = el => el ? parseFloat(win.getComputedStyle(el).fontSize) : null;
+  const copy = doc.querySelector('.chapter:not(.chapter-invert) .reading-copy > p, .intro .body-copy');
+  const header = doc.querySelector('.chapter-nav, .site-nav');
+  return {
+    w, actual:win.innerWidth, scroll:doc.documentElement.scrollWidth - area,
+    h1:size(doc.querySelector('h1')), h2:size(h2), h3:size(h3),
+    lines:longestLine(win, copy),
+    header: header ? win.getComputedStyle(header.closest('aside') || header).display : null,
+    fonts:[...doc.fonts].filter(f => f.status === 'loaded').map(f => f.family),
+    over:[...new Set(over)], missingImages, missingStyles,
+    tables:doc.querySelectorAll('table').length, dialogs:doc.querySelectorAll('dialog,[role="dialog"]').length
+  };
+}
+document.getElementById('run').onclick = async () => {
+  frames.replaceChildren();
+  result.textContent = 'En curso';
+  const report = [];
+  for (const [page, width] of pages.flatMap(p => widths.map(w => [p,w]))) {
+    const pair = await Promise.all(['baseline','test-QA'].map(env => openFrame(env,page,width,'')));
+    report.push({page, before:inspect(pair[0],width), after:inspect(pair[1],width)});
+    result.textContent = 'Revisadas ' + report.length + ' de ' + (pages.length * widths.length) + ' combinaciones';
+    pair.forEach(x => x.container.remove());
+  }
+  const issues = report.filter(({after:a}) => a.actual !== a.w || a.scroll > 1 || a.over.length || a.missingImages.length || a.missingStyles.length);
+  result.textContent = report.length + ' combinaciones revisadas · ' + issues.length + ' con incidencias';
+  const details = document.getElementById('details');
+  details.textContent = JSON.stringify(report);
+  document.getElementById('report').hidden = false;
+};
+document.getElementById('compare').onclick = () => {
+  frames.replaceChildren();
+  const anchor = document.getElementById('section').value;
+  for (const env of ['baseline','test-QA']) openFrame(env,pageInput.value,Number(widthInput.value),anchor);
+};
+</script>
+</html>

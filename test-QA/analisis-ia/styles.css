@@ -12,7 +12,7 @@
 
 .analisis-ia .table-step { color: var(--accent); font-weight: 800; }
 .analisis-ia .question-followup { margin-top: clamp(32px, 5vw, 68px); }
-@media (800px <= width <= 1279px) {
+@media (800px <= width < 1280px) {
   .analisis-ia .chapter { scroll-margin-top: calc(var(--portfolio-header-height) + 16px); }
 }
 .analisis-ia .ia-process-track {
@@ -164,7 +164,7 @@
 .analisis-ia .ia-poc-grid > div:nth-child(3) { padding-left: 18px; }
 
 
-@media (max-width: 799px) {
+@media (width < 800px) {
   .analisis-ia .ia-process-track { grid-template-columns: 1fr; }
   .analisis-ia .ia-process-track li { display: grid; grid-template-columns: 24px 1fr; gap: 4px 10px; min-height: 0; padding: 12px 14px; }
   .analisis-ia .ia-process-track li small { grid-column: 2; }

@@ -75,7 +75,7 @@ const headingRoles = [
   'editorial-home-heading', 'editorial-subchapter-title', 'editorial-module-title',
   'editorial-card-title', 'editorial-card-summary'
 ];
-function inspectTypography(doc, win) {
+function inspectTypography(doc, win, width) {
   const issues = [];
   const sizes = {};
   const labels = el => el.textContent.trim().replace(/\s+/g, ' ').slice(0, 86);
@@ -109,7 +109,7 @@ function inspectTypography(doc, win) {
   for (const el of nodes('.editorial-card-summary')) {
     above(el.closest('.project-card').querySelector('.editorial-card-title'), el);
   }
-  const narrow = win.matchMedia('(max-width: 799px)').matches;
+  const narrow = width < 800;
   range('.editorial-info-title', narrow ? 22 : 28, narrow ? 28 : 36);
   range('.editorial-home-heading', narrow ? 23 : 26, narrow ? 26 : 32);
   range('.editorial-body, .reading-copy, .body-copy, .description', 16, 18);
@@ -131,8 +131,8 @@ function inspectTypography(doc, win) {
   }
   return {issues: [...new Set(issues)], sizes};
 }
-function inspectFigures(doc, win) {
-  const narrow = win.matchMedia('(max-width: 799px)').matches;
+function inspectFigures(doc, win, width) {
+  const narrow = width < 800;
   const min = narrow ? 16 : 24;
   const max = narrow ? 20 : 32;
   const issues = [];
@@ -178,8 +178,9 @@ function inspect({win, doc}, w, proposal = false) {
     editorial: doc.querySelector('link[href*="/editorial.css"]')?.getAttribute('href') ?? null,
     h1:size(doc.querySelector('h1')), h2:size(h2), h3:size(h3),
     lines:longestLine(win, copy),
-    typography: proposal ? inspectTypography(doc, win) : null,
-    figures: proposal ? inspectFigures(doc, win) : null,
+    typography: proposal ? inspectTypography(doc, win, w) : null,
+    figures: proposal ? inspectFigures(doc, win, w) : null,
+    rail: doc.querySelector('.rail') ? win.getComputedStyle(doc.querySelector('.rail')).display !== 'none' : null,
     header: header ? win.getComputedStyle(header.closest('aside') || header).display : null,
     fonts:[...doc.fonts].filter(f => f.status === 'loaded').map(f => f.family),
     over:[...new Set(over)], missingImages, missingStyles,
@@ -189,6 +190,7 @@ function inspect({win, doc}, w, proposal = false) {
 function listIssues(a) {
   const issues = [...a.typography.issues, ...a.figures.issues];
   if (!a.editorial) issues.push('Falta la hoja editorial compartida');
+  if (a.rail !== null && a.rail !== (a.w >= 1280)) issues.push('El índice lateral no coincide con el punto de quiebre de 1280 px');
   if (a.actual !== a.w) issues.push('El ancho renderizado difiere del solicitado');
   if (a.scroll > 1 || a.over.length) issues.push('Desbordamiento horizontal' + (a.over.length ? ' · ' + a.over.join(', ') : ''));
   if (a.missingImages.length) issues.push('Imágenes sin cargar · ' + a.missingImages.join(', '));

@@ -61,7 +61,7 @@ function openFrame(env, page, w, anchor) {
       await doc.fonts.ready;
       resolve({frame, win, doc, container});
     }, {once: true});
-    frame.src = (env === 'baseline' ? '../' : './') + page + (anchor ? '#' + anchor : '');
+    frame.src = (env === 'baseline' ? '../' : './') + page + '?revision=' + Date.now() + (anchor ? '#' + anchor : '');
     container.append(label, frame);
     frames.append(container);
   });
@@ -81,6 +81,7 @@ function inspect({win, doc}, w) {
   const header = doc.querySelector('.chapter-nav, .site-nav');
   return {
     w, actual:win.innerWidth, scroll:doc.documentElement.scrollWidth - area,
+    editorial: doc.querySelector('link[href*="/editorial.css"]')?.getAttribute('href') ?? null,
     h1:size(doc.querySelector('h1')), h2:size(h2), h3:size(h3),
     lines:longestLine(win, copy),
     header: header ? win.getComputedStyle(header.closest('aside') || header).display : null,
@@ -99,7 +100,7 @@ document.getElementById('run').onclick = async () => {
     result.textContent = 'Revisadas ' + report.length + ' de ' + (pages.length * widths.length) + ' combinaciones';
     pair.forEach(x => x.container.remove());
   }
-  const issues = report.filter(({after:a}) => a.actual !== a.w || a.scroll > 1 || a.over.length || a.missingImages.length || a.missingStyles.length);
+  const issues = report.filter(({after:a}) => !a.editorial || a.actual !== a.w || a.scroll > 1 || a.over.length || a.missingImages.length || a.missingStyles.length);
   result.textContent = report.length + ' combinaciones revisadas · ' + issues.length + ' con incidencias';
   const details = document.getElementById('details');
   details.textContent = JSON.stringify(report);

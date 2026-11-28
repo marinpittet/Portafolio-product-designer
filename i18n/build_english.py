@@ -45,7 +45,8 @@ def translate_text(match):
 def translate_attribute(match):
     return match.group(1) + '="' + escape(translate(unescape(match.group(2))), quote=True) + '"'
 
-pages = [('index.html', 'index.en.html'), ('caso-tef/index.html', 'caso-tef/index.en.html')]
+pages = [('index.html', 'index.en.html'), ('caso-tef/index.html', 'caso-tef/index.en.html'),
+         ('analisis-ia/index.html', 'analisis-ia/index.en.html')]
 if options.qa:
     pages = [('test-QA/analisis-ia/index.html', 'test-QA/analisis-ia/index.en.html')]
 
@@ -59,6 +60,8 @@ for source_name, target_name in pages:
     html = html.replace('<a href="./index.html" lang="es" >', '<a href="./index.html" lang="es" data-language-link>')
     if source_name == 'index.html':
         html = html.replace('href="./caso-tef/"', 'href="./caso-tef/index.en.html"')
+        html = html.replace('href="./analisis-ia/" hreflang="es">View case study (Spanish)',
+                            'href="./analisis-ia/index.en.html" hreflang="en">View case study')
     else:
         html = html.replace('href="../#/"', 'href="../index.en.html#/"')
     (ROOT / target_name).write_text(html, encoding='utf-8')

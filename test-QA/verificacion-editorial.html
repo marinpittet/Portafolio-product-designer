@@ -229,10 +229,9 @@ run.onclick = async () => {
   const report = [];
   try {
     for (const [page, width] of pages.flatMap(p => widths.map(w => [p,w]))) {
-      const environments = page === 'analisis-ia/index.en.html' ? ['test-QA'] : ['baseline','test-QA'];
-      const pair = await Promise.all(environments.map(env => openFrame(env,page,width,'')));
-      const before = pair.length === 2 ? inspect(pair[0],width) : null;
-      const after = inspect(pair.at(-1),width,true);
+      const pair = await Promise.all(['baseline','test-QA'].map(env => openFrame(env,page,width,'')));
+      const before = inspect(pair[0],width);
+      const after = inspect(pair[1],width,true);
       report.push({page, before, after, issues:listIssues(after)});
       result.textContent = 'Revisadas ' + report.length + ' de ' + (pages.length * widths.length) + ' combinaciones';
       pair.forEach(x => x.container.remove());
@@ -254,8 +253,7 @@ run.onclick = async () => {
 compare.onclick = () => {
   frames.replaceChildren();
   const anchor = document.getElementById('section').value;
-  const environments = pageInput.value === 'analisis-ia/index.en.html' ? ['test-QA'] : ['baseline','test-QA'];
-  for (const env of environments) openFrame(env,pageInput.value,Number(widthInput.value),anchor);
+  for (const env of ['baseline','test-QA']) openFrame(env,pageInput.value,Number(widthInput.value),anchor);
 };
 </script>
 </html>

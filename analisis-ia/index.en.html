@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#F7F8F5">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="description" content="Turning the voice of the customer into evidence for decision-making and continuous improvement in digital products.">
+<title>Semantic analyzer [AI] — Andrés Marín</title>
+<link rel="icon" type="image/svg+xml" sizes="any" href="../assets/images/isotype-andres-marin-eter.svg">
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<link rel="stylesheet" href="../assets/css/brand.css?v=layout-01">
+<link rel="stylesheet" href="../caso-tef/styles.css?v=editorial-05">
+<script src="../caso-tef/script.js?v=lang-01" defer></script>
+<link rel="stylesheet" href="../caso-tef/preview-eter-botanico.css?v=editorial-05">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+<script defer src="../caso-tef/rail-back.js"></script>
+<link rel="stylesheet" href="../assets/css/editorial.css?v=editorial-05">
+<link rel="stylesheet" href="./styles.css?v=editorial-05">
+<link rel="alternate" hreflang="es" href="./index.html">
+<link rel="alternate" hreflang="en" href="./index.en.html">
+<script src="../assets/js/language.js" defer></script>
+</head>
+<body class="editorial-case analisis-ia">
+<a class="skip-link" href="#contenido">Skip to content</a>
+<header class="topbar">
+<nav class="language-switch" aria-label="Language"><a href="./index.html" lang="es" data-language-link>ES</a><a href="./index.en.html" lang="en" aria-current="page">EN</a></nav>
+<a class="brand" href="../index.en.html#/" aria-label="Go to portfolio home"><img class="brand-icon" src="../assets/images/isotype-andres-marin-eter.svg" alt="" width="30" height="30" aria-hidden="true"> Andrés Marín</a>
+<a class="back-link" href="../index.en.html#/" aria-label="Back to portfolio"><svg class="back-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="../assets/icons/lucide/sprite.svg?v=nav-01#chevron-left"></use></svg><span class="back-label-desktop">Back to portfolio</span><span class="back-label-mobile">Back</span></a>
+</header>
+<div class="reading-meter" aria-hidden="true"><span id="reading-progress"></span></div>
+<div class="shell">
+<aside class="rail" aria-label="Case contents">
+<div class="rail-label">Case study <span>02 / 03</span></div>
+<nav class="chapter-nav" aria-label="Chapters">
+  <a href="#contexto"><span aria-hidden="true">01</span> Context</a>
+  <a href="#diagnostico"><span aria-hidden="true">02</span> Diagnosis</a>
+  <a href="#primera-incursion"><span aria-hidden="true">03</span> First exploration</a>
+  <a href="#instrumentacion"><span aria-hidden="true">04</span> Instrumentation</a>
+  <a href="#arquitectura"><span aria-hidden="true">05</span> Architecture</a>
+  <a href="#validacion"><span aria-hidden="true">06</span> Validation</a>
+  <a href="#reporteria"><span aria-hidden="true">07</span> Reporting</a>
+  <a href="#prueba-de-concepto"><span aria-hidden="true">08</span> Proof of concept</a>
+  <a href="#resultados"><span aria-hidden="true">09</span> Results</a>
+  <a href="#limites"><span aria-hidden="true">10</span> Limitations</a>
+  <a href="#retrospectiva"><span aria-hidden="true">11</span> Retrospective</a>
+  <a href="#reflexion"><span aria-hidden="true">12</span> Final reflection</a>
+  <a href="#demostracion"><span aria-hidden="true">13</span> Appendix</a>
+</nav>
+<p class="rail-bottom">Digital banking<br>Transactional product · 2025–2026</p>
+<a class="back-link rail-back" hidden href="../index.en.html#/"><svg class="back-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>Back to portfolio</a>
+</aside>
+<main id="contenido" class="story">
+<section class="case-hero" aria-labelledby="title">
+<div class="kicker editorial-label">02 / Case study <span class="kicker-line"></span> Product Design</div>
+<div class="hero-layout"><div>
+<p class="hero-series">Digital banking</p>
+<h1 id="title" class="editorial-main-title">Semantic<br><em class="editorial-highlight">analyzer [AI]</em></h1>
+<p class="hero-statement editorial-deck">Turning the voice of the customer into evidence for decision-making and continuous improvement in digital products.</p>
+</div></div>
+<section class="case-overview" id="project-overview" aria-labelledby="project-overview-title">
+<div class="hero-meta">
+  <div><span>My role</span><strong>Product Designer and initiator of the project.</strong></div>
+  <div><span>Scope</span><strong>An operational solution built with generative AI, followed by an automated proof of concept in Python.</strong></div>
+  <div><span>Period</span><strong>September 2025 — May 2026</strong></div>
+</div>
+<div class="hero-intro">
+<h2 id="project-overview-title" class="editorial-info-title">Project overview</h2>
+<div class="editorial-intro">
+<p class="editorial-note case-status">Case study based on professional work.</p>
+<p class="editorial-body">I began the research and exploratory testing in September 2025. Most development took place between April and May 2026.</p>
+<dl class="overview-details reading-copy">
+  <dt>Industry</dt><dd>Digital banking.</dd>
+  <dt>Responsibilities</dt><dd>Research, conceptualization, analysis methodology design, instrumentation, experimentation, validation, and AI-assisted development.</dd>
+  <dt>Who used the solution</dt><dd>Design, Product, Business, and After-Sales teams.</dd>
+</dl>
+<p class="case-mockup-note editorial-note">Product Design · Artificial intelligence · Data analysis · Automation</p>
+<p class="case-confidentiality editorial-note">For confidentiality, certain details of the original product have been abstracted. The working demo will use a separate e-commerce scenario with fully synthetic data.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="process-overview ia-process" aria-labelledby="ia-process-title">
+  <div class="eyebrow editorial-label">The process</div>
+  <h2 id="ia-process-title" class="editorial-info-title">From comments to report</h2>
+  <ol class="process-track" role="list">
+    <li><span aria-hidden="true">01</span><strong>Exploration</strong><small>Review NPS and experiment with AI</small></li>
+    <li><span aria-hidden="true">02</span><strong>Instrumentation</strong><small>Document the flow and build the glossary</small></li>
+    <li class="active"><span aria-hidden="true">03</span><strong>Analysis</strong><small>Process and validate the data</small></li>
+    <li><span aria-hidden="true">04</span><strong>Reporting</strong><small>Interpret findings and guide action</small></li>
+    <li><span aria-hidden="true">05</span><strong>Automation</strong><small>Integrate the process into a proof of concept</small></li>
+  </ol>
+</section>
+<section class="chapter chapter-narrow" id="contexto" aria-labelledby="contexto-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">01 / Context</div><h2 id="contexto-title" class="editorial-chapter-title">Plenty of data, few answers</h2></div>
+<div class="reading-copy">
+<p>As part of my work monitoring and improving a digital banking product, I wanted to understand what was affecting customer satisfaction and where the biggest opportunities for improvement lay.</p>
+<p>We had a dedicated Net Promoter Score (NPS) platform that provided quantitative metrics, trend charts, segment breakdowns, and unsolicited customer comments.</p>
+<p>But there was a significant gap between <strong>having information and being able to use it</strong>.</p>
+<p>The qualitative tools were largely limited to displaying comments by satisfaction level and generating word clouds. These tended to highlight adjectives and generic expressions that conveyed tone but offered little insight into context.</p>
+<p>Knowing that people found an experience slow, poor, or frustrating did not necessarily tell us what was happening, where, or why.</p>
+<p>To get answers, we had to review comments manually, identify patterns, and try to link them to specific product problems. That could take days or weeks depending on people's availability, and we lacked standardized classification criteria for comparing results over time.</p>
+<p class="pull-small">We had the information. The challenge was turning it into knowledge.</p>
+</div>
+</section>
+<section class="chapter chapter-invert" id="diagnostico" aria-labelledby="diagnostico-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">02 / Diagnosis</div><h2 id="diagnostico-title" class="editorial-chapter-title">Questioning the diagnosis</h2></div>
+<div class="editorial-grid editorial-grid--split">
+<div class="reading-copy">
+<p>As I reviewed the comments, I began to notice patterns at odds with the prevailing interpretation of the decline in NPS.</p>
+<p>Much of the discussion focused on the quality of the experience from a UX/UI perspective. Yet <strong>customers repeatedly described interruptions, delays, loss of continuity, and having to retry transactions</strong> to complete them.</p>
+<p>The available technical monitoring logs showed few errors, making it hard to assess the scale of these problems or make a case for investigating them first.</p>
+<p>There was, therefore, <strong>a discrepancy between the stability indicated by the monitoring data and the experience users described</strong>.</p>
+<p>I wanted to determine what was driving negative feedback, distinguish between different types of problems, and understand how much each mattered to the overall experience.</p>
+<p>My aim was to gather enough evidence to direct our efforts toward the interventions with the greatest potential impact, while allowing for problems in the design itself.</p>
+<p>When generative AI tools became available in the corporate environment, I saw an opportunity to explore a solution.</p>
+</div>
+<figure class="ia-signals">
+  <figcaption class="eyebrow editorial-label">Two signals about the same experience</figcaption>
+  <dl class="ia-signal-list">
+    <div><dt>Technical monitoring</dt><dd>Few errors in the logs we reviewed.</dd></div>
+    <div><dt>Customer feedback</dt><dd>Recurring delays, interruptions, and retries.</dd></div>
+  </dl>
+</figure>
+</div>
+</section>
+<section class="chapter" id="primera-incursion" aria-labelledby="primera-incursion-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">03 / First exploration</div><h2 id="primera-incursion-title" class="editorial-chapter-title">My first professional use of AI</h2></div>
+<div class="reading-copy">
+<p>Until then, I had used generative AI models only casually and for personal tasks. I had never built a professional AI solution and had no experience in programming or advanced data processing.</p>
+<p>I began by experimenting with exports from the NPS platform, looking to automate the qualitative analysis we were doing manually.</p>
+<p>The early results showed promise for interpretation. The model could recognize recurring topics, summarize large amounts of information, and suggest possible groupings.</p>
+<p>But inconsistencies appeared when I repeated the exercises.</p>
+<p><strong>The same dataset could yield different comment counts for each category</strong>, different interpretations, and different conclusions.</p>
+<p>I also ran into difficulties with file structure and size, and with the model's ability to retrieve and process information consistently over the course of a conversation.</p>
+<p>These limitations forced me to rethink the problem.</p>
+<p class="pull-small">I needed more than an assistant that could analyze comments. I needed to design an analysis system that was reliable, traceable, and reproducible.</p>
+<p>The challenge shifted from writing instructions for an AI model to designing how information would be structured, processed, and validated so the system could benefit from the model's capabilities without depending entirely on its judgment.</p>
+</div>
+</section>
+<section class="chapter" id="instrumentacion" aria-labelledby="instrumentacion-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">04 / Instrumentation</div><h2 id="instrumentacion-title" class="editorial-chapter-title">Instrumentation: teaching the system to <em class="editorial-highlight">understand the product</em></h2></div>
+<div class="reading-copy">
+<p>One of the biggest challenges was <strong>giving the model the product knowledge I had as a designer</strong>.</p>
+<p>Users referred to components, features, interactions, and terms whose meanings depended on the context of their experience.</p>
+<p>A language model could understand the words in a comment without necessarily knowing which product element they referred to, what that element did, or where it appeared in the journey.</p>
+<p>To address this, I developed several tools for adding context, processing the data, and classifying it.</p>
+<div class="chapter-subhead"><div class="eyebrow editorial-label">4.1</div><h3 class="editorial-subchapter-title">Turning a visual experience into structured knowledge</h3></div>
+<p>At first I considered using screenshots to show the model how the product worked.</p>
+<p>But interpreting images required additional resources and introduced uncertainty. Recognizing an interface visually did not mean understanding its behavior, its rules, or the relationships between its components.</p>
+<p>I decided to approach the problem from a different angle:</p>
+</div>
+<blockquote class="editorial-quote">How would I describe a digital experience to someone who <em class="editorial-highlight">cannot see it or interact with it directly?</em></blockquote>
+<div class="reading-copy question-followup">
+<p>That question led me to <strong>write a Markdown document that represented the product experience in text</strong>.</p>
+<p>The document described each screen in a consistent structure, covering:</p>
+</div>
+<figure class="editorial-figure editorial-figure--open ia-doc" aria-labelledby="ia-doc-caption">
+  <figcaption id="ia-doc-caption"><span class="eyebrow editorial-label">Instrumentation / Markdown</span><strong>Anatomy of a screen described in words</strong></figcaption>
+  <div class="editorial-grid editorial-grid--two ia-doc-grid">
+    <div><p class="ia-group-title">Context and hierarchy</p><ul role="list"><li>Its purpose within the journey.</li><li>The hierarchy and order of its content.</li></ul></div>
+    <div><p class="ia-group-title">Components and content</p><ul role="list"><li>The components on the screen and their visual characteristics.</li><li>Interface copy and messages.</li></ul></div>
+    <div><p class="ia-group-title">Interaction and behavior</p><ul role="list"><li>Interactions and microinteractions.</li><li>How elements behave.</li></ul></div>
+    <div><p class="ia-group-title">Tasks and variants</p><ul role="list"><li>The expected sequence for completing each task.</li><li>Relationships and differences between flow variants.</li></ul></div>
+  </div>
+</figure>
+<div class="reading-copy">
+<p>The goal went beyond documenting a journey. I was building a representation of the product that a system could understand without direct access to the experience.</p>
+<p>That turned knowledge normally held in interfaces, prototypes, and the designer's own experience into structured context the AI could use.</p>
+<div class="chapter-subhead"><div class="eyebrow editorial-label">4.2</div><h3 id="instrumentacion-table-title" class="editorial-subchapter-title">Putting comments in the context of the journey</h3></div>
+<p>The written account of the experience made it possible to see which elements belonged to each stage.</p>
+<p>At a high level, the transaction process could be represented in five stages:</p>
+</div>
+<div class="editorial-table">
+<table aria-labelledby="instrumentacion-table-title"><thead><tr><th scope="col">Stage</th><th scope="col">Purpose</th></tr></thead><tbody>
+<tr><th scope="row"><span class="table-step">01.</span> Select a goal or destination</th><td>Define what operation the user wants to perform.</td></tr>
+<tr><th scope="row"><span class="table-step">02.</span> Enter details and amounts</th><td>Set the parameters of the transaction.</td></tr>
+<tr><th scope="row"><span class="table-step">03.</span> Review and confirm</th><td>Check the information and confirm the user's intent.</td></tr>
+<tr><th scope="row"><span class="table-step">04.</span> Authorization</th><td>Verify and authorize the transaction.</td></tr>
+<tr><th scope="row"><span class="table-step">05.</span> Outcome and completion</th><td>Communicate the outcome and finish the process.</td></tr>
+</tbody></table>
+</div>
+<div class="reading-copy">
+<p>Some elements appeared only at one stage, while others appeared throughout the journey.</p>
+<p>For example, a reference to an element unique to the final screen could point to that stage. A generic mention of a button offered too little information to place it.</p>
+<p>This distinction was essential for building rules that used context to link comments to stages and prevented the model from assigning them arbitrarily.</p>
+<div class="chapter-subhead"><div class="eyebrow editorial-label">4.3</div><h3 class="editorial-subchapter-title">Building the glossary and taxonomy</h3></div>
+<p>At the same time, I needed a common vocabulary for classifying comments.</p>
+<p>I began by manually reviewing responses from one period, identifying recurring themes, and defining categories relevant to the product.</p>
+<p>I then used generative AI to expand the keyword list, recognize common expressions, and explore possible relationships between terms.</p>
+<p><strong>Human validation</strong> remained essential. Customers used abbreviations, misspellings, informal names, and expressions specific to the product that could be difficult to interpret in isolation.</p>
+<p>I built a glossary of keywords, language variants, synonyms, and possible misspellings, linking them to functional categories and stages of the journey.</p>
+<p>I also experimented with automating the discovery of new terms using unigram and bigram analysis, spelling similarity, and AI-generated taxonomy guides.</p>
+<p>Those approaches were not stable enough for this application. I decided to <strong>retain a controlled glossary</strong>, adding terms only after reviewing the evidence and applying product knowledge.</p>
+<p>To resolve overlaps between categories, I added precedence rules that defined which terms should take priority when a match was ambiguous.</p>
+<div class="chapter-subhead"><div class="eyebrow editorial-label">4.4</div><h3 class="editorial-subchapter-title">Recognizing the limits of the information</h3></div>
+</div>
+<div class="editorial-grid editorial-grid--split">
+<div class="reading-copy">
+<p>A substantial share of comments contained only generic ratings, with too little information to identify a feature, issue, or specific stage.</p>
+<p>I created a category for comments that could not be classified and allowed the system to leave the journey stage unassigned when users had not provided enough information.</p>
+<p>The goal was to preserve the quality of the evidence and avoid inflating the number of classified comments.</p>
+</div>
+<aside class="editorial-aside"><p>The system also needed to represent missing information accurately.</p></aside>
+</div>
+<div class="reading-copy">
+<div class="chapter-subhead"><div class="eyebrow editorial-label">4.5</div><h3 class="editorial-subchapter-title">A methodology that can transfer to other products</h3></div>
+<p>Building these tools made it possible to <strong>separate product-specific knowledge from the general analysis logic</strong>.</p>
+<p>To apply the methodology to another flow, the aim was to adapt the documentation, glossary, and rules while preserving the underlying system design.</p>
+<p>The structured account of the experience also proved useful independently of the analyzer.</p>
+<p>I later reused this documentation method on other projects, including reviews of digital experiences against regulatory requirements from Chile's Financial Market Commission (CMF).</p>
+<p>What started as a way to contextualize comments became a way to convey product knowledge to AI systems for other kinds of professional work.</p>
+</div>
+</section>
+<section class="chapter chapter-decision" id="arquitectura" aria-labelledby="arquitectura-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">05 / Architecture</div><h2 id="arquitectura-title" class="editorial-chapter-title">Designing the <em class="editorial-highlight">analysis architecture</em></h2></div>
+<div class="reading-copy">
+<p>Experimentation showed me that some tasks called for a different approach than relying on the generative capabilities of a large language model (LLM).</p>
+<p><strong>Calculations, classifications, and comparisons over time needed to be consistent</strong>. Pattern interpretation, synthesis, and hypothesis exploration could benefit from a more flexible approach.</p>
+<p>With that distinction in mind, I designed a solution with two specialized assistants in the corporate ChatGPT environment.</p>
+</div>
+<figure class="editorial-figure editorial-figure--open ia-architecture" aria-labelledby="ia-architecture-caption">
+  <figcaption id="ia-architecture-caption"><span class="eyebrow editorial-label">Information flow</span><strong>Two assistants, one report</strong></figcaption>
+  <div class="ia-flow-source"><span class="eyebrow editorial-label">Shared input</span><strong>NPS export · CSV</strong></div>
+  <div class="ia-flow-lanes">
+    <div class="ia-flow-lane">
+      <div class="ia-node"><span class="eyebrow editorial-label">Analysis engine</span><strong>Normalize, calculate, and classify</strong><p>Produces a package of structured results.</p></div>
+      <div class="ia-node"><span class="eyebrow editorial-label">Interpretation engine</span><strong>Communicate the results</strong><p>Uses the metrics in the package without recalculating them.</p></div>
+    </div>
+    <div class="ia-flow-lane ia-flow-explore">
+      <div class="ia-node"><span class="eyebrow editorial-label">Original comments</span><strong>Keep the original text for exploration</strong></div>
+      <div class="ia-node"><span class="eyebrow editorial-label">Interpretation engine</span><strong>Explore semantic patterns</strong><p>Identifies additional concepts and hypotheses.</p></div>
+    </div>
+  </div>
+  <div class="ia-flow-outcome"><span class="eyebrow editorial-label">Output</span><strong>HTML report</strong><p>Reproducible results and exploratory findings.</p></div>
+</figure>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 id="arquitectura-table-title" class="editorial-subchapter-title">Analysis engine</h3></div>
+<p>The first assistant processed the data in five stages.</p>
+</div>
+<div class="editorial-table">
+<table aria-labelledby="arquitectura-table-title"><thead><tr><th scope="col">Phase</th><th scope="col">Function</th></tr></thead><tbody>
+<tr><th scope="row"><span class="table-step">00.</span> Normalization</th><td>Process the CSV files, extract the relevant information, and convert it into structured records.</td></tr>
+<tr><th scope="row"><span class="table-step">01.</span> Quantitative analysis</th><td>Calculate metrics and segment breakdowns that can be checked against the original source.</td></tr>
+<tr><th scope="row"><span class="table-step">02.</span> Qualitative analysis</th><td>Classify comments using glossaries, matching rules, and product context.</td></tr>
+<tr><th scope="row"><span class="table-step">03.</span> Consolidation</th><td>Combine the results of the preceding stages into a structured package.</td></tr>
+<tr><th scope="row"><span class="table-step">04.</span> Handoff</th><td>Generate an export file for the second assistant to process.</td></tr>
+</tbody></table>
+</div>
+<div class="reading-copy">
+<p>Normalization let me work with JSON and JSONL records, avoiding repeated reads of the original files and reducing issues arising from their structure.</p>
+<p>I also added a SHA-256 hash to identify the processed data and verify its integrity.</p>
+<p>Each stage had a defined purpose and used the relevant outputs from the preceding stages.</p>
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Interpretation and reporting engine</h3></div>
+</div>
+<div class="editorial-grid editorial-grid--split">
+<div class="reading-copy">
+<p>The second assistant received the results from the analysis engine and turned them into a report to support decision-making.</p>
+<p>Its job was to present the metrics, put the findings in context, and <strong>make recommendations without reinterpreting or recalculating the structured results</strong>.</p>
+<p>It also included a layer for semantic exploration based on the original comments.</p>
+<p>This layer helped identify related concepts, intentions, recurring patterns, and possible sources of friction that the predefined categories might have missed.</p>
+<p>Semantic interpretation served as a separate exploratory complement to the reproducible results from the engine.</p>
+</div>
+<aside class="editorial-aside"><p>AI could deepen our understanding of the information while preserving the evidence on which the analysis was based.</p></aside>
+</div>
+</section>
+<section class="chapter" id="validacion" aria-labelledby="validacion-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">06 / Validation</div><h2 id="validacion-title" class="editorial-chapter-title">Iterating, questioning, and validating</h2></div>
+<div class="reading-copy">
+<p>The final architecture was the result of dozens of iterations and hundreds of tests.</p>
+<p>In the early experiments, I relied mainly on the model's ability to interpret comments and assign categories. But each run could produce different results.</p>
+<p>To find the source of those variations, I began to <strong>separate responsibilities, structure the inputs, and progressively limit the decisions I delegated to the model</strong>.</p>
+<p>I validated the system at three levels.</p>
+</div>
+<div class="methods ia-methods">
+  <div><span class="method-no" aria-hidden="true">01</span><h3 class="editorial-module-title">Quantitative integrity</h3>
+<p>I checked the metrics calculated by the engine against those from the original platform.</p>
+<p>This made it possible to catch skipped records, processing errors, or inconsistencies in how the files were read before moving on to qualitative analysis.</p>
+  </div>
+  <div><span class="method-no" aria-hidden="true">02</span><h3 class="editorial-module-title">Classification accuracy</h3>
+<p>During the iterations, I added appendices that grouped the verbatim comments by their assigned categories.</p>
+<p>I reviewed the results by hand to identify errors, adjust keywords, resolve ambiguities, and refine the precedence rules.</p>
+<p>This audit showed what the system produced and helped explain why it misclassified particular comments.</p>
+  </div>
+  <div><span class="method-no" aria-hidden="true">03</span><h3 class="editorial-module-title">Reproducibility</h3>
+<p>I ran the analysis repeatedly on the same dataset to identify variations.</p>
+<p>As I refined the architecture and rules, the runs produced increasingly consistent results.</p>
+<p>Once the system was stable enough, I used AI to help develop a set of reference tests, or <em>golden tests</em>, to stress-test the system and verify how it behaved in different scenarios.</p>
+  </div>
+</div>
+<div class="reading-copy">
+<p>The process made it possible to move from one-off reports to analysis across reporting periods using comparable evaluation criteria.</p>
+<p>I initially separated the work into stages for quality control. This also addressed a limitation of the conversational environment: each operation could finish and produce files that the next stage could use to continue processing.</p>
+</div>
+</section>
+<section class="chapter" id="reporteria" aria-labelledby="reporteria-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">07 / Reporting</div><h2 id="reporteria-title" class="editorial-chapter-title">Designing information for <em class="editorial-highlight">decision-making</em></h2></div>
+<div class="reading-copy">
+<p>Classifying comments was only one part of the solution.</p>
+<p>The system's value depended on whether people with different responsibilities across the organization could understand and use its results.</p>
+<p>I designed a report that offered <strong>several levels of detail, from an executive overview to the evidence behind the findings</strong>.</p>
+<p>It included:</p>
+</div>
+<figure class="editorial-figure editorial-figure--open ia-report" aria-labelledby="ia-report-caption">
+  <figcaption id="ia-report-caption"><span class="eyebrow editorial-label">Reporting</span><strong>How to read the report</strong></figcaption>
+  <div class="editorial-grid editorial-grid--three ia-report-grid">
+    <div><p class="ia-group-title">Experience overview</p><ol start="1" role="list">
+      <li><span aria-hidden="true">01</span>Executive summary.</li>
+      <li><span aria-hidden="true">02</span>NPS overview.</li>
+      <li><span aria-hidden="true">03</span>Comparative context.</li>
+      <li><span aria-hidden="true">04</span>Performance by flow.</li>
+      <li><span aria-hidden="true">05</span>Performance by device.</li>
+      <li><span aria-hidden="true">06</span>Strengths of the experience.</li>
+    </ol></div>
+    <div><p class="ia-group-title">Diagnosis</p><ol start="7" role="list">
+      <li><span aria-hidden="true">07</span>Friction points classified by the engine.</li>
+      <li><span aria-hidden="true">08</span>Semantic patterns.</li>
+      <li><span aria-hidden="true">09</span>Journey and concentration of friction points.</li>
+      <li><span aria-hidden="true">10</span>Diagnostic summary.</li>
+    </ol></div>
+    <div><p class="ia-group-title">Action and supporting evidence</p><ol start="11" role="list">
+      <li><span aria-hidden="true">11</span>Prioritization of initiatives by impact and effort.</li>
+      <li><span aria-hidden="true">12</span>Action plan and follow-up.</li>
+      <li><span aria-hidden="true">13</span>Appendices, methodology, and transparency.</li>
+    </ol></div>
+  </div>
+</figure>
+<div class="reading-copy">
+<p>The aim was to support different levels of reading while keeping the underlying evidence accessible.</p>
+<p>The reports showed how metrics changed, which segments experienced the most difficulty, which problems recurred, and what opportunities warranted further investigation.</p>
+<p>Taking inspiration from Google Trends, I also visualized recurring concepts over time to see what customers were commenting on, when patterns emerged, and how they evolved throughout the reporting period.</p>
+<p>Interactive elements in the HTML report made this information easier to explore.</p>
+<p>What began as automation for manual analysis became a diagnostic tool that supported product prioritization.</p>
+</div>
+</section>
+<section class="chapter chapter-decision" id="prueba-de-concepto" aria-labelledby="prueba-de-concepto-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">08 / Proof of concept</div><h2 id="prueba-de-concepto-title" class="editorial-chapter-title">From an assistant to an <em class="editorial-highlight">automated proof of concept</em></h2></div>
+<div class="reading-copy">
+<p>The solution built on two Custom GPTs was functional and in operational use, but it <strong>still relied on me to run the stages</strong>, validate the results, and pass information between assistants.</p>
+<p>The process depended on the constraints of the conversational environment and on access to the corporate AI platform.</p>
+<p>To address those limitations, I explored a standalone Python implementation.</p>
+<p>I did not know how to program in Python, so I used Devin as an AI-assisted development tool.</p>
+<p>My role was to define how the product should work, transfer the methodology, set the requirements, and validate the implementation.</p>
+<p>The proof of concept could:</p>
+</div>
+<figure class="editorial-figure editorial-figure--contained ia-poc" aria-labelledby="ia-poc-caption">
+  <figcaption id="ia-poc-caption"><span class="eyebrow editorial-label">Proof of concept / Python</span><strong>From CSV to HTML report</strong></figcaption>
+  <div class="rollout ia-poc-grid">
+    <div><span>Input</span><strong>File upload</strong><ul role="list"><li>Import CSV files using a file picker or drag and drop.</li></ul></div>
+    <div><span>Processing</span><strong>Automatic execution</strong><ul role="list"><li>Automate data normalization and processing.</li><li>Run the analysis sequence without manual commands.</li><li>Reproduce the structured classification and categorization.</li></ul></div>
+    <div><span>Output</span><strong>Report ready to review</strong><ul role="list"><li>Generate the complete HTML report.</li></ul></div>
+  </div>
+</figure>
+<div class="reading-copy">
+<p>The proof of concept could <strong>reproduce the functionality of the previous solution in under three minutes</strong>, based on tests in the development environment.</p>
+<p>The next step was to turn it into a standalone, distributable product with a finished interface that other teams could access.</p>
+<p>That step remained open. Distribution within the corporate environment required further review and approval from cybersecurity, as well as an authorized channel for using the tool.</p>
+</div>
+</section>
+<section class="chapter" id="resultados" aria-labelledby="resultados-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">09 / Results</div><h2 id="resultados-title" class="editorial-chapter-title">Results and impact</h2></div>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 id="resultados-table-title" class="editorial-subchapter-title">From days of analysis to minutes of processing</h3></div>
+</div>
+<figure class="editorial-stat-figure" aria-labelledby="resultados-table-title" aria-describedby="resultados-metodo">
+  <dl class="editorial-grid editorial-grid--three editorial-statline">
+    <div><dt>Manual analysis</dt><dd class="editorial-stat-value">Days or weeks</dd><dd>Manual review and categorization</dd></div>
+    <div><dt>Custom GPTs</dt><dd class="editorial-stat-value">Under an hour</dd><dd>Automated processing in stages with human supervision</dd></div>
+    <div class="editorial-stat-featured"><dt>Python proof of concept</dt><dd class="editorial-stat-value">Under three minutes</dd><dd>Automated execution and report generation</dd></div>
+  </dl>
+  <figcaption class="editorial-note" id="resultados-metodo">Approximate times observed during the project. They do not represent a controlled benchmark.</figcaption>
+</figure>
+<div class="reading-copy">
+<p>Shorter processing times changed how quickly we could consult and analyze the information.</p>
+<p>I could produce reports for specific periods at stakeholders' request, compare multiple segments in a single day, and track changes month over month using consistent criteria.</p>
+<p>That made an occasional task, previously limited by the time available for reviewing comments, into a more responsive way to track the product.</p>
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">A shared diagnostic tool</h3></div>
+<p>The reports were used in working sessions with representatives from Product, After-Sales, and Design.</p>
+<p>The After-Sales team found the tool especially helpful for understanding what customers were experiencing and putting issues reported through support channels in context.</p>
+<p>The tool added a capability the original platform lacked: <strong>linking comments to features, stages of the journey, and recurring behavior patterns</strong>.</p>
+<p>It also helped identify meaningful differences between segments and devices, pointing more clearly to where interventions could help.</p>
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">A diagnosis supported by changes in the product</h3></div>
+</div>
+<div class="editorial-grid editorial-grid--split">
+<div class="reading-copy">
+<p>One of the reports' main contributions was making visible the role of operational difficulties in declining satisfaction.</p>
+<p>While the technical logs we reviewed showed relatively few errors, customer comments repeatedly described interruptions, retries, and loss of continuity during transactions.</p>
+<p>Structured analysis helped us assess these reports, identify how often the problems recurred, and flag <strong>operational stability as a priority for intervention</strong>.</p>
+<p>In the final months of the project, development efforts focused on resolving technical incidents and improving operational continuity without changing the experience design.</p>
+</div>
+<aside class="editorial-aside"><p>NPS rebounded significantly during this period.</p></aside>
+</div>
+<div class="reading-copy">
+<p>The change was consistent with the diagnosis and priorities identified in the reports. It supported the finding that interface design and usability alone could not explain the decline in satisfaction.</p>
+<p>Regardless of what drove the prioritization decisions, the results reinforced the analyzer's value as a diagnostic tool for distinguishing between kinds of problems and directing research toward opportunities with greater potential impact.</p>
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Adoption and organizational reach</h3></div>
+<p>Despite its usefulness in day-to-day work, the solution was not adopted across the organization.</p>
+<p>Collaboration patterns, resistance to changing established processes, and restrictions on distributing the tool limited its uptake in other teams' workflows.</p>
+<p>Report generation continued to depend mainly on me.</p>
+<p>The experience showed that the quality of an analytics solution alone does not guarantee adoption. Accessibility, integration into workflows, and the involvement of the people who will use the results matter just as much.</p>
+</div>
+</section>
+<section class="chapter" id="limites" aria-labelledby="limites-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">10 / Limitations</div><h2 id="limites-title" class="editorial-chapter-title">The limits of the analysis</h2></div>
+<div class="reading-copy">
+<p>The project revealed a limitation that improvements to the analysis engine alone could not address.</p>
+<p>The NPS survey appeared in context only after the user had successfully completed the transaction.</p>
+<p>That meant <strong>users who abandoned the flow or could not complete the transaction were excluded from feedback collection</strong>.</p>
+</div>
+<figure class="editorial-figure editorial-figure--open ia-limits" aria-labelledby="ia-limits-caption">
+  <figcaption id="ia-limits-caption"><span class="eyebrow editorial-label">Feedback coverage</span><strong>Who received the survey?</strong></figcaption>
+  <div class="ia-flow-source"><span class="eyebrow editorial-label">Starting point</span><strong>Start of the transaction</strong></div>
+  <div class="ia-limit-branches">
+    <div class="ia-node"><span class="eyebrow editorial-label">Completes the transaction</span><strong>Can respond to the NPS survey</strong></div>
+    <div class="ia-node ia-unobserved"><span class="eyebrow editorial-label">Leaves or cannot complete it</span><strong>Does not receive the survey</strong></div>
+  </div>
+</figure>
+<div class="reading-copy">
+<p>When I compared comments with conversion metrics, I saw that we lacked enough qualitative evidence to explain some of the stages with the highest drop-off.</p>
+<p>The system could identify more precisely the difficulties described by users who completed the transaction, but it could not recover information from people who had never had a chance to share it.</p>
+<p>I explored ways to collect feedback at other points in the journey. Existing rules about how we could contact customers limited what we could implement.</p>
+<p class="pull-small">Even good analysis cannot make up for information that was never captured.</p>
+<p>This broadened how I think about designing analytics tools. Processing the data correctly is only part of the work. We also have to understand how, when, and under what conditions it was collected.</p>
+</div>
+</section>
+<section class="chapter" id="retrospectiva" aria-labelledby="retrospectiva-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">11 / Retrospective</div><h2 id="retrospectiva-title" class="editorial-chapter-title">Retrospective: what I would do differently</h2></div>
+<div class="editorial-grid editorial-grid--two editorial-grid--matrix">
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Separate the dimensions of classification</h3></div>
+<p>One of the biggest opportunities for improvement lies in the original taxonomy.</p>
+<p>Some categories represented the nature of a problem, while others referred to features or specific points in the journey.</p>
+<p>This produced classification conflicts that I had to resolve with precedence rules.</p>
+<p>In a new implementation, I would separate those dimensions <strong>so a comment could describe the nature of the friction, where it occurred, its symptoms, and its consequences at the same time</strong>.</p>
+<p>I would also spend more time building and validating the initial taxonomy so the researcher's hypotheses did not unduly influence the analysis.</p>
+</div>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Combine reproducibility and semantic exploration</h3></div>
+<p>I would build the system on a standalone architecture from the outset, using Python for structured operations and evaluating semantic processing technologies that can recognize conceptual similarities beyond literal matches.</p>
+<p>I would explicitly separate reproducible metrics from interpretive findings and use automated tests and reference datasets to assess the quality of both.</p>
+</div>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Design a tool that goes beyond the report</h3></div>
+<p>I would develop the solution into a self-service platform with an interface for importing information, exploring segments, configuring searches, and viewing results without specialized data analysis knowledge.</p>
+<p>I am particularly interested in letting users define concepts or keywords and track how they change over time, so they can explore new hypotheses.</p>
+<p>The aim would be to lower the barriers to using specialized analytics platforms and put those capabilities within reach of people who make product decisions.</p>
+</div>
+<div class="reading-copy">
+<div class="chapter-subhead"><h3 class="editorial-subchapter-title">Support adoption from the start</h3></div>
+<p>I would involve key stakeholders from the earliest stages of definition to understand their needs, validate whether the features are useful, and make the tool easier to incorporate into their workflows.</p>
+<p>I would prioritize an accessible, distributable application that initially processes information locally and keeps it from being exposed to external services.</p>
+<p>In a second stage, I would explore integrating directly with the data sources, subject to the relevant security requirements, to reduce dependence on manual imports and enable automatically updated reports.</p>
+</div>
+</div>
+</section>
+<section class="chapter chapter-retro" id="reflexion" aria-labelledby="reflexion-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">12 / Final reflection</div><h2 id="reflexion-title" class="editorial-chapter-title">Final reflection</h2></div>
+<div class="reading-copy">
+<p>This was my first professional experience with AI, and it changed how I understood its possibilities in product design.</p>
+<p>I set out to automate a repetitive task and ended up designing a methodology that brought together product knowledge, information structuring, classification, validation, interpretation, and communication.</p>
+<p>I learned which problems could benefit from a language model's interpretive capabilities and which needed more tightly controlled processing.</p>
+<p>I also discovered the value of structuring and communicating what we know as designers so AI systems can reuse it.</p>
+<p>Beyond the technologies involved, the project strengthened my interest in designing products that extend people's capabilities, improve access to information, and support better-informed decisions.</p>
+</div>
+<blockquote class="closing-quote">The most valuable role for AI was to <em class="editorial-highlight">expand our ability to understand information and act on it while retaining human analysis.</em></blockquote>
+</section>
+<section class="chapter chapter-decision editorial-appendix" id="demostracion" aria-labelledby="demostracion-title">
+<div class="chapter-head"><div class="eyebrow editorial-label">13 / Appendix</div><h2 id="demostracion-title" class="editorial-info-title">Standalone demonstration</h2></div>
+<div class="reading-copy">
+<p class="editorial-note case-status">In development.</p>
+<p>To demonstrate the system without exposing confidential information from the original project, I will build a standalone implementation covering the full purchase journey of a fictional e-commerce store.</p>
+<p>This reconstruction will use fully synthetic data and incorporate what I learned during the professional project.</p>
+<p>The goal is to evolve the proof of concept into a working standalone product with a verifiable technical architecture, local processing, semantic exploration, interactive visualization, and automated report generation.</p>
+<p>The demonstration, the decisions behind its implementation, and the results of validation will be added to this section once development is complete.</p>
+</div>
+</section>
+<footer class="case-footer"><a href="../index.en.html#/" class="back-cta"><span class="back-cta-label"><svg class="back-icon" width="18" height="18" aria-hidden="true" focusable="false"><use href="../assets/icons/lucide/sprite.svg?v=nav-01#chevron-left"></use></svg>Back to portfolio</span><strong>Keep exploring</strong></a><span>Andrés Marín · Product Design · 2026</span></footer>
+</main>
+</div>
+</body>
+</html>

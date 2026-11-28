@@ -9,3 +9,5 @@ Antes de cualquier futura actualización, comparar los archivos de QA contra la 
 Verificación: comparación de árboles y contenido del repositorio; revisión visual responsive y despliegue en navegador pendientes.
 
 Ajuste visual QA: nota del diagrama de exploración semántica centrada en el ancho completo de la figura; conectores compensados por el gap real de columnas y unidos mediante un solape mínimo. CSS semantic-02 en ES/EN. Verificación visual en navegador pendiente.
+
+Corrección de las cuatro esquinas del esquema semántico tras captura del usuario: cada codo lateral utiliza un único borde CSS continuo, conectado al centro de su tarjeta y solapado con el eje central. Se mantiene la disposición móvil. Cache CSS semantic-03 (ES/EN). Revisión visual en navegador pendiente.

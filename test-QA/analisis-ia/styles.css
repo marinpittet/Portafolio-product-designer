@@ -202,6 +202,34 @@
 .analisis-ia .ia-consensus-result { margin-top: var(--consensus-gap); }
 .analisis-ia .ia-consensus-result::before { height: calc(var(--consensus-gap) + 2px); }
 .analisis-ia .ia-consensus > .ia-consensus-note { width: 100%; max-width: none; margin: 16px auto 0; text-align: center; }
+/* Each outer elbow is one continuous border, anchored to its own card.
+   The horizontal arm overlaps the central stem instead of meeting a separate
+   line at the outer corner (avoids fractional-pixel gaps in WebKit). */
+@media (min-width: 700px) {
+  .analisis-ia .ia-consensus-perspectives::before,
+  .analisis-ia .ia-consensus-perspectives::after { display: none; }
+  .analisis-ia .ia-consensus-perspectives > li:first-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:first-child::after,
+  .analisis-ia .ia-consensus-perspectives > li:last-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:last-child::after {
+    width: calc(100% + var(--consensus-column-gap) + 4px);
+    height: 13px;
+  }
+  .analisis-ia .ia-consensus-perspectives > li:first-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:first-child::after {
+    left: 50%; right: auto; border-left: 1px solid var(--green);
+  }
+  .analisis-ia .ia-consensus-perspectives > li:last-child::before,
+  .analisis-ia .ia-consensus-perspectives > li:last-child::after {
+    right: 50%; left: auto; border-left: 0; border-right: 1px solid var(--green);
+  }
+  .analisis-ia .ia-consensus-perspectives > li:is(:first-child,:last-child)::before {
+    border-top: 1px solid var(--green);
+  }
+  .analisis-ia .ia-consensus-perspectives > li:is(:first-child,:last-child)::after {
+    border-bottom: 1px solid var(--green);
+  }
+}
 @media (max-width: 699px) {
   .analisis-ia .ia-consensus-perspectives { grid-template-columns: minmax(0,1fr); gap: 8px; padding-left: 16px; border-left: 1px solid var(--green); }
   .analisis-ia .ia-consensus-perspectives::before,

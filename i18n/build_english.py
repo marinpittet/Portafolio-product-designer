@@ -1,5 +1,6 @@
 """Generate static English pages from the Spanish source and reviewed translations."""
 
+from argparse import ArgumentParser
 from html import escape, unescape
 from pathlib import Path
 import re
@@ -15,6 +16,10 @@ for line_number, line in enumerate((ROOT / 'i18n/en.tsv').read_text(encoding='ut
     if source in translations:
         raise ValueError(f'en.tsv:{line_number}: duplicate source: {source}')
     translations[source] = target
+
+parser = ArgumentParser(description=__doc__)
+parser.add_argument('--qa', action='store_true', help='Regenerate the staged English version of case 02')
+options = parser.parse_args()
 
 used = set()
 untranslated = set()
@@ -40,8 +45,11 @@ def translate_text(match):
 def translate_attribute(match):
     return match.group(1) + '="' + escape(translate(unescape(match.group(2))), quote=True) + '"'
 
-for source_name, target_name in [('index.html', 'index.en.html'),
-                                 ('caso-tef/index.html', 'caso-tef/index.en.html')]:
+pages = [('index.html', 'index.en.html'), ('caso-tef/index.html', 'caso-tef/index.en.html')]
+if options.qa:
+    pages = [('test-QA/analisis-ia/index.html', 'test-QA/analisis-ia/index.en.html')]
+
+for source_name, target_name in pages:
     html = (ROOT / source_name).read_text(encoding='utf-8')
     html = re.sub(r'>([^<>]+)<', translate_text, html)
     html = re.sub(r'\b(alt|aria-label|content)="([^"]+)"', translate_attribute, html)

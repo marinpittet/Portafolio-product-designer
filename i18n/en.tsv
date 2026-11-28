@@ -311,3 +311,371 @@ Después de pagar, volví al inicio y no supe si se hizo el pedido.	After paying
 Confirmación del pedido	Order confirmation
 Comprobante de compra	Purchase receipt
 Si el comprobante no aparece al finalizar el pago, el cliente podría volver a intentar la compra.	If the receipt doesn’t appear after payment, shoppers might try to place the order again.
+
+# Analizador semántico [IA]
+Analizador semántico [IA] — Andrés Marín	Semantic analyzer [AI] — Andrés Marín
+Primera incursión	First exploration
+Instrumentación	Instrumentation
+Arquitectura	Architecture
+Validación	Validation
+Reportería	Reporting
+Prueba de concepto	Proof of concept
+Resultados	Results
+Límites	Limitations
+Reflexión final	Final reflection
+Anexo	Appendix
+Banca digital	Digital banking
+Producto transaccional · 2025—2026	Transactional product · 2025–2026
+02 / Caso de estudio	02 / Case study
+Transformando la voz del cliente en evidencia para la toma de decisiones y la mejora continua de productos digitales.	Turning the voice of the customer into evidence for decision-making and continuous improvement in digital products.
+Product Designer e impulsor de la iniciativa.	Product Designer and initiator of the project.
+Solución de uso operativo mediante IA generativa y posterior prueba de concepto automatizada en Python.	An operational solution built with generative AI, followed by an automated proof of concept in Python.
+Septiembre 2025 — mayo 2026	September 2025 — May 2026
+Resumen del proyecto	Project overview
+Caso de estudio profesional real.	Case study based on professional work.
+Comencé la investigación y las pruebas exploratorias en septiembre de 2025. El desarrollo se concentró entre abril y mayo de 2026.	I began the research and exploratory testing in September 2025. Most development took place between April and May 2026.
+Industria	Industry
+Banca digital.	Digital banking.
+Responsabilidades	Responsibilities
+Investigación, conceptualización, diseño de la metodología de análisis, instrumentación, experimentación, validación y desarrollo asistido por IA.	Research, conceptualization, analysis methodology design, instrumentation, experimentation, validation, and AI-assisted development.
+Usuarios de la solución	Who used the solution
+Equipos de Diseño, Producto, Negocio y Postventa.	Design, Product, Business, and After-Sales teams.
+Product Design · Inteligencia artificial · Análisis de datos · Automatización	Product Design · Artificial intelligence · Data analysis · Automation
+Por motivos de confidencialidad, se han abstraído determinados antecedentes del producto original. La demostración funcional se realizará sobre un escenario independiente de comercio electrónico, utilizando datos completamente sintéticos.	For confidentiality, certain details of the original product have been abstracted. The working demo will use a separate e-commerce scenario with fully synthetic data.
+El proceso	The process
+De los comentarios al informe	From comments to report
+Exploración	Exploration
+Revisar el NPS y ensayar con IA	Review NPS and experiment with AI
+Describir el flujo y construir el glosario	Document the flow and build the glossary
+Análisis	Analysis
+Procesar y validar los datos	Process and validate the data
+Interpretar hallazgos y orientar la acción	Interpret findings and guide action
+Automatización	Automation
+Integrar el proceso en una POC	Integrate the process into a proof of concept
+Muchos datos, pocas respuestas	Plenty of data, few answers
+Como parte de mis iniciativas de seguimiento y mejora continua de un producto transaccional de banca digital, buscaba comprender qué factores estaban condicionando la satisfacción de nuestros clientes y dónde existían las mayores oportunidades de mejora.	As part of my work monitoring and improving a digital banking product, I wanted to understand what was affecting customer satisfaction and where the biggest opportunities for improvement lay.
+Contábamos con una plataforma especializada en la medición del Net Promoter Score (NPS), que proporcionaba indicadores cuantitativos, gráficos de tendencias, segmentaciones y comentarios espontáneos de clientes.	We had a dedicated Net Promoter Score (NPS) platform that provided quantitative metrics, trend charts, segment breakdowns, and unsolicited customer comments.
+Sin embargo, existía una brecha importante entre	But there was a significant gap between
+disponer de información y poder utilizarla	having information and being able to use it
+Las herramientas de análisis cualitativo se limitaban principalmente a visualizar los comentarios agrupados por nivel de satisfacción y generar nubes de palabras. Estas últimas tendían a destacar adjetivos y expresiones genéricas que, si bien permitían reconocer el tono de los comentarios, aportaban poco valor para comprender su contexto.	The qualitative tools were largely limited to displaying comments by satisfaction level and generating word clouds. These tended to highlight adjectives and generic expressions that conveyed tone but offered little insight into context.
+Saber que una experiencia era percibida como lenta, mala o frustrante no permitía comprender necesariamente qué estaba ocurriendo, dónde ni por qué.	Knowing that people found an experience slow, poor, or frustrating did not necessarily tell us what was happening, where, or why.
+Para obtener respuestas, debíamos revisar manualmente los comentarios, identificar patrones y tratar de asociarlos a problemas específicos del producto. Era un proceso que podía extenderse durante días o semanas, condicionado por la disponibilidad de las personas y sin criterios de clasificación estandarizados que permitieran comparar sus resultados en el tiempo.	To get answers, we had to review comments manually, identify patterns, and try to link them to specific product problems. That could take days or weeks depending on people's availability, and we lacked standardized classification criteria for comparing results over time.
+El problema no era la falta de información, sino nuestra capacidad para transformarla en conocimiento.	We had the information. The challenge was turning it into knowledge.
+02 / Diagnóstico	02 / Diagnosis
+Cuestionar el diagnóstico	Questioning the diagnosis
+Durante mis revisiones de los comentarios, comencé a identificar patrones que contrastaban con la interpretación que se estaba haciendo del deterioro del NPS.	As I reviewed the comments, I began to notice patterns at odds with the prevailing interpretation of the decline in NPS.
+Gran parte de la discusión se concentraba en la calidad de la experiencia desde una perspectiva de UX/UI. Sin embargo,	Much of the discussion focused on the quality of the experience from a UX/UI perspective. Yet
+los relatos de los clientes describían recurrentemente interrupciones, demoras, pérdida de continuidad y la necesidad de repetir operaciones	customers repeatedly described interruptions, delays, loss of continuity, and having to retry transactions
+para completarlas.	to complete them.
+Los registros de monitoreo técnico disponibles mostraban una cantidad reducida de errores, lo que dificultaba dimensionar estos problemas y respaldar la necesidad de priorizar su investigación.	The available technical monitoring logs showed few errors, making it hard to assess the scale of these problems or make a case for investigating them first.
+Existía, por tanto,	There was, therefore,
+una discrepancia entre la estabilidad que reflejaban los indicadores técnicos consultados y la experiencia que describían los usuarios	a discrepancy between the stability indicated by the monitoring data and the experience users described
+Mi objetivo era determinar qué factores estaban impulsando la detracción, distinguir su naturaleza y comprender su relevancia relativa dentro de la experiencia.	I wanted to determine what was driving negative feedback, distinguish between different types of problems, and understand how much each mattered to the overall experience.
+No buscaba demostrar que el diseño estuviera exento de problemas, sino contar con evidencia suficiente para orientar los esfuerzos hacia las intervenciones con mayor potencial de impacto.	My aim was to gather enough evidence to direct our efforts toward the interventions with the greatest potential impact, while allowing for problems in the design itself.
+Coincidiendo con la incorporación de herramientas de inteligencia artificial generativa al entorno corporativo, encontré una oportunidad para explorar una solución.	When generative AI tools became available in the corporate environment, I saw an opportunity to explore a solution.
+Dos señales sobre la misma experiencia	Two signals about the same experience
+Monitoreo técnico	Technical monitoring
+Pocos errores en los registros consultados.	Few errors in the logs we reviewed.
+Voz de los clientes	Customer feedback
+Demoras, interrupciones y reintentos recurrentes.	Recurring delays, interruptions, and retries.
+03 / Primera incursión	03 / First exploration
+Mi primera incursión profesional en la IA	My first professional use of AI
+Hasta ese momento, mi experiencia con modelos de inteligencia artificial generativa se limitaba a usos personales y casuales. No había desarrollado soluciones profesionales con IA ni contaba con experiencia en programación o procesamiento avanzado de datos.	Until then, I had used generative AI models only casually and for personal tasks. I had never built a professional AI solution and had no experience in programming or advanced data processing.
+Comencé experimentando con los archivos exportados desde la plataforma de NPS, buscando automatizar el ejercicio de análisis cualitativo que realizábamos manualmente.	I began by experimenting with exports from the NPS platform, looking to automate the qualitative analysis we were doing manually.
+Los primeros resultados fueron prometedores desde una perspectiva interpretativa. El modelo era capaz de reconocer temas recurrentes, resumir grandes cantidades de información y sugerir posibles agrupaciones.	The early results showed promise for interpretation. The model could recognize recurring topics, summarize large amounts of information, and suggest possible groupings.
+Sin embargo, al repetir los ejercicios comenzaron a aparecer inconsistencias.	But inconsistencies appeared when I repeated the exercises.
+Un mismo conjunto de datos podía producir diferentes cantidades de comentarios por categoría	The same dataset could yield different comment counts for each category
+, distintas interpretaciones y variaciones en las conclusiones.	, different interpretations, and different conclusions.
+También encontré dificultades relacionadas con la estructura de los archivos, su extensión y la capacidad del modelo para recuperar y procesar consistentemente la información a lo largo de una conversación.	I also ran into difficulties with file structure and size, and with the model's ability to retrieve and process information consistently over the course of a conversation.
+Estas limitaciones me obligaron a replantear el problema.	These limitations forced me to rethink the problem.
+No necesitaba simplemente un asistente capaz de analizar comentarios. Necesitaba diseñar un sistema de análisis confiable, trazable y reproducible.	I needed more than an assistant that could analyze comments. I needed to design an analysis system that was reliable, traceable, and reproducible.
+El desafío pasó de formular instrucciones para un modelo de IA a diseñar una arquitectura de información, procesamiento y validación que permitiera aprovechar sus capacidades sin depender completamente de su criterio interpretativo.	The challenge shifted from writing instructions for an AI model to designing how information would be structured, processed, and validated so the system could benefit from the model's capabilities without depending entirely on its judgment.
+04 / Instrumentación	04 / Instrumentation
+Instrumentación: enseñar al sistema a	Instrumentation: teaching the system to
+comprender el producto	understand the product
+Uno de los mayores desafíos era	One of the biggest challenges was
+trasladar al modelo el conocimiento que yo tenía como diseñador del producto	giving the model the product knowledge I had as a designer
+Los comentarios de los usuarios contenían referencias a componentes, funcionalidades, interacciones y términos cuyo significado dependía directamente del contexto de la experiencia.	Users referred to components, features, interactions, and terms whose meanings depended on the context of their experience.
+Un modelo de lenguaje podía comprender las palabras de un comentario, pero no necesariamente reconocer a qué elemento del producto hacían referencia, cuál era su propósito o en qué momento del recorrido aparecían.	A language model could understand the words in a comment without necessarily knowing which product element they referred to, what that element did, or where it appeared in the journey.
+Para resolverlo, desarrollé distintos instrumentos de contextualización, procesamiento y clasificación.	To address this, I developed several tools for adding context, processing the data, and classifying it.
+Convertir una experiencia visual en conocimiento estructurado	Turning a visual experience into structured knowledge
+Inicialmente consideré utilizar capturas de pantalla como fuente de información para comunicar al modelo cómo funcionaba el producto.	At first I considered using screenshots to show the model how the product worked.
+Sin embargo, interpretar imágenes implicaba un consumo adicional de recursos y volvía a introducir un margen de incertidumbre. Reconocer visualmente una interfaz no era equivalente a comprender su comportamiento, sus reglas o las relaciones entre sus componentes.	But interpreting images required additional resources and introduced uncertainty. Recognizing an interface visually did not mean understanding its behavior, its rules, or the relationships between its components.
+Decidí abordar el problema desde otra perspectiva:	I decided to approach the problem from a different angle:
+¿Cómo describiría una experiencia digital a alguien que	How would I describe a digital experience to someone who
+no puede verla ni interactuar directamente con ella?	cannot see it or interact with it directly?
+A partir de esta pregunta,	That question led me to
+desarrollé un documento Markdown que representaba textualmente la experiencia del producto	write a Markdown document that represented the product experience in text
+El documento describía de manera estructurada cada pantalla, considerando:	The document described each screen in a consistent structure, covering:
+Instrumentación / Markdown	Instrumentation / Markdown
+Anatomía de una pantalla escrita	Anatomy of a screen described in words
+Contexto y jerarquía	Context and hierarchy
+Su propósito dentro del recorrido.	Its purpose within the journey.
+La jerarquía y el orden de sus contenidos.	The hierarchy and order of its content.
+Componentes y contenidos	Components and content
+Los componentes presentes y sus características visuales.	The components on the screen and their visual characteristics.
+Los textos y mensajes de la interfaz.	Interface copy and messages.
+Interacción y comportamiento	Interaction and behavior
+Las interacciones y microinteracciones.	Interactions and microinteractions.
+El comportamiento de los elementos.	How elements behave.
+Tareas y variantes	Tasks and variants
+La secuencia esperada para completar cada tarea.	The expected sequence for completing each task.
+Las relaciones y diferencias entre las variantes del flujo.	Relationships and differences between flow variants.
+No se trataba simplemente de documentar un journey, sino de construir una representación del producto que pudiera ser comprendida por un sistema sin acceso directo a la experiencia.	The goal went beyond documenting a journey. I was building a representation of the product that a system could understand without direct access to the experience.
+De esta manera, el conocimiento que habitualmente reside en interfaces, prototipos y en la propia experiencia del diseñador podía ser incorporado como contexto estructurado para la IA.	That turned knowledge normally held in interfaces, prototypes, and the designer's own experience into structured context the AI could use.
+Contextualizar los comentarios dentro del journey	Putting comments in the context of the journey
+El relato de la experiencia permitía comprender qué elementos pertenecían a cada etapa del recorrido.	The written account of the experience made it possible to see which elements belonged to each stage.
+De forma abstracta, el proceso transaccional analizado podía representarse mediante cinco etapas:	At a high level, the transaction process could be represented in five stages:
+Etapa	Stage
+Propósito	Purpose
+Selección de objetivo o destino	Select a goal or destination
+Definir qué operación se desea realizar.	Define what operation the user wants to perform.
+Ingreso de datos y montos	Enter details and amounts
+Configurar los parámetros de la operación.	Set the parameters of the transaction.
+Revisión y confirmación	Review and confirm
+Verificar la información y confirmar la intención.	Check the information and confirm the user's intent.
+Validar y autorizar la operación.	Verify and authorize the transaction.
+Resultado y cierre	Outcome and completion
+Comunicar el resultado y finalizar el proceso.	Communicate the outcome and finish the process.
+Determinados elementos eran exclusivos de una etapa, mientras que otros estaban presentes de forma transversal.	Some elements appeared only at one stage, while others appeared throughout the journey.
+Por ejemplo, una referencia a un elemento exclusivo de la pantalla de cierre permitía asociar un comentario a ese momento del recorrido. En cambio, mencionar genéricamente un botón no proporcionaba información suficiente para determinar su ubicación.	For example, a reference to an element unique to the final screen could point to that stage. A generic mention of a button offered too little information to place it.
+Esta distinción fue fundamental para establecer reglas de asociación contextual y evitar que el modelo asignara arbitrariamente los comentarios a una etapa.	This distinction was essential for building rules that used context to link comments to stages and prevented the model from assigning them arbitrarily.
+Construcción del glosario y la taxonomía	Building the glossary and taxonomy
+Paralelamente, necesitaba establecer un lenguaje común para clasificar los comentarios.	At the same time, I needed a common vocabulary for classifying comments.
+Comencé revisando manualmente las respuestas de un período, identificando temas recurrentes y definiendo categorías relevantes para el producto.	I began by manually reviewing responses from one period, identifying recurring themes, and defining categories relevant to the product.
+Posteriormente utilicé IA generativa para ampliar el levantamiento de palabras clave, reconocer expresiones frecuentes y explorar posibles relaciones entre términos.	I then used generative AI to expand the keyword list, recognize common expressions, and explore possible relationships between terms.
+La validación humana	Human validation
+seguía siendo indispensable. Los clientes utilizaban abreviaturas, errores ortográficos, denominaciones informales y expresiones propias del contexto del producto que no siempre podían interpretarse correctamente de forma aislada.	remained essential. Customers used abbreviations, misspellings, informal names, and expressions specific to the product that could be difficult to interpret in isolation.
+Construí un glosario que contemplaba palabras clave, variantes lingüísticas, sinónimos y posibles errores de escritura, relacionándolos con categorías funcionales y etapas del recorrido.	I built a glossary of keywords, language variants, synonyms, and possible misspellings, linking them to functional categories and stages of the journey.
+También experimenté con mecanismos para automatizar el descubrimiento de nuevos términos, mediante análisis de unigramas y bigramas, similitud ortográfica y guías taxonómicas generadas con IA.	I also experimented with automating the discovery of new terms using unigram and bigram analysis, spelling similarity, and AI-generated taxonomy guides.
+Estas aproximaciones no alcanzaron la estabilidad que necesitaba. Decidí entonces	Those approaches were not stable enough for this application. I decided to
+conservar un glosario controlado	retain a controlled glossary
+, cuya ampliación dependiera de la revisión de evidencia y del conocimiento del producto.	, adding terms only after reviewing the evidence and applying product knowledge.
+Para resolver coincidencias entre categorías, incorporé reglas de precedencia que establecían qué términos debían tener prioridad ante una ambigüedad.	To resolve overlaps between categories, I added precedence rules that defined which terms should take priority when a match was ambiguous.
+Reconocer los límites de la información	Recognizing the limits of the information
+Una proporción importante de los comentarios contenía únicamente valoraciones genéricas, sin información suficiente para identificar una funcionalidad, un problema o una etapa concreta.	A substantial share of comments contained only generic ratings, with too little information to identify a feature, issue, or specific stage.
+En lugar de intentar interpretar aquello que el usuario no había expresado, establecí una categoría para los comentarios no clasificables y contemplé la posibilidad de no asignarles una etapa del recorrido.	I created a category for comments that could not be classified and allowed the system to leave the journey stage unassigned when users had not provided enough information.
+El objetivo no era maximizar artificialmente la cantidad de comentarios clasificados, sino preservar la calidad de la evidencia.	The goal was to preserve the quality of the evidence and avoid inflating the number of classified comments.
+La ausencia de información también debía ser representada correctamente por el sistema.	The system also needed to represent missing information accurately.
+Una metodología transferible a otros productos	A methodology that can transfer to other products
+El desarrollo de estos instrumentos permitió	Building these tools made it possible to
+separar el conocimiento específico del producto de la lógica general de análisis	separate product-specific knowledge from the general analysis logic
+La intención era que, para aplicar la metodología a otro flujo, fuera posible adaptar su documentación, glosario y reglas sin tener que reconstruir conceptualmente todo el sistema.	To apply the methodology to another flow, the aim was to adapt the documentation, glossary, and rules while preserving the underlying system design.
+El relato estructurado de la experiencia adquirió además un valor independiente del analizador.	The structured account of the experience also proved useful independently of the analyzer.
+Posteriormente reutilicé este método de documentación en otros proyectos, incluyendo ejercicios de revisión de experiencias digitales frente a requerimientos regulatorios de la Comisión para el Mercado Financiero (CMF).	I later reused this documentation method on other projects, including reviews of digital experiences against regulatory requirements from Chile's Financial Market Commission (CMF).
+Lo que había surgido como una solución para contextualizar comentarios se convirtió en una forma de comunicar conocimiento de producto a sistemas de inteligencia artificial para distintos propósitos profesionales.	What started as a way to contextualize comments became a way to convey product knowledge to AI systems for other kinds of professional work.
+05 / Arquitectura	05 / Architecture
+Diseñar la	Designing the
+arquitectura de análisis	analysis architecture
+La experimentación me permitió comprender que no todas las tareas debían resolverse utilizando las capacidades generativas de un LLM.	Experimentation showed me that some tasks called for a different approach than relying on the generative capabilities of a large language model (LLM).
+Los cálculos, las clasificaciones y las comparaciones temporales requerían consistencia	Calculations, classifications, and comparisons over time needed to be consistent
+. La interpretación de patrones, la síntesis y la exploración de hipótesis podían beneficiarse de una aproximación más flexible.	. Pattern interpretation, synthesis, and hypothesis exploration could benefit from a more flexible approach.
+A partir de esta distinción, diseñé una solución compuesta por dos asistentes especializados dentro del entorno corporativo de ChatGPT.	With that distinction in mind, I designed a solution with two specialized assistants in the corporate ChatGPT environment.
+Flujo de información	Information flow
+Dos asistentes, un informe	Two assistants, one report
+Entrada común	Shared input
+Exportación de NPS · CSV	NPS export · CSV
+Motor de análisis	Analysis engine
+Normalizar, calcular y clasificar	Normalize, calculate, and classify
+Genera el paquete de resultados estructurados.	Produces a package of structured results.
+Motor de interpretación	Interpretation engine
+Comunicar los resultados	Communicate the results
+Usa los indicadores del paquete sin recalcularlos.	Uses the metrics in the package without recalculating them.
+Comentarios originales	Original comments
+Conservar los textos para exploración	Keep the original text for exploration
+Explorar patrones semánticos	Explore semantic patterns
+Identifica conceptos e hipótesis complementarias.	Identifies additional concepts and hypotheses.
+Salida	Output
+Informe HTML	HTML report
+Resultados reproducibles y hallazgos exploratorios.	Reproducible results and exploratory findings.
+El primer asistente era responsable de procesar los datos mediante una secuencia de cinco fases.	The first assistant processed the data in five stages.
+Fase	Phase
+Función	Function
+Normalización	Normalization
+Procesar los archivos CSV, extraer la información relevante y convertirla en registros estructurados.	Process the CSV files, extract the relevant information, and convert it into structured records.
+Análisis cuantitativo	Quantitative analysis
+Calcular indicadores y segmentaciones, contrastables con la fuente original.	Calculate metrics and segment breakdowns that can be checked against the original source.
+Análisis cualitativo	Qualitative analysis
+Clasificar los comentarios mediante glosarios, reglas de coincidencia y contexto del producto.	Classify comments using glossaries, matching rules, and product context.
+Consolidación	Consolidation
+Reunir los resultados de las fases anteriores en un paquete de información estructurada.	Combine the results of the preceding stages into a structured package.
+Generar un archivo exportable para su procesamiento por el segundo asistente.	Generate an export file for the second assistant to process.
+La normalización permitía trabajar con registros JSON y JSONL, evitando la necesidad de consultar repetidamente los archivos originales y reduciendo los problemas asociados a su estructura.	Normalization let me work with JSON and JSONL records, avoiding repeated reads of the original files and reducing issues arising from their structure.
+También incorporé una huella digital SHA-256 como mecanismo de identificación e integridad de los datos procesados.	I also added a SHA-256 hash to identify the processed data and verify its integrity.
+Cada fase tenía un propósito delimitado y debía utilizar los resultados correspondientes a las etapas anteriores.	Each stage had a defined purpose and used the relevant outputs from the preceding stages.
+Motor de interpretación y reportería	Interpretation and reporting engine
+El segundo asistente recibía los resultados del motor de análisis y los transformaba en un informe orientado a la toma de decisiones.	The second assistant received the results from the analysis engine and turned them into a report to support decision-making.
+Su responsabilidad era comunicar los indicadores, contextualizar los hallazgos y	Its job was to present the metrics, put the findings in context, and
+generar recomendaciones sin reinterpretar ni recalcular los resultados estructurados	make recommendations without reinterpreting or recalculating the structured results
+Adicionalmente, incorporaba una capa de exploración semántica basada en los comentarios originales.	It also included a layer for semantic exploration based on the original comments.
+Esta capa permitía identificar conceptos relacionados, intenciones, patrones recurrentes y posibles mecanismos de fricción que no necesariamente estaban contemplados en las categorías predefinidas.	This layer helped identify related concepts, intentions, recurring patterns, and possible sources of friction that the predefined categories might have missed.
+La interpretación semántica funcionaba como un complemento exploratorio, separado de los resultados reproducibles del motor.	Semantic interpretation served as a separate exploratory complement to the reproducible results from the engine.
+La IA podía ampliar nuestra comprensión de la información, pero no debía alterar la evidencia sobre la que se construía el análisis.	AI could deepen our understanding of the information while preserving the evidence on which the analysis was based.
+06 / Validación	06 / Validation
+Iterar, cuestionar y validar	Iterating, questioning, and validating
+La arquitectura final fue el resultado de decenas de iteraciones y cientos de pruebas.	The final architecture was the result of dozens of iterations and hundreds of tests.
+Durante las primeras etapas de experimentación, utilizaba principalmente la capacidad interpretativa del modelo para clasificar los comentarios. Sin embargo, cada nueva ejecución podía producir resultados diferentes.	In the early experiments, I relied mainly on the model's ability to interpret comments and assign categories. But each run could produce different results.
+Para identificar el origen de estas variaciones, comencé a	To find the source of those variations, I began to
+aislar responsabilidades, estructurar las entradas y restringir progresivamente las decisiones que delegaba al modelo	separate responsibilities, structure the inputs, and progressively limit the decisions I delegated to the model
+La validación se desarrolló en tres niveles.	I validated the system at three levels.
+Integridad cuantitativa	Quantitative integrity
+Contrastaba los indicadores calculados por el motor con los proporcionados por la plataforma original.	I checked the metrics calculated by the engine against those from the original platform.
+Este ejercicio permitía detectar registros omitidos, errores de procesamiento o inconsistencias en la lectura de los archivos antes de continuar con el análisis cualitativo.	This made it possible to catch skipped records, processing errors, or inconsistencies in how the files were read before moving on to qualitative analysis.
+Exactitud de la clasificación	Classification accuracy
+Durante las iteraciones incorporé anexos que agrupaban los comentarios literales según las categorías asignadas.	During the iterations, I added appendices that grouped the verbatim comments by their assigned categories.
+Revisaba manualmente estos resultados para identificar errores, ajustar las palabras clave, corregir ambigüedades y refinar las reglas de precedencia.	I reviewed the results by hand to identify errors, adjust keywords, resolve ambiguities, and refine the precedence rules.
+Esta auditoría permitía comprender no solo qué resultados entregaba el sistema, sino por qué determinados comentarios estaban siendo clasificados incorrectamente.	This audit showed what the system produced and helped explain why it misclassified particular comments.
+Reproducibilidad	Reproducibility
+Ejecutaba repetidamente el análisis sobre un mismo conjunto de datos para identificar variaciones.	I ran the analysis repeatedly on the same dataset to identify variations.
+A medida que refinaba la arquitectura y las reglas, las ejecuciones comenzaron a producir resultados cada vez más consistentes.	As I refined the architecture and rules, the runs produced increasingly consistent results.
+Una vez alcanzada una estabilidad suficiente, desarrollé con apoyo de IA un conjunto de pruebas de referencia, o	Once the system was stable enough, I used AI to help develop a set of reference tests, or
+, para estresar el sistema y comprobar su comportamiento ante distintos escenarios.	, to stress-test the system and verify how it behaved in different scenarios.
+Este proceso permitió avanzar desde informes aislados hacia análisis evolutivos entre períodos, manteniendo criterios de evaluación comparables.	The process made it possible to move from one-off reports to analysis across reporting periods using comparable evaluation criteria.
+La separación en fases, inicialmente concebida como un mecanismo de control de calidad, también resolvía limitaciones propias del entorno conversacional: permitía finalizar cada operación, disponer de sus archivos resultantes y continuar el procesamiento a partir de ellos.	I initially separated the work into stages for quality control. This also addressed a limitation of the conversational environment: each operation could finish and produce files that the next stage could use to continue processing.
+07 / Reportería	07 / Reporting
+Diseñar información para	Designing information for
+tomar decisiones	decision-making
+La solución no terminaba con la clasificación de comentarios.	Classifying comments was only one part of the solution.
+El valor del sistema dependía de cómo esos resultados podían ser comprendidos y utilizados por personas con distintas responsabilidades dentro de la organización.	The system's value depended on whether people with different responsibilities across the organization could understand and use its results.
+Diseñé un informe que integraba	I designed a report that offered
+diferentes niveles de lectura, desde una visión ejecutiva hasta el detalle de la evidencia utilizada	several levels of detail, from an executive overview to the evidence behind the findings
+Su estructura contemplaba:	It included:
+Cómo se lee el informe	How to read the report
+Panorama de la experiencia	Experience overview
+Resumen ejecutivo.	Executive summary.
+Panorama general del NPS.	NPS overview.
+Contexto comparativo.	Comparative context.
+Desempeño por flujo.	Performance by flow.
+Desempeño por dispositivo.	Performance by device.
+Fortalezas de la experiencia.	Strengths of the experience.
+Fricciones clasificadas por el motor.	Friction points classified by the engine.
+Patrones semánticos.	Semantic patterns.
+Journey y concentración de puntos de fricción.	Journey and concentration of friction points.
+Síntesis diagnóstica.	Diagnostic summary.
+Acción y respaldo	Action and supporting evidence
+Priorización de iniciativas según impacto y esfuerzo.	Prioritization of initiatives by impact and effort.
+Plan de acción y seguimiento.	Action plan and follow-up.
+Anexos, metodología y transparencia.	Appendices, methodology, and transparency.
+La intención era facilitar distintos niveles de consumo de la información sin perder la posibilidad de consultar su fundamento.	The aim was to support different levels of reading while keeping the underlying evidence accessible.
+Los informes permitían comprender cómo evolucionaban los indicadores, qué segmentos presentaban mayores dificultades, qué problemas se repetían y dónde existían oportunidades que merecían ser investigadas.	The reports showed how metrics changed, which segments experienced the most difficulty, which problems recurred, and what opportunities warranted further investigation.
+Inspirándome en Google Trends, incorporé también visualizaciones de evolución temporal de los conceptos recurrentes, buscando comprender no solo qué estaban comentando los clientes, sino cuándo aparecían determinados patrones y cómo se comportaban a lo largo del período analizado.	Taking inspiration from Google Trends, I also visualized recurring concepts over time to see what customers were commenting on, when patterns emerged, and how they evolved throughout the reporting period.
+El informe HTML incorporaba elementos interactivos que facilitaban la exploración de esta información.	Interactive elements in the HTML report made this information easier to explore.
+De esta manera, el resultado evolucionó desde una automatización del análisis manual hacia un instrumento de diagnóstico y apoyo a la priorización de producto.	What began as automation for manual analysis became a diagnostic tool that supported product prioritization.
+08 / Prueba de concepto	08 / Proof of concept
+Del asistente a una	From an assistant to an
+prueba de concepto automatizada	automated proof of concept
+Aunque la solución basada en dos Custom GPTs era funcional y se utilizaba operativamente,	The solution built on two Custom GPTs was functional and in operational use, but it
+todavía dependía de mi intervención para ejecutar las fases	still relied on me to run the stages
+, validar los resultados y trasladar la información entre asistentes.	, validate the results, and pass information between assistants.
+El proceso estaba condicionado por las características del entorno conversacional y por la disponibilidad de la plataforma corporativa de IA.	The process depended on the constraints of the conversational environment and on access to the corporate AI platform.
+Buscando superar estas limitaciones, exploré una implementación independiente basada en Python.	To address those limitations, I explored a standalone Python implementation.
+No tenía conocimientos de programación en este lenguaje, por lo que utilicé Devin como herramienta de desarrollo asistido por inteligencia artificial.	I did not know how to program in Python, so I used Devin as an AI-assisted development tool.
+Mi responsabilidad consistía en definir el funcionamiento del producto, trasladar la metodología desarrollada, establecer los requerimientos y validar los resultados de su implementación.	My role was to define how the product should work, transfer the methodology, set the requirements, and validate the implementation.
+La prueba de concepto permitió:	The proof of concept could:
+Prueba de concepto / Python	Proof of concept / Python
+Del CSV al informe HTML	From CSV to HTML report
+Entrada	Input
+Carga de archivos	File upload
+Importar archivos CSV mediante un explorador de archivos o drag & drop.	Import CSV files using a file picker or drag and drop.
+Procesamiento	Processing
+Ejecución automática	Automatic execution
+Automatizar la normalización y el procesamiento de los datos.	Automate data normalization and processing.
+Ejecutar la secuencia de análisis sin comandos manuales.	Run the analysis sequence without manual commands.
+Reproducir la clasificación y categorización estructurada.	Reproduce the structured classification and categorization.
+Informe listo para consultar	Report ready to review
+Generar el informe HTML completo.	Generate the complete HTML report.
+La POC consiguió	The proof of concept could
+reproducir el alcance funcional de la solución anterior en menos de tres minutos	reproduce the functionality of the previous solution in under three minutes
+, según las pruebas realizadas en el entorno de desarrollo.	, based on tests in the development environment.
+El siguiente paso era convertirla en un producto independiente y distribuible, con una interfaz terminada y accesible para otros equipos.	The next step was to turn it into a standalone, distributable product with a finished interface that other teams could access.
+Esta etapa quedó pendiente. Su distribución dentro del entorno corporativo requería procesos adicionales de evaluación y aprobación por parte del área de ciberseguridad, así como la habilitación de un canal autorizado para su utilización.	That step remained open. Distribution within the corporate environment required further review and approval from cybersecurity, as well as an authorized channel for using the tool.
+09 / Resultados	09 / Results
+Resultados e impacto	Results and impact
+De días de análisis a minutos de procesamiento	From days of analysis to minutes of processing
+Análisis manual	Manual analysis
+Días o semanas	Days or weeks
+Revisión y categorización manual	Manual review and categorization
+Menos de una hora	Under an hour
+Procesamiento automatizado por fases y supervisión humana	Automated processing in stages with human supervision
+POC en Python	Python proof of concept
+Menos de tres minutos	Under three minutes
+Ejecución automatizada y generación del informe	Automated execution and report generation
+Tiempos aproximados observados durante el proyecto. No corresponden a un benchmark controlado.	Approximate times observed during the project. They do not represent a controlled benchmark.
+La reducción del tiempo de procesamiento cambió nuestra capacidad para consultar y analizar la información.	Shorter processing times changed how quickly we could consult and analyze the information.
+Podía generar informes de períodos específicos a solicitud de los stakeholders, comparar distintos segmentos dentro de una misma jornada y realizar análisis evolutivos mensuales utilizando criterios consistentes.	I could produce reports for specific periods at stakeholders' request, compare multiple segments in a single day, and track changes month over month using consistent criteria.
+Esto permitió transformar una actividad ocasional, condicionada por el tiempo disponible para revisar comentarios, en un ejercicio de seguimiento mucho más ágil.	That made an occasional task, previously limited by the time available for reviewing comments, into a more responsive way to track the product.
+Un instrumento compartido de diagnóstico	A shared diagnostic tool
+Los informes se utilizaron en mesas de trabajo con representantes de Producto, Postventa y Diseño.	The reports were used in working sessions with representatives from Product, After-Sales, and Design.
+Postventa valoró especialmente la solución como un instrumento complementario para comprender los problemas que experimentaban los clientes y contextualizar las incidencias reportadas a través de los canales de atención.	The After-Sales team found the tool especially helpful for understanding what customers were experiencing and putting issues reported through support channels in context.
+La herramienta proporcionaba una dimensión de análisis que no estaba disponible en la plataforma original: la posibilidad de	The tool added a capability the original platform lacked:
+asociar comentarios a funcionalidades, etapas del recorrido y patrones de comportamiento recurrentes	linking comments to features, stages of the journey, and recurring behavior patterns
+También permitía identificar diferencias relevantes entre segmentos y dispositivos, facilitando una lectura más específica de las oportunidades de intervención.	It also helped identify meaningful differences between segments and devices, pointing more clearly to where interventions could help.
+Un diagnóstico respaldado por la evolución del producto	A diagnosis supported by changes in the product
+Uno de los principales aportes de los informes fue visibilizar la relevancia de las dificultades operativas dentro del deterioro de la satisfacción.	One of the reports' main contributions was making visible the role of operational difficulties in declining satisfaction.
+Mientras los registros técnicos consultados mostraban una cantidad limitada de errores, los comentarios de los clientes describían recurrentemente interrupciones, reintentos y pérdida de continuidad durante las operaciones.	While the technical logs we reviewed showed relatively few errors, customer comments repeatedly described interruptions, retries, and loss of continuity during transactions.
+El análisis estructurado permitió dimensionar estos relatos, identificar su recurrencia y señalar	Structured analysis helped us assess these reports, identify how often the problems recurred, and flag
+la estabilidad operativa como uno de los ámbitos prioritarios de intervención	operational stability as a priority for intervention
+Durante los últimos meses del proyecto, los esfuerzos de desarrollo se concentraron en resolver incidencias técnicas y mejorar la continuidad operativa, sin introducir modificaciones en el diseño de la experiencia.	In the final months of the project, development efforts focused on resolving technical incidents and improving operational continuity without changing the experience design.
+El NPS experimentó un repunte significativo durante este período.	NPS rebounded significantly during this period.
+Esta evolución fue consistente con el diagnóstico y las prioridades de intervención identificadas en los informes, aportando respaldo a sus hallazgos: el deterioro de la satisfacción no podía explicarse exclusivamente desde el diseño de la interfaz o su usabilidad.	The change was consistent with the diagnosis and priorities identified in the reports. It supported the finding that interface design and usability alone could not explain the decline in satisfaction.
+Más allá del origen de las decisiones de priorización, los resultados observados reforzaron el valor del analizador como instrumento de diagnóstico para distinguir problemas de distinta naturaleza y orientar la investigación hacia oportunidades de mayor impacto potencial.	Regardless of what drove the prioritization decisions, the results reinforced the analyzer's value as a diagnostic tool for distinguishing between kinds of problems and directing research toward opportunities with greater potential impact.
+Adopción y alcance organizacional	Adoption and organizational reach
+A pesar de su utilidad operativa, la solución no consiguió una adopción transversal dentro de la organización.	Despite its usefulness in day-to-day work, the solution was not adopted across the organization.
+Las dinámicas de colaboración entre áreas, la resistencia a modificar procesos establecidos y las restricciones para distribuir la herramienta limitaron su incorporación a los flujos de trabajo de otros equipos.	Collaboration patterns, resistance to changing established processes, and restrictions on distributing the tool limited its uptake in other teams' workflows.
+La generación de informes continuó dependiendo principalmente de mí.	Report generation continued to depend mainly on me.
+Esta experiencia puso de manifiesto que la calidad de una solución analítica no es suficiente para garantizar su adopción. Su accesibilidad, integración en los procesos de trabajo y participación de quienes deben utilizar sus resultados son igualmente determinantes.	The experience showed that the quality of an analytics solution alone does not guarantee adoption. Accessibility, integration into workflows, and the involvement of the people who will use the results matter just as much.
+10 / Límites	10 / Limitations
+Los límites del análisis	The limits of the analysis
+El proyecto permitió identificar una limitación que no podía resolverse exclusivamente mejorando el motor de análisis.	The project revealed a limitation that improvements to the analysis engine alone could not address.
+La encuesta NPS se presentaba de forma contextual únicamente después de que el usuario completara exitosamente el proceso transaccional.	The NPS survey appeared in context only after the user had successfully completed the transaction.
+Esto implicaba que	That meant
+los usuarios que abandonaban el flujo o no conseguían finalizar la operación quedaban fuera de la captura de feedback	users who abandoned the flow or could not complete the transaction were excluded from feedback collection
+Cobertura de la fuente	Feedback coverage
+¿A quiénes llegaba la encuesta?	Who received the survey?
+Punto de partida	Starting point
+Inicio de la operación	Start of the transaction
+Completa la operación	Completes the transaction
+Puede responder la encuesta NPS	Can respond to the NPS survey
+Abandona o no logra completarla	Leaves or cannot complete it
+Queda fuera de la encuesta	Does not receive the survey
+Al contrastar los comentarios con las métricas de conversión, observé que algunas de las etapas con mayor abandono no contaban con suficiente evidencia cualitativa para comprender sus causas.	When I compared comments with conversion metrics, I saw that we lacked enough qualitative evidence to explain some of the stages with the highest drop-off.
+El sistema podía identificar con mayor precisión las dificultades relatadas por quienes lograban completar la operación, pero no podía recuperar información de quienes nunca habían tenido la oportunidad de expresarlas.	The system could identify more precisely the difficulties described by users who completed the transaction, but it could not recover information from people who had never had a chance to share it.
+Exploré conceptualmente alternativas para ampliar la captura de feedback a otros momentos del recorrido. Sin embargo, las restricciones existentes sobre los mecanismos de contacto con clientes limitaron su implementación.	I explored ways to collect feedback at other points in the journey. Existing rules about how we could contact customers limited what we could implement.
+La calidad del análisis no puede compensar la ausencia de información en su fuente.	Even good analysis cannot make up for information that was never captured.
+Este aprendizaje amplió mi perspectiva sobre el diseño de soluciones analíticas: no basta con procesar correctamente los datos; también es necesario comprender cómo, cuándo y bajo qué condiciones fueron recopilados.	This broadened how I think about designing analytics tools. Processing the data correctly is only part of the work. We also have to understand how, when, and under what conditions it was collected.
+11 / Retrospectiva	11 / Retrospective
+Retrospectiva: qué haría diferente	Retrospective: what I would do differently
+Separar las dimensiones de clasificación	Separate the dimensions of classification
+Una de las principales oportunidades de mejora se encuentra en el diseño de la taxonomía original.	One of the biggest opportunities for improvement lies in the original taxonomy.
+Algunas categorías representaban la naturaleza de un problema, mientras que otras correspondían a funcionalidades o momentos específicos del journey.	Some categories represented the nature of a problem, while others referred to features or specific points in the journey.
+Esto generaba conflictos de clasificación que debía resolver mediante reglas de precedencia.	This produced classification conflicts that I had to resolve with precedence rules.
+En una nueva implementación, separaría estas dimensiones	In a new implementation, I would separate those dimensions
+para permitir que un comentario describiera simultáneamente la naturaleza de una fricción, su ubicación dentro del recorrido, sus síntomas y sus consecuencias	so a comment could describe the nature of the friction, where it occurred, its symptoms, and its consequences at the same time
+También dedicaría mayor atención a la construcción y validación de la taxonomía inicial, evitando que las hipótesis del investigador condicionen excesivamente los resultados del análisis.	I would also spend more time building and validating the initial taxonomy so the researcher's hypotheses did not unduly influence the analysis.
+Combinar reproducibilidad y exploración semántica	Combine reproducibility and semantic exploration
+Desarrollaría el sistema directamente sobre una arquitectura independiente, utilizando Python para las operaciones estructuradas y evaluando tecnologías de procesamiento semántico que permitan reconocer similitudes conceptuales más allá de las coincidencias literales.	I would build the system on a standalone architecture from the outset, using Python for structured operations and evaluating semantic processing technologies that can recognize conceptual similarities beyond literal matches.
+Mantendría una separación explícita entre los indicadores reproducibles y los resultados interpretativos, incorporando pruebas automatizadas y conjuntos de datos de referencia para evaluar la calidad de ambos.	I would explicitly separate reproducible metrics from interpretive findings and use automated tests and reference datasets to assess the quality of both.
+Diseñar una herramienta, no únicamente un informe	Design a tool that goes beyond the report
+Evolucionaría la solución hacia una plataforma autoservicio, con una interfaz que permita importar información, explorar segmentos, configurar búsquedas y consultar resultados sin depender de conocimientos especializados en análisis de datos.	I would develop the solution into a self-service platform with an interface for importing information, exploring segments, configuring searches, and viewing results without specialized data analysis knowledge.
+Me interesa especialmente la posibilidad de permitir que los usuarios definan conceptos o palabras clave y estudien su comportamiento a lo largo del tiempo, facilitando la exploración de nuevas hipótesis.	I am particularly interested in letting users define concepts or keywords and track how they change over time, so they can explore new hypotheses.
+La intención sería reducir las barreras de entrada que presentan las plataformas analíticas más especializadas y acercar sus capacidades a quienes toman decisiones de producto.	The aim would be to lower the barriers to using specialized analytics platforms and put those capabilities within reach of people who make product decisions.
+Facilitar la adopción desde el inicio	Support adoption from the start
+Involucraría a los stakeholders clave desde las primeras etapas de definición, buscando comprender sus necesidades, validar la utilidad de las funcionalidades y facilitar la incorporación de la herramienta a sus procesos habituales.	I would involve key stakeholders from the earliest stages of definition to understand their needs, validate whether the features are useful, and make the tool easier to incorporate into their workflows.
+Priorizaría una aplicación accesible y distribuible, diseñada para procesar inicialmente la información de forma local y evitar su exposición a servicios externos.	I would prioritize an accessible, distributable application that initially processes information locally and keeps it from being exposed to external services.
+En una segunda etapa, exploraría mecanismos de integración directa con las fuentes de información, sujetos a los requerimientos de seguridad correspondientes, para reducir la dependencia de la importación manual y habilitar reportería actualizada automáticamente.	In a second stage, I would explore integrating directly with the data sources, subject to the relevant security requirements, to reduce dependence on manual imports and enable automatically updated reports.
+12 / Reflexión final	12 / Final reflection
+Este proyecto representó mi primera experiencia profesional utilizando inteligencia artificial y transformó mi manera de entender sus posibilidades dentro del Product Design.	This was my first professional experience with AI, and it changed how I understood its possibilities in product design.
+Comencé buscando automatizar una actividad repetitiva y terminé diseñando una metodología que integraba conocimiento del producto, estructuración de información, clasificación, validación, interpretación y comunicación de resultados.	I set out to automate a repetitive task and ended up designing a methodology that brought together product knowledge, information structuring, classification, validation, interpretation, and communication.
+Aprendí a reconocer qué problemas podían resolverse aprovechando las capacidades interpretativas de un modelo de lenguaje y cuáles requerían mecanismos de procesamiento más controlados.	I learned which problems could benefit from a language model's interpretive capabilities and which needed more tightly controlled processing.
+También descubrí el valor de estructurar y comunicar el conocimiento que poseemos como diseñadores para convertirlo en un recurso reutilizable por sistemas de inteligencia artificial.	I also discovered the value of structuring and communicating what we know as designers so AI systems can reuse it.
+Más allá de las tecnologías utilizadas, el proyecto reforzó mi interés por diseñar productos que amplíen las capacidades de las personas, reduzcan barreras de acceso a la información y permitan tomar decisiones mejor fundamentadas.	Beyond the technologies involved, the project strengthened my interest in designing products that extend people's capabilities, improve access to information, and support better-informed decisions.
+El mayor valor de la IA no estaba en sustituir el análisis humano, sino en	The most valuable role for AI was to
+ampliar nuestra capacidad para comprender la información y actuar sobre ella.	expand our ability to understand information and act on it while retaining human analysis.
+13 / Anexo	13 / Appendix
+Demostración independiente	Standalone demonstration
+En desarrollo.	In development.
+Para demostrar el funcionamiento del sistema sin exponer información confidencial del proyecto original, se desarrollará una implementación independiente aplicada al journey completo de compra de un comercio electrónico ficticio.	To demonstrate the system without exposing confidential information from the original project, I will build a standalone implementation covering the full purchase journey of a fictional e-commerce store.
+Esta reconstrucción utilizará datos completamente sintéticos y permitirá incorporar los aprendizajes obtenidos durante el desarrollo del proyecto profesional.	This reconstruction will use fully synthetic data and incorporate what I learned during the professional project.
+El objetivo es evolucionar la prueba de concepto hacia un producto funcional e independiente, con una arquitectura tecnológica verificable, procesamiento local, exploración semántica, visualización interactiva y generación automatizada de informes.	The goal is to evolve the proof of concept into a working standalone product with a verifiable technical architecture, local processing, semantic exploration, interactive visualization, and automated report generation.
+La demostración, sus decisiones de implementación y los resultados de su validación se incorporarán a esta sección una vez completado su desarrollo.	The demonstration, the decisions behind its implementation, and the results of validation will be added to this section once development is complete.
+Capítulos	Chapters

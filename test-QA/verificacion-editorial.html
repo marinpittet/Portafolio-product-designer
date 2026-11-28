@@ -22,7 +22,7 @@ pre { white-space: pre-wrap }
 <div class="frames" id="frames"></div>
 <script>
 const widths = [1920, 1440, 1280, 1279, 1024, 800, 799, 393, 320];
-const pages = ['index.html', 'index.en.html', 'caso-tef/index.html', 'caso-tef/index.en.html', 'analisis-ia/index.html'];
+const pages = ['index.html', 'index.en.html', 'caso-tef/index.html', 'caso-tef/index.en.html', 'analisis-ia/index.html', 'analisis-ia/index.en.html'];
 const selectors = ['h1','h2','h3','.reading-copy','.editorial-grid','.ia-flow-lanes','.ia-poc-grid','.editorial-table','.hero-meta','.hero-layout','.project-card','.topbar'];
 const pageInput = document.getElementById('page');
 const widthInput = document.getElementById('width');
@@ -229,9 +229,10 @@ run.onclick = async () => {
   const report = [];
   try {
     for (const [page, width] of pages.flatMap(p => widths.map(w => [p,w]))) {
-      const pair = await Promise.all(['baseline','test-QA'].map(env => openFrame(env,page,width,'')));
-      const before = inspect(pair[0],width);
-      const after = inspect(pair[1],width,true);
+      const environments = page === 'analisis-ia/index.en.html' ? ['test-QA'] : ['baseline','test-QA'];
+      const pair = await Promise.all(environments.map(env => openFrame(env,page,width,'')));
+      const before = pair.length === 2 ? inspect(pair[0],width) : null;
+      const after = inspect(pair.at(-1),width,true);
       report.push({page, before, after, issues:listIssues(after)});
       result.textContent = 'Revisadas ' + report.length + ' de ' + (pages.length * widths.length) + ' combinaciones';
       pair.forEach(x => x.container.remove());
@@ -253,7 +254,8 @@ run.onclick = async () => {
 compare.onclick = () => {
   frames.replaceChildren();
   const anchor = document.getElementById('section').value;
-  for (const env of ['baseline','test-QA']) openFrame(env,pageInput.value,Number(widthInput.value),anchor);
+  const environments = pageInput.value === 'analisis-ia/index.en.html' ? ['test-QA'] : ['baseline','test-QA'];
+  for (const env of environments) openFrame(env,pageInput.value,Number(widthInput.value),anchor);
 };
 </script>
 </html>
